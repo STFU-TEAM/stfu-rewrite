@@ -1,0 +1,5 @@
+# ignore pre-compiled junk #
+#caused problem in the past dont want it to happen again :)
+#plus enough thing are already pre compiled sooooo.
+__pycache__/
+cogs/__pycache__/
