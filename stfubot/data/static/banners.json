@@ -1,0 +1,2261 @@
+{
+  "banners": [
+    {
+      "name": "Part 3",
+      "id": 0,
+      "dates": [0, 6],
+      "stands": [
+        {
+          "stand_name": "Star platinum",
+          "stars": 4,
+          "id": 1,
+          "stats": {
+            "base_hp": 400,
+            "base_damage": 50,
+            "base_speed": 10,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Magician's Red",
+          "stars": 3,
+          "id": 2,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 30,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Hierophant green",
+          "stars": 3,
+          "id": 3,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 20,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Hermit purple",
+          "stars": 1,
+          "id": 4,
+          "stats": {
+            "base_hp": 25,
+            "base_damage": 1,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The Fool",
+          "stars": 3,
+          "id": 5,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 25,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Silver chariot",
+          "stars": 4,
+          "id": 6,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 40,
+            "base_speed": 9,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Dark blue moon",
+          "stars": 2,
+          "id": 7,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 15,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tower of Grey",
+          "stars": 2,
+          "id": 8,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 5,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Strength",
+          "stars": 1,
+          "id": 9,
+          "stats": {
+            "base_hp": 350,
+            "base_damage": 0,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "TheWorld",
+          "stars": 5,
+          "id": 10,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 60,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Ebony devil",
+          "stars": 2,
+          "id": 11,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Yellow Temperance",
+          "stars": 2,
+          "id": 12,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Hanged Man",
+          "stars": 3,
+          "id": 13,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 25,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Emperor",
+          "stars": 3,
+          "id": 14,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 25,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Wheel of Fortune",
+          "stars": 2,
+          "id": 15,
+          "stats": {
+            "base_hp": 195,
+            "base_damage": 10,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Justice",
+          "stars": 3,
+          "id": 16,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 1,
+            "base_speed": 100,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The lovers",
+          "stars": 1,
+          "id": 17,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 1,
+            "base_speed": 100,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The sun",
+          "stars": 2,
+          "id": 18,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Death 13",
+          "stars": 3,
+          "id": 19,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 50,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Judgement",
+          "stars": 2,
+          "id": 20,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "High Priestess",
+          "stars": 3,
+          "id": 21,
+          "stats": {
+            "base_hp": 350,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Geb",
+          "stars": 3,
+          "id": 22,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 25,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Khnum",
+          "stars": 1,
+          "id": 23,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tohth",
+          "stars": 1,
+          "id": 24,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Anubis",
+          "stars": 2,
+          "id": 25,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Bastet",
+          "stars": 1,
+          "id": 26,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Horus",
+          "stars": 3,
+          "id": 27,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 30,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Atum",
+          "stars": 3,
+          "id": 28,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Osiris",
+          "stars": 3,
+          "id": 29,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Cream",
+          "stars": 4,
+          "id": 30,
+          "stats": {
+            "base_hp": 375,
+            "base_damage": 35,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "Part 4",
+      "id": 1,
+      "dates": [1, 6],
+      "stands": [
+        {
+          "stand_name": "Star Platinum The World",
+          "stars": 5,
+          "id": 31,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 60,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Crazy Diamond",
+          "stars": 4,
+          "id": 32,
+          "stats": {
+            "base_hp": 520,
+            "base_damage": 45,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Aqua Necklace",
+          "stars": 2,
+          "id": 33,
+          "stats": {
+            "base_hp": 295,
+            "base_damage": 10,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The Hand",
+          "stars": 4,
+          "id": 34,
+          "stats": {
+            "base_hp": 365,
+            "base_damage": 40,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Bad Company",
+          "stars": 2,
+          "id": 35,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 20,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Echoes Act 0",
+          "stars": 1,
+          "id": 36,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Red Hot Chili Pepper",
+          "stars": 3,
+          "id": 37,
+          "stats": {
+            "base_hp": 280,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The Lock",
+          "stars": 1,
+          "id": 38,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Surface",
+          "stars": 2,
+          "id": 39,
+          "stats": {
+            "base_hp": 150,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Love Deluxe",
+          "stars": 2,
+          "id": 40,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 10,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Echoes Act 1",
+          "stars": 2,
+          "id": 41,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Echoes Act 2",
+          "stars": 3,
+          "id": 42,
+          "stats": {
+            "base_hp": 180,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Pearl Jam",
+          "stars": 1,
+          "id": 43,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Achtung Baby",
+          "stars": 1,
+          "id": 44,
+          "stats": {
+            "base_hp": 60,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Heaven's Door",
+          "stars": 4,
+          "id": 45,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 15,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Ratt",
+          "stars": 2,
+          "id": 46,
+          "stats": {
+            "base_hp": 125,
+            "base_damage": 20,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Harvest",
+          "stars": 2,
+          "id": 47,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 10,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Cinderella",
+          "stars": 3,
+          "id": 48,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 5,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Killer Queen",
+          "stars": 4,
+          "id": 49,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 65,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Echoes Act 3",
+          "stars": 4,
+          "id": 50,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 20,
+            "base_speed": 4,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Atom Heart Father",
+          "stars": 1,
+          "id": 51,
+          "stats": {
+            "base_hp": 50,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Boy II Man",
+          "stars": 2,
+          "id": 52,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 15,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Highway Star",
+          "stars": 3,
+          "id": 53,
+          "stats": {
+            "base_hp": 290,
+            "base_damage": 15,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Stray Cat",
+          "stars": 3,
+          "id": 54,
+          "stats": {
+            "base_hp": 260,
+            "base_damage": 15,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Super Fly",
+          "stars": 1,
+          "id": 55,
+          "stats": {
+            "base_hp": 1000,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Enigma",
+          "stars": 3,
+          "id": 56,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 25,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Cheap Trick",
+          "stars": 1,
+          "id": 57,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 1,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Killer Queen bite the dust",
+          "stars": 5,
+          "id": 58,
+          "stats": {
+            "base_hp": 320,
+            "base_damage": 70,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 4
+          }
+        }
+      ]
+    },
+    {
+      "name": "Part 5",
+      "id": 2,
+      "dates": [2, 6],
+      "stands": [
+        {
+          "stand_name": "Gold Experience",
+          "stars": 4,
+          "id": 59,
+          "stats": {
+            "base_hp": 385,
+            "base_damage": 30,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Sticky Fingers",
+          "stars": 4,
+          "id": 60,
+          "stats": {
+            "base_hp": 375,
+            "base_damage": 25,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Black Sabbath",
+          "stars": 2,
+          "id": 61,
+          "stats": {
+            "base_hp": 280,
+            "base_damage": 15,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Moody Blues",
+          "stars": 2,
+          "id": 62,
+          "stats": {
+            "base_hp": 260,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Soft Machine",
+          "stars": 2,
+          "id": 63,
+          "stats": {
+            "base_hp": 240,
+            "base_damage": 15,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Sex Pistols",
+          "stars": 3,
+          "id": 64,
+          "stats": {
+            "base_hp": 160,
+            "base_damage": 20,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Kraft Work",
+          "stars": 3,
+          "id": 65,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Little Feet",
+          "stars": 2,
+          "id": 66,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 5,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Aerosmith",
+          "stars": 3,
+          "id": 67,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 20,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Man in the Mirror",
+          "stars": 3,
+          "id": 68,
+          "stats": {
+            "base_hp": 230,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Purple Haze",
+          "stars": 4,
+          "id": 69,
+          "stats": {
+            "base_hp": 375,
+            "base_damage": 35,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Mr.President",
+          "stars": 1,
+          "id": 70,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Beach Boy",
+          "stars": 2,
+          "id": 71,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The Grateful Dead",
+          "stars": 3,
+          "id": 72,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 10,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Baby Face",
+          "stars": 3,
+          "id": 73,
+          "stats": {
+            "base_hp": 0,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "White Album",
+          "stars": 3,
+          "id": 74,
+          "stats": {
+            "base_hp": 280,
+            "base_damage": 15,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "King Crimson",
+          "stars": 5,
+          "id": 75,
+          "stats": {
+            "base_hp": 480,
+            "base_damage": 60,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Clash",
+          "stars": 2,
+          "id": 76,
+          "stats": {
+            "base_hp": 125,
+            "base_damage": 25,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Talking Head",
+          "stars": 1,
+          "id": 77,
+          "stats": {
+            "base_hp": 50,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Notorious B.I.G",
+          "stars": 4,
+          "id": 78,
+          "stats": {
+            "base_hp": 400,
+            "base_damage": 25,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Spice Girl",
+          "stars": 3,
+          "id": 79,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 30,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Metallica",
+          "stars": 4,
+          "id": 80,
+          "stats": {
+            "base_hp": 365,
+            "base_damage": 40,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Green Day",
+          "stars": 4,
+          "id": 81,
+          "stats": {
+            "base_hp": 310,
+            "base_damage": 40,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Oasis",
+          "stars": 3,
+          "id": 82,
+          "stats": {
+            "base_hp": 320,
+            "base_damage": 30,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Chariot Requiem",
+          "stars": 5,
+          "id": 83,
+          "stats": {
+            "base_hp": 450,
+            "base_damage": 50,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Gold Experience Requiem",
+          "stars": 6,
+          "id": 84,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 65,
+            "base_speed": 10,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Rolling Stones",
+          "stars": 1,
+          "id": 85,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Part 6",
+      "id": 3,
+      "dates": [3, 6],
+      "stands": [
+        {
+          "stand_name": "Stone Free",
+          "stars": 4,
+          "id": 86,
+          "stats": {
+            "base_hp": 375,
+            "base_damage": 35,
+            "base_speed": 8,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Goo Goo Dolis",
+          "stars": 1,
+          "id": 87,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 5,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Manhattan Transfer",
+          "stars": 1,
+          "id": 88,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 25,
+            "base_speed": 4,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Kiss",
+          "stars": 3,
+          "id": 89,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 34,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Highway to Hell",
+          "stars": 1,
+          "id": 90,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Burning Down The House",
+          "stars": 1,
+          "id": 91,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Foo Fighters",
+          "stars": 3,
+          "id": 92,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 30,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Marilyn Manson",
+          "stars": 1,
+          "id": 93,
+          "stats": {
+            "base_hp": 260,
+            "base_damage": 20,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Weather Report",
+          "stars": 5,
+          "id": 94,
+          "stats": {
+            "base_hp": 499,
+            "base_damage": 50,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Jumpin Jack Flash",
+          "stars": 4,
+          "id": 95,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 35,
+            "base_speed": 4,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Limp Bizkit",
+          "stars": 3,
+          "id": 96,
+          "stats": {
+            "base_hp": 0,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Diver Down",
+          "stars": 3,
+          "id": 97,
+          "stats": {
+            "base_hp": 340,
+            "base_damage": 29,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Planet Waves",
+          "stars": 3,
+          "id": 98,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 15,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Dragons Dream",
+          "stars": 2,
+          "id": 99,
+          "stats": {
+            "base_hp": 0,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Yo-Yo-Ma",
+          "stars": 1,
+          "id": 100,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 1,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Green Green Grass Of Home",
+          "stars": 3,
+          "id": 101,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 20,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Jail House Lock",
+          "stars": 3,
+          "id": 102,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Bohemian Rhapsody",
+          "stars": 4,
+          "id": 103,
+          "stats": {
+            "base_hp": 350,
+            "base_damage": 30,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Sky High",
+          "stars": 3,
+          "id": 104,
+          "stats": {
+            "base_hp": 320,
+            "base_damage": 25,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Underworld",
+          "stars": 4,
+          "id": 105,
+          "stats": {
+            "base_hp": 420,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Survivor",
+          "stars": 1,
+          "id": 106,
+          "stats": {
+            "base_hp": 1,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Whitesnake",
+          "stars": 3,
+          "id": 107,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 35,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "C-Moon",
+          "stars": 4,
+          "id": 108,
+          "stats": {
+            "base_hp": 400,
+            "base_damage": 40,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Made In Heaven",
+          "stars": 6,
+          "id": 109,
+          "stats": {
+            "base_hp": 550,
+            "base_damage": 60,
+            "base_speed": 25,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Part 7",
+      "id": 4,
+      "dates": [4, 6],
+      "stands": [
+        {
+          "stand_name": "Tusk act 1",
+          "stars": 1,
+          "id": 111,
+          "stats": {
+            "base_hp": 190,
+            "base_damage": 10,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tusk act 2",
+          "stars": 2,
+          "id": 112,
+          "stats": {
+            "base_hp": 215,
+            "base_damage": 15,
+            "base_speed": 6,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tusk act 3",
+          "stars": 3,
+          "id": 113,
+          "stats": {
+            "base_hp": 240,
+            "base_damage": 20,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tusk act 4",
+          "stars": 6,
+          "id": 114,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 60,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Ball Breaker",
+          "stars": 4,
+          "id": 115,
+          "stats": {
+            "base_hp": 280,
+            "base_damage": 30,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 1
+          }
+        },
+        {
+          "stand_name": "OH! Lonesome Me",
+          "stars": 1,
+          "id": 116,
+          "stats": {
+            "base_hp": 220,
+            "base_damage": 10,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Scary Monsters",
+          "stars": 3,
+          "id": 117,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 25,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Cream Starter",
+          "stars": 2,
+          "id": 118,
+          "stats": {
+            "base_hp": 180,
+            "base_damage": 15,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Ticket To Ride",
+          "stars": 2,
+          "id": 119,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 20,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Dirty Deeds Done Dirt Cheap (D4C)",
+          "stars": 6,
+          "id": 120,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 65,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 4
+          }
+        },
+        {
+          "stand_name": "In a Silent Way",
+          "stars": 3,
+          "id": 121,
+          "stats": {
+            "base_hp": 175,
+            "base_damage": 15,
+            "base_speed": 9,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Hey Ya!",
+          "stars": 2,
+          "id": 122,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 20,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tomb of the Boom 1",
+          "stars": 3,
+          "id": 123,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 10,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Boku no Rhythm wo Kiitekure",
+          "stars": 4,
+          "id": 124,
+          "stats": {
+            "base_hp": 230,
+            "base_damage": 35,
+            "base_speed": 4,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Wired",
+          "stars": 3,
+          "id": 125,
+          "stats": {
+            "base_hp": 220,
+            "base_damage": 10,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Mandom",
+          "stars": 4,
+          "id": 126,
+          "stats": {
+            "base_hp": 240,
+            "base_damage": 30,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Catch the Rainbow",
+          "stars": 3,
+          "id": 127,
+          "stats": {
+            "base_hp": 240,
+            "base_damage": 15,
+            "base_speed": 10,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Sugar Mountain",
+          "stars": 1,
+          "id": 128,
+          "stats": {
+            "base_hp": 70,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tatoo You!",
+          "stars": 1,
+          "id": 129,
+          "stats": {
+            "base_hp": 130,
+            "base_damage": 10,
+            "base_speed": 2,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tubular Bells",
+          "stars": 1,
+          "id": 130,
+          "stats": {
+            "base_hp": 210,
+            "base_damage": 25,
+            "base_speed": 4,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "20th Century Boy",
+          "stars": 2,
+          "id": 131,
+          "stats": {
+            "base_hp": 320,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Civil War",
+          "stars": 3,
+          "id": 132,
+          "stats": {
+            "base_hp": 400,
+            "base_damage": 1,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Chocolate Disco",
+          "stars": 2,
+          "id": 133,
+          "stats": {
+            "base_hp": 230,
+            "base_damage": 5,
+            "base_speed": 6,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "THE WORLD (SBR)",
+          "stars": 5,
+          "id": 134,
+          "stats": {
+            "base_hp": 400,
+            "base_damage": 70,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Tomb of the Boom 2",
+          "stars": 3,
+          "id": 135,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 10,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tomb of the Boom 3",
+          "stars": 3,
+          "id": 136,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 10,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Part 8",
+      "id": 5,
+      "dates": [5, 6],
+      "stands": [
+        {
+          "stand_name": "Soft & Wet",
+          "stars": 5,
+          "id": 137,
+          "stats": {
+            "base_hp": 425,
+            "base_damage": 60,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Paisley Park",
+          "stars": 3,
+          "id": 138,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 25,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Doggy Style",
+          "stars": 2,
+          "id": 139,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Nut King Call",
+          "stars": 3,
+          "id": 140,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Paper Moon King",
+          "stars": 1,
+          "id": 141,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "King Nothing",
+          "stars": 2,
+          "id": 142,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 5,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Speed King",
+          "stars": 3,
+          "id": 143,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 20,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Fun Fun Fun",
+          "stars": 3,
+          "id": 144,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "California King Bed",
+          "stars": 2,
+          "id": 145,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Born This Way",
+          "stars": 3,
+          "id": 146,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 20,
+            "base_speed": 30,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Les Feuilles",
+          "stars": 1,
+          "id": 147,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "I Am a Rock",
+          "stars": 3,
+          "id": 148,
+          "stats": {
+            "base_hp": 225,
+            "base_damage": 20,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Doobie Wah !",
+          "stars": 4,
+          "id": 149,
+          "stats": {
+            "base_hp": 350,
+            "base_damage": 45,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Love Love Deluxe",
+          "stars": 2,
+          "id": 150,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Schott Key n\u00c2\u00b01",
+          "stars": 1,
+          "id": 151,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Schott Key n\u00c2\u00b02",
+          "stars": 2,
+          "id": 152,
+          "stats": {
+            "base_hp": 150,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Vitamine C",
+          "stars": 2,
+          "id": 153,
+          "stats": {
+            "base_hp": 125,
+            "base_damage": 5,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Walking Heart",
+          "stars": 4,
+          "id": 154,
+          "stats": {
+            "base_hp": 350,
+            "base_damage": 40,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Milagro Man",
+          "stars": 1,
+          "id": 155,
+          "stats": {
+            "base_hp": 50,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Blue Hawaii",
+          "stars": 3,
+          "id": 156,
+          "stats": {
+            "base_hp": 150,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Brain Storm",
+          "stars": 1,
+          "id": 157,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 20,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Ozon Baby",
+          "stars": 3,
+          "id": 158,
+          "stats": {
+            "base_hp": 125,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Doctor Wu",
+          "stars": 3,
+          "id": 159,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Awaking III Leaves",
+          "stars": 1,
+          "id": 160,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Wonder of U",
+          "stars": 6,
+          "id": 161,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 60,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Space Trucking",
+          "stars": 3,
+          "id": 162,
+          "stats": {
+            "base_hp": 150,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Opening Banner",
+      "id": 5,
+      "dates": [0, 1, 2, 3, 4, 5, 6],
+      "stands": [
+        {
+          "stand_name": "Mr.President",
+          "stars": 1,
+          "id": 70,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 0,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Pearl Jam",
+          "stars": 1,
+          "id": 43,
+          "stats": {
+            "base_hp": 200,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Milagro Man",
+          "stars": 1,
+          "id": 155,
+          "stats": {
+            "base_hp": 50,
+            "base_damage": 0,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Hermit purple",
+          "stars": 1,
+          "id": 4,
+          "stats": {
+            "base_hp": 25,
+            "base_damage": 1,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Talking Head",
+          "stars": 1,
+          "id": 77,
+          "stats": {
+            "base_hp": 50,
+            "base_damage": 0,
+            "base_speed": 0,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "King Nothing",
+          "stars": 2,
+          "id": 142,
+          "stats": {
+            "base_hp": 275,
+            "base_damage": 5,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Love Love Deluxe",
+          "stars": 2,
+          "id": 150,
+          "stats": {
+            "base_hp": 250,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Moody Blues",
+          "stars": 2,
+          "id": 62,
+          "stats": {
+            "base_hp": 260,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Beach Boy",
+          "stars": 2,
+          "id": 71,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 15,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Ebony devil",
+          "stars": 2,
+          "id": 11,
+          "stats": {
+            "base_hp": 100,
+            "base_damage": 10,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "The Fool",
+          "stars": 3,
+          "id": 5,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 25,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Stray Cat",
+          "stars": 3,
+          "id": 54,
+          "stats": {
+            "base_hp": 260,
+            "base_damage": 15,
+            "base_speed": 0.1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Foo Fighters",
+          "stars": 3,
+          "id": 92,
+          "stats": {
+            "base_hp": 300,
+            "base_damage": 30,
+            "base_speed": 3,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Tusk act 3",
+          "stars": 3,
+          "id": 113,
+          "stats": {
+            "base_hp": 240,
+            "base_damage": 20,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Sex Pistols",
+          "stars": 3,
+          "id": 64,
+          "stats": {
+            "base_hp": 160,
+            "base_damage": 20,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Silver chariot",
+          "stars": 4,
+          "id": 6,
+          "stats": {
+            "base_hp": 325,
+            "base_damage": 40,
+            "base_speed": 9,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Crazy Diamond",
+          "stars": 4,
+          "id": 32,
+          "stats": {
+            "base_hp": 520,
+            "base_damage": 45,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        },
+        {
+          "stand_name": "Ball Breaker",
+          "stars": 4,
+          "id": 115,
+          "stats": {
+            "base_hp": 280,
+            "base_damage": 30,
+            "base_speed": 7,
+            "base_critical_rate": 0,
+            "turn_for_ability": 1
+          }
+        },
+        {
+          "stand_name": "Purple Haze",
+          "stars": 4,
+          "id": 69,
+          "stats": {
+            "base_hp": 375,
+            "base_damage": 35,
+            "base_speed": 0.5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Gold Experience",
+          "stars": 4,
+          "id": 59,
+          "stats": {
+            "base_hp": 385,
+            "base_damage": 30,
+            "base_speed": 5,
+            "base_critical_rate": 0,
+            "turn_for_ability": 3
+          }
+        },
+        {
+          "stand_name": "Star Platinum The World",
+          "stars": 5,
+          "id": 31,
+          "stats": {
+            "base_hp": 500,
+            "base_damage": 60,
+            "base_speed": 15,
+            "base_critical_rate": 0,
+            "turn_for_ability": 2
+          }
+        },
+        {
+          "stand_name": "Killer Queen bite the dust",
+          "stars": 5,
+          "id": 58,
+          "stats": {
+            "base_hp": 320,
+            "base_damage": 70,
+            "base_speed": 1,
+            "base_critical_rate": 0,
+            "turn_for_ability": 4
+          }
+        },
+        {
+          "stand_name": "Made In Heaven",
+          "stars": 6,
+          "id": 109,
+          "stats": {
+            "base_hp": 550,
+            "base_damage": 60,
+            "base_speed": 25,
+            "base_critical_rate": 0,
+            "turn_for_ability": 0
+          }
+        }
+      ]
+    }
+  ]
+}

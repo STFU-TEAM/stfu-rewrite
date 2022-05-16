@@ -1,0 +1,15 @@
+{
+  "error_meesages": {
+    "not_registered": "It seems {0} is not registered to the database ! use /begin to register !"
+  },
+  "fight": {
+    "1": "{0}, would you like to fight {0} ?",
+    "2": "{0} refused to fight !",
+    "3": "Fight ⚔️:`{0}` choose an ennemy stand to attack",
+    "4": "turn: `{0}`",
+    "5": "Who `『{0}』` should attack ?",
+    "6": "{0} dodged {0} attack !",
+    "7": "Critical Hit ! {0} was hit with {0} damage !",
+    "8": "{0} was hit with {0} damage !"
+  }
+}

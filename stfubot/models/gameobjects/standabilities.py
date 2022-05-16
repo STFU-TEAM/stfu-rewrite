@@ -1,0 +1,512 @@
+import random
+
+from gameobjects.effects import Effect, EffectType
+from typing import TYPE_CHECKING, List
+
+
+# It's for typehint
+if TYPE_CHECKING:
+    from gameobjects.stands import Stand
+
+
+def get_payload():
+    return {
+        "gold_experience_requiem": False,
+        "tusk_act_4": False,
+        "king_crimson": False,
+    }
+
+
+"""
+
+name your fonction to the stand
+
+def special_boiler_plate(stand:"Stand",allied_stand:List["Stand"],ennemy_stand:List["Stand"])->tuple:
+    payload = get_payload()
+    //Whatever your code does to the lists above
+    //Payload Contain behavior change to the game
+    //message is what should be printed to the embed
+    return payload,message
+
+their is a load of exemple bellow
+AOE attack : the_world
+AOE effect : weather_report
+self buff  : made_in_heaven
+
+"""
+
+
+def the_world_over_heaven(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    damage = 0
+    for ennemy in ennemy_stand:
+        damage += stand.attack(ennemy)
+    message = f"｢{stand.name}｣ ! and damage everyone for {int(damage)}"
+    return payload, message
+
+
+def star_platinum(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = random.randint(1, 4)
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: Stand = random.choice(valid_stand)
+        stand.attack(target, multiplier=multiplier)
+        message = f"｢{stand.name}｣ punches ,{target.name} ,{multiplier} times dealing {stand.current_damage*multiplier}"
+    else:
+        message = f"｢{stand.name}｣ punches multiple times"
+    return payload, message
+
+
+def silver_chariot(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    stand.current_speed += 10
+    stand.ressistance *= 0.75
+    message = f"｢{stand.name}｣ gain speed and loses ressistance"
+    return payload, message
+
+
+def the_world(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.6
+    damage = 0
+    for ennemy in ennemy_stand:
+        damage += stand.attack(ennemy, multiplier=multiplier)
+    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    return payload, message
+
+
+def cream(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    stand.current_speed += 5
+    stand.current_damage += 5
+    stand.effects.append(Effect(EffectType.STUN, 1, 0))
+    message = f"｢{stand.name}｣ get's faster"
+    return payload, message
+
+
+def star_platinum_the_world(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.6
+    damage = 0
+    for ennemy in ennemy_stand:
+        damage += stand.attack(ennemy, multiplier=multiplier)
+    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    return payload, message
+
+
+def crazy_diamond(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    valid_stand = [i for i in allied_stand if i.is_alive() and i != stand]
+    if len(valid_stand) != 0:
+        ally: "Stand" = random.choice(valid_stand)
+        dif_damage = abs(stand.base_hp - stand.current_hp)
+        heal = min(ally.base_hp, ally.current_hp + (dif_damage // 2))
+        ally.current_hp = heal
+        message = f"｢{stand.name}｣ heals {ally.name}"
+    else:
+        message = f"｢{stand.name}｣ enrage !"
+    return payload, message
+
+
+def the_hand(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = random.choice((0.75, 1, 1.5, 2.5))
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        damage = stand.attack(target, multipler=multiplier)
+        message = f"｢{stand.name}｣ throw out random items and deal {damage} damage"
+    return payload, message
+
+
+def heavens_door(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplicator = 2
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
+        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+    else:
+        message = f"｢{stand.name}｣ !"
+    return payload, message
+
+
+def killer_queen(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplicator = 1.5
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.POISON, 1, multiplicator))
+        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+    else:
+        message = f"｢{stand.name}｣ !"
+    return payload, message
+
+
+def echoes_act_3(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplicator = 2
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
+        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+    else:
+        message = f"｢{stand.name}｣!"
+    return payload, message
+
+
+def killer_queen_bite_the_dust(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    heal = (stand.base_hp - stand.current_hp) // 3
+    stand.current_hp += heal
+    stand.current_hp = max(0, min(stand.current_hp, stand.base_hp))
+    message = f"｢{stand.name}｣ reset the timeline ! and healed for {heal}"
+    return payload, message
+
+
+def gold_experience(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 30
+    payload = get_payload()
+    for allies in allied_stand:
+        if allies.current_hp < allies.base_hp:
+            allies.current_hp += 30
+            allies.current_hp = min(allies.base_hp, allies.current_hp)
+    message = f"｢{stand.name}｣ heals it's ally for {multiplier}"
+    return payload, message
+
+
+def sticky_finger(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    stand.current_critical += 5
+    message = f"｢{stand.name}｣ becomes more precise"
+    return payload, message
+
+
+def purple_haze(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.5
+    payload = get_payload()
+    for s in allied_stand + ennemy_stand:
+        s.effects.append(Effect(EffectType, 3, stand.current_damage * multiplier))
+    message = f"｢{stand.name}｣ poison everyone for {stand.current_damage*multiplier}"
+    return payload, message
+
+
+def king_crimson(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    payload["king_crimson"] = True
+    message = f"｢{stand.name}｣ has already..."
+    return payload, message
+
+
+def notorious_big(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.1
+    payload = get_payload()
+    alive_allies = [i for i in allied_stand if i.is_alive() and i != stand]
+    if len(alive_allies) != 0:
+        stand.effects.append(
+            Effect(EffectType.REGENERATION, 1, stand.current_hp * multiplier)
+        )
+    message = f"｢{stand.name}｣ Regenerate itself"
+    return payload, message
+
+
+def metallica(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.5
+    payload = get_payload()
+    for ennemy in ennemy_stand:
+        for effect in ennemy.effects:
+            if effect == EffectType.REGENERATION:
+                effect.value *= multiplier
+        ennemy.effects.append(Effect(EffectType.POISON, 2, stand.current_damage * 0.1))
+    message = f"｢{stand.name}｣ infects their blood stream"
+    return payload, message
+
+
+def green_day(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.90
+    payload = get_payload()
+    for ennemy in ennemy_stand:
+        ennemy.effects.append(Effect(EffectType.WEAKEN, 3, multiplier))
+    message = f"｢{stand.name}｣ green day weakens all ennemies"
+    return payload, message
+
+
+def chariot_requiem(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        if target.id != stand.id:
+            return specials[f"{target.id}"](stand, allied_stand, ennemy_stand)
+    stand.current_damage += 5
+    message = f"｢{stand.name}｣ souls schearch the arrow"
+    return payload, message
+
+
+def gold_experience_requiem(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    payload["GER"] = True
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ You will never reach the truth , Return to Zero"
+    # reset their scaling
+    for ennemy in ennemy_stand:
+        ennemy: "Stand" = stand
+        ennemy.current_hp = min(ennemy.base_hp, ennemy.current_hp)
+        ennemy.current_damage = min(ennemy.base_damage, ennemy.current_damage)
+        ennemy.current_speed = min(ennemy.base_speed, ennemy.current_speed)
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.STUN, 2, 0))
+        message += f", stunned {target.name}"
+    return payload, message
+
+
+def stone_free(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.90
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.STUN, 1, 0))
+        target.current_speed *= multiplier
+    return payload, message
+
+
+def weather_report(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.20
+    for ennemy in ennemy_stand:
+        ennemy.effects.append(
+            Effect(EffectType.POISON, 3, stand.current_damage * multiplier)
+        )
+    message = f"｢{stand.name}｣ make death rains... and poison everyone for {stand.current_damage*multiplier}"
+    return payload, message
+
+
+def jumpin_jack_flash(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(EffectType.STUN, stand.turn // 2, 0)
+    return payload, message
+
+
+def bohemian_rhapsody(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    message = f"｢{stand.name}｣ create a perfect version of itself"
+    for allie in allied_stand:
+        pass
+    return payload, message
+
+
+def underworld(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def c_moon(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def made_in_heaven(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    stand.current_speed += 2
+    stand.current_damage += 12
+    stand.current_critical += 3
+    message = f"｢{stand.name}｣ speed increase"
+    return payload, message
+
+
+def tusk_act_4(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.75
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ lesson  5 !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(
+            Effect(EffectType.POISON, 4, multiplier * stand.current_damage)
+        )
+        message += f" damage ｢{target.name}｣ for {stand.current_damage*multiplier} for 4 rounds"
+    return payload, message
+
+
+def ball_breaker(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def dirty_deed_done_dirt_cheap(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def boku_no_rythm_wo_kiitekure(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def mandom(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def the_world_sbr(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.6
+    damage = 0
+    for ennemy in ennemy_stand:
+        damage += stand.attack(ennemy, multiplier=multiplier)
+    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    return payload, message
+
+
+def soft_and_wet(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    multiplier = 0.75
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.WEAKEN, 1, multiplier))
+    return payload, message
+
+
+def doobie_wah(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def walking_heart(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+def wonder_of_u(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    return payload, message
+
+
+specials = {
+    "1": star_platinum,
+    "6": silver_chariot,
+    "10": the_world,
+    "30": cream,
+    "31": star_platinum_the_world,
+    "32": crazy_diamond,
+    "34": the_hand,
+    "45": heavens_door,
+    "49": killer_queen,
+    "50": echoes_act_3,
+    "58": killer_queen_bite_the_dust,
+    "59": gold_experience,
+    "60": sticky_finger,
+    "69": purple_haze,
+    "75": king_crimson,
+    "78": notorious_big,
+    "80": metallica,
+    "81": green_day,
+    "83": chariot_requiem,
+    "84": gold_experience_requiem,
+    "86": stone_free,
+    "94": weather_report,
+    "95": jumpin_jack_flash,
+    "103": bohemian_rhapsody,
+    "105": underworld,
+    "108": c_moon,
+    "109": made_in_heaven,
+    "114": tusk_act_4,
+    "115": ball_breaker,
+    "120": dirty_deed_done_dirt_cheap,
+    "124": boku_no_rythm_wo_kiitekure,
+    "126": mandom,
+    "134": the_world_sbr,
+    "137": soft_and_wet,
+    "150": doobie_wah,
+    "155": walking_heart,
+    "162": wonder_of_u,
+}

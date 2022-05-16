@@ -1,5 +1,5 @@
-import bson
 import datetime
+import disnake
 
 from typing import List
 
@@ -7,10 +7,10 @@ from typing import TYPE_CHECKING
 
 # It's for typehint
 if TYPE_CHECKING:
-    from stfubot.models.database.maindatabase import Database
+    from database.maindatabase import Database
 
-from stfubot.models.gameobjects.stands import Stand, stand_from_dict
-from stfubot.models.gameobjects.items import Item, item_from_dict
+from gameobjects.stands import Stand, stand_from_dict
+from gameobjects.items import Item, item_from_dict
 
 
 class User:
@@ -56,10 +56,21 @@ class User:
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
+        self.discord: disnake.Member = None
 
     async def update(self) -> None:
         """Update the user info in the database"""
         await self.database.update_user(self.to_dict())
+
+    def is_donator(self):
+        status = self.early_supporter | self.over_heaven_supporter
+        # regular donor status
+        status |= (
+            self.donor_status >= datetime.datetime.now()
+            and self.donor_status != datetime.datetime.max
+        )
+        # answer
+        return status
 
     def to_dict(self) -> dict:
         """Convert Class to storable data
