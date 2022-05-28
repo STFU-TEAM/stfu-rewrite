@@ -10,13 +10,13 @@ from stfubot.ui.confirmation import Confirm
 from stfubot.ui.paginator import Menu
 
 # utils
-from utils.functions import format_combat_log
-from utils.fight_logic import fight_instance
-from utils.image_generators import get_fight_image, get_win_image
+from stfubot.utils.functions import format_combat_log
+from stfubot.utils.fight_logic import fight_instance
+from stfubot.utils.image_generators import get_fight_image, get_win_image
 
 # stfu model
-from models.bot.stfubot import StfuBot
-from globals.variables import COINSGAINS, PLAYER_XPGAINS, STAND_XPGAINS
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.globals.variables import PLAYER_XPGAINS, STAND_XPGAINS
 
 
 class fight(commands.Cog):

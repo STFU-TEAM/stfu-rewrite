@@ -1,9 +1,7 @@
 import disnake
-import time
-import asyncio
 
-from models.gameobjects.stands import Stand
-from globals.emojis import CustomEmoji
+from stfubot.models.gameobjects.stands import Stand
+from stfubot.globals.emojis import CustomEmoji
 
 from typing import List, Union
 
@@ -13,7 +11,6 @@ EmojiList = [
     CustomEmoji.THREE,
     CustomEmoji.FF,
 ]
-# [ONE, TWO, THREE, FF]
 
 
 class FightButton(disnake.ui.Button):

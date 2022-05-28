@@ -1,4 +1,3 @@
-import disnake
 from enum import Enum
 
 
@@ -10,7 +9,7 @@ Emoji = {
 }
 
 
-class EffectType(Enum):
+class EffectType(Enum, str):
     STUN = "STUN"
     POISON = "POISON"
     WEAKEN = "WEAKEN"

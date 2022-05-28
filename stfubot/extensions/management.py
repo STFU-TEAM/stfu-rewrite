@@ -3,20 +3,18 @@ import random
 import asyncio
 
 # utils
-from utils.decorators import database_check
-from utils.functions import (
+from stfubot.utils.decorators import database_check
+from stfubot.utils.functions import (
     play_files,
     sign,
     wait_for,
     add_to_available_storage,
-    get_drop_from_list,
-    stand_fields,
 )
 
 
 # stfu model
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, get_stand_from_template
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.models.gameobjects.stands import Stand
 
 # specific class import
 from disnake.ext import commands
@@ -25,7 +23,6 @@ from disnake.ext import commands
 from ui.place_holder import PlaceHolder
 from ui.confirmation import Confirm
 from ui.StandSelect import StandSelectDropdown
-from ui.item_select import ItemSelectDropdown
 from ui.storage.ChooseDonor import ChooseStorage
 
 

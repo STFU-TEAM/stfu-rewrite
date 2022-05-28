@@ -1,15 +1,6 @@
 import json
 
-from enum import Enum
-from typing import TYPE_CHECKING, List
-
-
-# It's for typehint
-if TYPE_CHECKING:
-    from gameobjects.stands import Stand
-
-
-from gameobjects.itemabilities import item_specials
+from stfubot.models.gameobjects.itemabilities import item_specials
 
 with open("stfubot/data/static/item_templates.json", "r", encoding="utf-8") as item:
     item_file = json.load(item)["item"]

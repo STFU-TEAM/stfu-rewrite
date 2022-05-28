@@ -7,10 +7,10 @@ from typing import TYPE_CHECKING
 
 # It's for typehint
 if TYPE_CHECKING:
-    from database.maindatabase import Database
+    from stfubot.models.database.maindatabase import Database
 
-from gameobjects.stands import Stand, stand_from_dict
-from gameobjects.items import Item, item_from_dict
+from stfubot.models.gameobjects.stands import Stand, stand_from_dict
+from stfubot.models.gameobjects.items import Item, item_from_dict
 
 from stfubot.globals.variables import USRXPTOLEVEL
 

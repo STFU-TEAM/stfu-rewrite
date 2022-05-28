@@ -1,12 +1,12 @@
 import random
 
-from gameobjects.effects import Effect, EffectType
+from stfubot.models.gameobjects.effects import Effect, EffectType
 from typing import TYPE_CHECKING, List
 
 
 # It's for typehint
 if TYPE_CHECKING:
-    from gameobjects.stands import Stand
+    from stfubot.models.gameobjects.stands import Stand
 
 
 def get_payload():

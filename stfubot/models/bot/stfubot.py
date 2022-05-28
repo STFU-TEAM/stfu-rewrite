@@ -3,7 +3,7 @@ import asyncio
 
 from disnake.ext import commands
 
-from database.maindatabase import Database
+from stfubot.models.database.maindatabase import Database
 
 
 class StfuBot(commands.AutoShardedBot):

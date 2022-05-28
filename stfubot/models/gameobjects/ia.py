@@ -2,7 +2,7 @@ import disnake
 
 from typing import List
 
-from gameobjects.stands import Stand, stand_from_dict
+from stfubot.models.gameobjects.stands import Stand, stand_from_dict
 
 
 class Ia:

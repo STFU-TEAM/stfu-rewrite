@@ -1,7 +1,7 @@
 import disnake
 import json
 
-from globals.emojis import CustomEmoji
+from stfubot.globals.emojis import CustomEmoji
 
 # drop downelement class
 class Dropdown(disnake.ui.Select):

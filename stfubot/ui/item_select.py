@@ -3,8 +3,8 @@ import json
 
 from typing import List
 
-from gameobjects.items import Item
-from globals.emojis import CustomEmoji
+from stfubot.models.gameobjects.items import Item
+from stfubot.globals.emojis import CustomEmoji
 
 # drop downelement class
 class Dropdown(disnake.ui.Select):

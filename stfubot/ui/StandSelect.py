@@ -1,8 +1,8 @@
 import disnake
 import json
 
-from globals.emojis import CustomEmoji
-from models.gameobjects.stands import Stand
+from stfubot.globals.emojis import CustomEmoji
+from stfubot.models.gameobjects.stands import Stand
 from typing import List
 
 # drop downelement class

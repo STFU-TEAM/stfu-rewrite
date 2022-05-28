@@ -1,6 +1,5 @@
 import disnake
 import random
-import asyncio
 import datetime
 
 from typing import List
@@ -11,23 +10,23 @@ from disnake.ext import commands
 from stfubot.ui.paginator import Menu
 
 # utils
-from utils.decorators import database_check
-from utils.fight_logic import fight_instance
-from utils.functions import secondsToText, format_combat_log
+from stfubot.utils.decorators import database_check
+from stfubot.utils.fight_logic import fight_instance
+from stfubot.utils.functions import secondsToText, format_combat_log
 
 # stfu model
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, get_stand_from_template
-from models.gameobjects.ia import Ia
-from models.gameobjects.items import item_from_dict, get_item_from_template
-from globals.variables import (
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.models.gameobjects.stands import Stand, get_stand_from_template
+from stfubot.models.gameobjects.ia import Ia
+from stfubot.models.gameobjects.items import item_from_dict, get_item_from_template
+from stfubot.globals.variables import (
     COINSGAINS,
     PLAYER_XPGAINS,
     STAND_XPGAINS,
     CRUSADEURL,
     CHANCEITEM,
 )
-from globals.emojis import CustomEmoji
+from stfubot.globals.emojis import CustomEmoji
 
 
 class Crusade(commands.Cog):

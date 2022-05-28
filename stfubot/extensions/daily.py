@@ -11,9 +11,9 @@ from stfubot.utils.functions import secondsToText
 
 # stfu model
 from globals.emojis import CustomEmoji
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, stand_from_dict, get_stand_from_template
-from models.gameobjects.items import Item, item_from_dict
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.models.gameobjects.stands import get_stand_from_template
+from stfubot.models.gameobjects.items import Item, item_from_dict
 
 # specific class import
 from disnake.ext import commands

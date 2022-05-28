@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, List
 
 # It's for typehint
 if TYPE_CHECKING:
-    from gameobjects.stands import Stand
+    from stfubot.models.gameobjects.stands import Stand
 
 
 """

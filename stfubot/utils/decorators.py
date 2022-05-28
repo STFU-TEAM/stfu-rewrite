@@ -3,8 +3,8 @@ import asyncio
 
 from typing import List, Union
 from discord.ext import commands
-from models.database.maindatabase import Database
-from globals.variables import LOOP
+from stfubot.models.database.maindatabase import Database
+from stfubot.globals.variables import LOOP
 
 
 def database_check():

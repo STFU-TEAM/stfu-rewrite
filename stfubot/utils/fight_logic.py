@@ -10,7 +10,7 @@ from stfubot.ui.fight.fight_ui import FightUi
 from stfubot.ui.place_holder import PlaceHolder
 
 # utils
-from utils.functions import (
+from stfubot.utils.functions import (
     game,
     get_stand_status,
     get_turn_special,
@@ -18,7 +18,7 @@ from utils.functions import (
 )
 
 # stfu model
-from models.gameobjects.stands import Stand
+from stfubot.models.gameobjects.stands import Stand
 
 
 from stfubot.models.gameobjects.ia import Ia

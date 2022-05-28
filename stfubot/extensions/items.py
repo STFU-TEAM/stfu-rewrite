@@ -9,26 +9,20 @@ from typing import List
 # ui
 from stfubot.ui.StandSelect import StandSelectDropdown
 from stfubot.ui.item_select import ItemSelectDropdown
-from stfubot.ui.confirmation import Confirm
-from stfubot.ui.place_holder import PlaceHolder
 
 # utils
-from utils.decorators import database_check
-from utils.functions import (
+from stfubot.utils.decorators import database_check
+from stfubot.utils.functions import (
     wait_for,
     get_drop_from_list,
     stand_fields,
     add_to_available_storage,
 )
-from utils.image_generators import tower_images
 
 # stfu model
-from models.gameobjects.items import Item
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, get_stand_from_template
-from models.gameobjects.ia import Ia
-from models.gameobjects.items import item_from_dict, get_item_from_template
-from globals.emojis import CustomEmoji
+from stfubot.models.gameobjects.items import Item
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.models.gameobjects.stands import Stand, get_stand_from_template
 
 
 class Items(commands.Cog):

@@ -4,7 +4,6 @@ import random
 import asyncio
 
 from disnake.ext import commands
-from scipy import rand
 
 # ui
 from stfubot.ui.pve.tower_select import TowerSelectDropdown
@@ -12,26 +11,22 @@ from stfubot.ui.confirmation import Confirm
 from stfubot.ui.place_holder import PlaceHolder
 
 # utils
-from utils.decorators import database_check
-from utils.fight_logic import fight_instance
-from utils.functions import wait_for
-from utils.image_generators import tower_images
+from stfubot.utils.decorators import database_check
+from stfubot.utils.fight_logic import fight_instance
+from stfubot.utils.functions import wait_for
+from stfubot.utils.image_generators import tower_images
 
 # stfu model
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, get_stand_from_template
-from models.gameobjects.ia import Ia
-from models.gameobjects.items import item_from_dict, get_item_from_template
-from globals.variables import (
-    COINSGAINS,
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.models.gameobjects.ia import Ia
+from stfubot.models.gameobjects.items import item_from_dict, get_item_from_template
+from stfubot.globals.variables import (
     PLAYER_XPGAINS,
     STAND_XPGAINS,
-    CRUSADEURL,
-    CHANCEITEM,
     ENTRYCOST,
     TOWERURL,
 )
-from globals.emojis import CustomEmoji
+from stfubot.globals.emojis import CustomEmoji
 
 
 class Tower(commands.Cog):
@@ -126,7 +121,11 @@ class Tower(commands.Cog):
             embed = disnake.Embed(
                 title=translation["tower"]["4"], color=disnake.Color.blue()
             )
+            for stand in user.stands:
+                stand.xp += STAND_XPGAINS * (tower["levels"] + 1 / (i + 1))
+            user.xp += PLAYER_XPGAINS * (tower["levels"] + 1 / (i + 1))
             embed.set_image(url=TOWERURL)
+            await user.update()
             await Interaction.channel.send(embed=embed)
             return
         tower["rewards"].sort(key=lambda x: x["p"], reverse=True)

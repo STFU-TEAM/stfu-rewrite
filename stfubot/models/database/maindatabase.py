@@ -5,10 +5,10 @@ import os
 import disnake
 import json
 
-from typing import List, Union
+from typing import Union
 
-from database.user import User, create_user
-from database.cache import Cache
+from stfubot.models.database.user import User, create_user
+from stfubot.models.database.cache import Cache
 
 MONGO_URL = os.environ["MONGO_URL"]
 

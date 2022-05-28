@@ -2,9 +2,9 @@ import random
 import math
 import json
 
-from gameobjects.items import Item, item_from_dict
-from gameobjects.effects import Effect, EffectType
-from gameobjects.standabilities import specials
+from stfubot.models.gameobjects.items import Item, item_from_dict
+from stfubot.models.gameobjects.effects import Effect, EffectType
+from stfubot.models.gameobjects.standabilities import specials
 from typing import List, TypeVar, Union
 
 from stfubot.globals.variables import (

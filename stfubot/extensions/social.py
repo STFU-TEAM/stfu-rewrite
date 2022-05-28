@@ -5,13 +5,11 @@ import asyncio
 from disnake.ext import commands
 
 # utils
-from utils.decorators import database_check
-from utils.functions import play_files, sign
+from stfubot.utils.decorators import database_check
 
 # stfu model
-from models.bot.stfubot import StfuBot
-from models.gameobjects.stands import Stand, stand_from_dict, get_stand_from_template
-from globals.emojis import CustomEmoji
+from stfubot.models.bot.stfubot import StfuBot
+from stfubot.globals.emojis import CustomEmoji
 
 
 class social(commands.Cog):

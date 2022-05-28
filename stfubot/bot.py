@@ -1,8 +1,8 @@
 import os
 import asyncio
 
-from globals.variables import LOOP
-from models.bot.stfubot import StfuBot
+from stfubot.globals.variables import LOOP
+from stfubot.models.bot.stfubot import StfuBot
 from disnake.ext import commands
 
 TOKEN = os.environ["TOKEN_DISCORD"]

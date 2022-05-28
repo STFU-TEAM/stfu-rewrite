@@ -9,11 +9,11 @@ from discord.ext import commands
 
 # It's for typehint
 if TYPE_CHECKING:
-    from gameobjects.stands import Stand
+    from stfubot.models.gameobjects.stands import Stand
 
-from gameobjects.ia import Ia
-from gameobjects.effects import Effect, EffectType
-from database.user import User
+from stfubot.models.gameobjects.ia import Ia
+from stfubot.models.gameobjects.effects import Effect, EffectType
+from stfubot.models.database.user import User
 
 # playing one or multiple file a better version of playfile bassicly
 async def play_files(
