@@ -1,0 +1,14 @@
+disnake==2.4.0
+dnspython
+async-timeout
+asyncio
+datetime
+disputils
+asyncpg
+Pillow
+PyNaCl
+requests
+aioredis==2.0.0b1
+topggpy==1.4.0
+statcord.py
+motor
