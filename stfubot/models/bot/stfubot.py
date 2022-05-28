@@ -35,5 +35,5 @@ class StfuBot(commands.AutoShardedBot):
 
         self.database: Database = Database(loop)
         with open("stfubot/data/static/stand_template.json", "r") as item:
-            self.stand_file = json.load(item)["stand"]
+            self.stand_file: dict = json.load(item)["stand"]
         self.avatar_url = "https://storage.stfurequiem.com/randomAsset/avatar.png"

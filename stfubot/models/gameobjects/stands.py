@@ -7,13 +7,16 @@ from gameobjects.effects import Effect, EffectType
 from gameobjects.standabilities import specials
 from typing import List, TypeVar, Union
 
-XPRATE = 0.1
-HPSCALING = 50
-SPEEDSCALING = 1
-DAMAGESCALING = 10
-CRITICALSCALING = 0.1
-CRITMULTIPLIER = 1.25
-DODGENERF = 10
+from stfubot.globals.variables import (
+    XPRATE,
+    HPSCALING,
+    DAMAGESCALING,
+    SPEEDSCALING,
+    CRITICALSCALING,
+    CRITMULTIPLIER,
+    DODGENERF,
+    STXPTOLEVEL,
+)
 
 stand = TypeVar("stand", bound="Stand")
 
@@ -48,21 +51,41 @@ class Stand:
             bonus_speed += item.bonus_speed
             bonus_critical += item.bonus_critical
         # LEVEL SCALING
-        bonus_hp += XPRATE * self.xp * (7 - (self.stars + self.ascension)) * HPSCALING
+        bonus_hp += (
+            XPRATE
+            * self.xp
+            // STXPTOLEVEL
+            * (7 - (self.stars + self.ascension))
+            * HPSCALING
+        )
         bonus_damage += (
-            XPRATE * self.xp * (7 - (self.stars + self.ascension)) * DAMAGESCALING
+            XPRATE
+            * self.xp
+            // STXPTOLEVEL
+            * (7 - (self.stars + self.ascension))
+            * DAMAGESCALING
         )
         bonus_speed += (
-            XPRATE * self.xp * (7 - (self.stars + self.ascension)) * SPEEDSCALING
+            XPRATE
+            * self.xp
+            // STXPTOLEVEL
+            * (7 - (self.stars + self.ascension))
+            * SPEEDSCALING
         )
         bonus_critical += (
-            XPRATE * self.xp * (7 - (self.stars + self.ascension)) * CRITICALSCALING
+            XPRATE
+            * self.xp
+            // STXPTOLEVEL
+            * (7 - (self.stars + self.ascension))
+            * CRITICALSCALING
         )
         # Define the starting STATS and variables
-        self.current_hp = self.base_hp + bonus_hp
-        self.current_damage = self.base_damage + bonus_damage
-        self.current_speed = self.base_speed + bonus_speed
-        self.current_critical = self.base_critical + bonus_critical
+        self.current_hp = self.base_hp + bonus_hp * (1 + self.ascension / 3)
+        self.current_damage = self.base_damage + bonus_damage * (1 + self.ascension / 3)
+        self.current_speed = self.base_speed + bonus_speed * (1 + self.ascension / 3)
+        self.current_critical = self.base_critical + bonus_critical * (
+            1 + self.ascension / 3
+        )
         self.start_hp = self.current_hp
         self.start_damage = self.current_damage
         self.start_speed = self.current_speed
@@ -71,6 +94,7 @@ class Stand:
         self.special_meter: int = 0
         self.turn: int = 0
         self.ressistance: int = 1
+        self.level: int = self.xp // STXPTOLEVEL
 
     def is_alive(self) -> bool:
         """Check if a stand is alive
@@ -144,6 +168,9 @@ class Stand:
         # add to the special
         self.special_meter += 1
         self.turn += 1
+        # add to items special meter
+        for item in self.items:
+            item.special_meter += 1
 
     def as_special(self) -> bool:
         return self.special_meter >= self.turn_for_ability
@@ -163,10 +190,22 @@ class Stand:
         return specials[f"{self.id}"](self, allies, ennemies)
 
     def to_dict(self) -> dict:
+        """Update the data of the stand
+
+        Returns:
+            dict: the data of the stand
+        """
         self.data["xp"] = self.xp
         self.data["ascension"] = self.ascension
         self.data["items"] = [s.to_dict() for s in self.items]
         return self.data
+
+    def reset(self) -> None:
+        """call at the end of a fight"""
+        self.data["xp"] = self.xp
+        self.data["ascension"] = self.ascension
+        self.data["items"] = [s.to_dict() for s in self.items]
+        self.__init__(self.data)
 
 
 def stand_from_dict(data: dict) -> Stand:

@@ -20,16 +20,16 @@ class Dropdown(disnake.ui.Select):
         self.stop = False
         self.max_value = max_value
         self.emojiNumbers = [
-            CustomEmoji.ONE.value,
-            CustomEmoji.TWO.value,
-            CustomEmoji.THREE.value,
-            CustomEmoji.FOUR.value,
-            CustomEmoji.FIVE.value,
-            CustomEmoji.SIX.value,
-            CustomEmoji.SEVEN.value,
-            CustomEmoji.EIGHT.value,
-            CustomEmoji.NINE.value,
-            CustomEmoji.TEN.value,
+            CustomEmoji.ONE,
+            CustomEmoji.TWO,
+            CustomEmoji.THREE,
+            CustomEmoji.FOUR,
+            CustomEmoji.FIVE,
+            CustomEmoji.SIX,
+            CustomEmoji.SEVEN,
+            CustomEmoji.EIGHT,
+            CustomEmoji.NINE,
+            CustomEmoji.TEN,
         ]
         if len(disabled) == 0:
             disabled = [False] * len(stand_list)

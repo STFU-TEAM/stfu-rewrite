@@ -1,0 +1,21 @@
+name: Deploy dokku
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Cloning...
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: Dokku
+        uses: dokku/github-action@v1.0.1
+        with:
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          git_remote_url: "ssh://dokku@stfurequiem.com:3582/stfulegacy"
+          git_push_flags: "--force"

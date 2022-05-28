@@ -53,9 +53,10 @@ def database_check():
             return False
         """
         if not await database.user_in_database(Interaction.author.id):
+            translation = await database.get_interaction_lang(Interaction)
             embed = disnake.Embed(
-                title="An error has occurred",
-                description="It seems you are not in the database, consider using /begin first !",
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["not_registered"],
                 color=disnake.Color.red(),
             )
             embed.set_thumbnail(

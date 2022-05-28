@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 from gameobjects.stands import Stand, stand_from_dict
 from gameobjects.items import Item, item_from_dict
 
+from stfubot.globals.variables import USRXPTOLEVEL
+
 
 class User:
     """| Class used as an interface to data ,Any change made to the class is also made to the data"""
@@ -57,6 +59,9 @@ class User:
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
         self.discord: disnake.Member = None
+        self.message: disnake.Message = None
+        self.level: int = self.xp // USRXPTOLEVEL
+        self.is_human = True
 
     async def update(self) -> None:
         """Update the user info in the database"""

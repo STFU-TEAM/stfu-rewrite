@@ -1,0 +1,120 @@
+{
+  "towers": {
+    "1": {
+      "name": "Part 3",
+      "levels": 6,
+      "fighters": [
+        [
+          { "id": 7, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] },
+          { "id": 8, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] },
+          { "id": 11, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] }
+        ],
+        [
+          { "id": 18, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] },
+          { "id": 19, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] },
+          { "id": 20, "xp": 100, "ascension": 1, "items": [{ "id": 1 }] }
+        ],
+        [
+          {
+            "id": 13,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 14,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 16,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          }
+        ],
+        [
+          {
+            "id": 21,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 22,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 25,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }]
+          }
+        ],
+        [
+          {
+            "id": 27,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 28,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 29,
+            "xp": 100,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 1 }]
+          }
+        ],
+        [
+          {
+            "id": 10,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 7 }]
+          },
+          {
+            "id": 30,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 1 }]
+          },
+          {
+            "id": 30,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 1 }, { "id": 1 }, { "id": 1 }]
+          }
+        ]
+      ],
+      "rewards": [
+        { "id": 1, "p": 0.1 },
+        { "id": 2, "p": 0.05 },
+        { "id": 7, "p": 0.05 },
+        { "id": 8, "p": 0.01 },
+        { "id": 9, "p": 0.04 },
+        { "id": 10, "p": 0.05 },
+        { "id": 11, "p": 0.05 },
+        { "id": 12, "p": 0.05 },
+        { "id": 13, "p": 0.5 }
+      ],
+      "unlocks": [0, 0, 0, 2, 7, 9],
+      "names": [
+        "Dio's minions",
+        "Dio's minions",
+        "Dio's minions",
+        "Dio's minions",
+        "Dio's minions",
+        "Dio"
+      ]
+    }
+  }
+}

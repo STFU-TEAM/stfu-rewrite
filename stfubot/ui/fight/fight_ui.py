@@ -8,19 +8,18 @@ from globals.emojis import CustomEmoji
 from typing import List, Union
 
 EmojiList = [
-    CustomEmoji.ONE.value,
-    CustomEmoji.TWO.value,
-    CustomEmoji.THREE.value,
-    CustomEmoji.FF.value,
-    CustomEmoji.COIN.value,
+    CustomEmoji.ONE,
+    CustomEmoji.TWO,
+    CustomEmoji.THREE,
+    CustomEmoji.FF,
 ]
-# [ONE, TWO, THREE, FF, COIN]
+# [ONE, TWO, THREE, FF]
 
 
 class FightButton(disnake.ui.Button):
     def __init__(self, postion: int):
         super().__init__(
-            style=disnake.ButtonStyle.grey,
+            style=disnake.ButtonStyle.blurple,
             emoji=EmojiList[postion],
             custom_id=str(postion),
         )
@@ -35,7 +34,7 @@ class FightButton(disnake.ui.Button):
 class FightButtonFF(disnake.ui.Button):
     def __init__(self):
         super().__init__(
-            style=disnake.ButtonStyle.grey, emoji=EmojiList[3], custom_id="ff"
+            style=disnake.ButtonStyle.red, emoji=EmojiList[3], custom_id="ff"
         )
 
     async def callback(self, interaction: disnake.MessageInteraction):

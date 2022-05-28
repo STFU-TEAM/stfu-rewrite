@@ -12,7 +12,15 @@ Client = StfuBot(LOOP)
 
 print("All the databases ,emojis and apis have been initialized")
 
-main_extension = {"extensions.daily", "extensions.management", "extensions.fight"}
+main_extension = {
+    "extensions.daily",
+    "extensions.management",
+    "extensions.fight",
+    "extensions.social",
+    "extensions.crusade",
+    "extensions.tower",
+    "extensions.items",
+}
 
 # loads file and stuff
 for file in main_extension:

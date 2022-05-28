@@ -3,7 +3,7 @@ import disnake
 from enum import Enum
 
 
-class CustomEmoji(Enum):
+class CustomEmoji(str, Enum):
     ONE: disnake.PartialEmoji = "<:emote1:838150929261658183>"
     TWO: disnake.PartialEmoji = "<:emote2:838150930385600563>"
     THREE: disnake.PartialEmoji = "<:emote3:838150932466106378>"

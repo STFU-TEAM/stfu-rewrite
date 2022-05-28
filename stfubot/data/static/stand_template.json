@@ -492,7 +492,7 @@
       "base_hp": 325,
       "base_damage": 15,
       "base_speed": 2,
-      "turn_for_ability": 2,
+      "turn_for_ability": 3,
       "base_critical": 1
     },
     {
@@ -906,7 +906,7 @@
       "id": 83,
       "name": "Chariot Requiem",
       "stars": 5,
-      "special_description": "Gain `5` damage",
+      "special_description": "Choose the special ability of an other stand",
       "base_hp": 450,
       "base_damage": 50,
       "base_speed": 2,
@@ -1152,7 +1152,7 @@
       "base_hp": 420,
       "base_damage": 10,
       "base_speed": 1,
-      "turn_for_ability": 0,
+      "turn_for_ability": 2,
       "base_critical": 1
     },
     {
