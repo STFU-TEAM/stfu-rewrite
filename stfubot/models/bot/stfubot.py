@@ -6,16 +6,14 @@ from disnake.ext import commands
 from stfubot.models.database.maindatabase import Database
 
 
-class StfuBot(commands.AutoShardedBot):
+class StfuBot(commands.AutoShardedInteractionBot):
     """AutoShardedBot with added methods and caviats"""
 
     def __init__(self, loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()):
         super().__init__(
             loop=loop,
-            command_prefix="?",
             sync_commands=True,
-            sync_commands_debug=True,
-            test_guilds=[742654613282619473],
+            sync_commands_debug=True,,
         )
         self.developers = [
             242367586233352193,  # EIRBLAST
