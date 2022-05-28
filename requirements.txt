@@ -1,4 +1,5 @@
-disnake==2.4.0
+disnake==2.5.1
+numpy
 dnspython
 async-timeout
 asyncio
