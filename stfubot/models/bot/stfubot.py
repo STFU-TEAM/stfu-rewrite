@@ -13,7 +13,7 @@ class StfuBot(commands.AutoShardedInteractionBot):
         super().__init__(
             loop=loop,
             sync_commands=True,
-            sync_commands_debug=True,,
+            sync_commands_debug=True,
         )
         self.developers = [
             242367586233352193,  # EIRBLAST
