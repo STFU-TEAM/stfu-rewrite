@@ -1,9 +1,7 @@
 import disnake
 import asyncio
-import io
 import random
 
-from PIL import Image, ImageDraw
 from typing import List, Union, TYPE_CHECKING
 from discord.ext import commands
 
@@ -12,7 +10,7 @@ if TYPE_CHECKING:
     from stfubot.models.gameobjects.stands import Stand
 
 from stfubot.models.gameobjects.ia import Ia
-from stfubot.models.gameobjects.effects import Effect, EffectType
+from stfubot.models.gameobjects.effects import Effect
 from stfubot.models.database.user import User
 
 # playing one or multiple file a better version of playfile bassicly

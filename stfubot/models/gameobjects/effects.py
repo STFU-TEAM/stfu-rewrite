@@ -9,7 +9,7 @@ Emoji = {
 }
 
 
-class EffectType(Enum, str):
+class EffectType(Enum):
     STUN = "STUN"
     POISON = "POISON"
     WEAKEN = "WEAKEN"

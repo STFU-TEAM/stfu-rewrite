@@ -1,8 +1,10 @@
 import random
 
-from stfubot.models.gameobjects.effects import Effect, EffectType
+
 from typing import TYPE_CHECKING, List
 
+
+from stfubot.models.gameobjects.effects import Effect, EffectType
 
 # It's for typehint
 if TYPE_CHECKING:

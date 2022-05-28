@@ -183,7 +183,10 @@ if __name__ == "__main__":
         db = Database(loop)
         User = await db.get_user_info("242367586233352193")
 
-        from gameobjects.items import get_item_from_template, item_from_dict
+        from stfubot.models.gameobjects.items import (
+            get_item_from_template,
+            item_from_dict,
+        )
 
         User.items.append(item_from_dict(get_item_from_template({"id": 2})))
         await User.update()

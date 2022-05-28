@@ -1,5 +1,4 @@
 import os
-import asyncio
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
