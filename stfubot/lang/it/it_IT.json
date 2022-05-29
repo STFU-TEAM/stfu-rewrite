@@ -1,17 +1,17 @@
 {
   "error_meesages": {
-    "error": "An error occurred:",
-    "sorry_but": "Sorry but",
-    "cool_down": "It seems you must wait before using this command again. next {0} in :`{1}`",
-    "not_registered": "It seems {0} is not registered to the database ! use `/begin` to register !",
-    "already_registered": "It seems you are already registered",
-    "empty_storages": "Your storage is empty"
+    "error": "Si è verificato un errore:",
+    "sorry_but": "Scusa, ma",
+    "cool_down": "Sembra che tu debba aspettare prima di usare nuovamente questo comando. Prossimo utilizzo in:`{1}`",
+    "not_registered": "Sembra che {0} non sia registrato nel database! Usa `/begin` per registrarti!",
+    "already_registered": "Sembra che tu ti sia già registrato",
+    "empty_storages": "Il tuo storage è vuoto"
   },
   "fight": {
-    "1": "{0}, would you like to fight {1} ?",
-    "2": "{0} refused to fight !",
-    "3": "Fight ⚔️:`{0}` choose an ennemy stand to attack",
-    "4": "turn: `{0}`",
+    "1": "{0}, vorresti combattere {1}?",
+    "2": "{0} si è rifiutato di combattere!",
+    "3": "Lotta ⚔️:`{0}` scegli uno stand nemico da attaccare",
+    "4": "turno: `{0}`",
     "5": "Who `『{0}』` should attack ?",
     "6": "{0} dodged {1} attack !",
     "7": "Critical Hit ! {0} was hit with {1} damage !",
