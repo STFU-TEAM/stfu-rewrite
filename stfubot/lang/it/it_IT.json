@@ -37,7 +37,7 @@
     "6": "`Elo`:"
   },
   "crusade": {
-    "1": "We are going on a crusade !",
+    "1": "Partiamo per un'avventura!",
     "2": "Hai perso e non hai guadagnato niente.",
     "3": "Ecco le tue ricompense!",
     "4": "monete:",
@@ -71,7 +71,7 @@
   "remove": {
     "1": "Scegli lo stand da rimuovere",
     "2": "Sei sicuro di voler rimuovere {0}",
-    "3": "{0} was sent to brazil.",
+    "3": "{0} è stato spedito al regno delle ombre.",
     "4": "Hai tenuto {0}"
   },
   "mainstand": {
@@ -80,35 +80,35 @@
     "3": "{0} non è stato spostato",
     "4": "{0} è stato messo tra gli stand principali",
     "5": "Scegli uno stand da mettere un uno storage",
-    "6": "{0} was moved to mainstand and {1} was stored"
+    "6": "{0} è stato messo tra gli stand principali e {1} è stato depositato nello storage"
   },
   "store": {
-    "1": "Choose a stand to store"
+    "1": "Scegli uno stand da spostare nello storage"
   },
   "storage": {
-    "1": "{0}'s storage"
+    "1": "Storage di {0}"
   },
   "inventory": {
-    "1": "{0}'s inventory"
+    "1": "Inventario di {0}"
   },
   "equip": {
-    "1": "You have no items to equip",
-    "2": "Select a stand to equip an item on",
-    "3": "This stand cannot carry anymore items",
-    "4": "Select an item to equip",
-    "5": "{0} was equiped on {1}"
+    "1": "Non hai nessun oggetto da equipaggiare",
+    "2": "Seleziona uno stand su cui equipaggiare un oggetto",
+    "3": "Questo stand non può avere equipaggiati altri oggetti",
+    "4": "Seleziona un oggetto da equipaggiare",
+    "5": "{0} è stato equipaggiato su {1}"
   },
   "unequip": {
-    "1": "Select a stand to unequip an item from",
-    "2": "This stand has no item",
-    "3": "Unequiped {0} from {1}"
+    "1": "Seleziona uno stand da cui rimuovere un oggetto",
+    "2": "Questo stand non ha alcun oggetto",
+    "3": "{0} è stato rimosso da {1}"
   },
   "unequipall": {
-    "1": "all item where unequiped from {0}"
+    "1": "Tutti gli oggetti sono stati rimossi da {0}"
   },
   "adventure": {
-    "1": "Your stands went on an adventure and found:",
-    "2": "Your stands found an item !",
-    "3": "Your stands found coins !"
+    "1": "I tuoi stand sono partiti per un'avventura e hanno trovato:",
+    "2": "I tuoi stand hanno trovato un oggetto!",
+    "3": "I tuoi stand hanno trovato delle monete!"
   }
 }
