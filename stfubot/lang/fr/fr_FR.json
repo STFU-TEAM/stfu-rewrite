@@ -1,114 +1,114 @@
 {
   "error_meesages": {
-    "error": "An error occurred:",
-    "sorry_but": "Sorry but",
-    "cool_down": "It seems you must wait before using this command again. next {0} in :`{1}`",
-    "not_registered": "It seems {0} is not registered to the database ! use `/begin` to register !",
-    "already_registered": "It seems you are already registered",
-    "empty_storages": "Your storage is empty"
+    "error": "Une erreur est survenue :",
+    "sorry_but": "Désolé mais",
+    "cool_down": "Il semble que vous devez attendre avant d'utiliser cette commande à nouveau. {0} suivant dans :`{1}`",
+    "not_registered": "Il semble que {0} n'est pas enregistré dans la base de données ! Utilisez `/begin` pour vous enregistrer !",
+    "already_registered": "Il semble que vous êtes déjà enregistré",
+    "empty_storages": "Votre stockage est vide"
   },
   "fight": {
-    "1": "{0}, would you like to fight {1} ?",
-    "2": "{0} refused to fight !",
-    "3": "Fight ⚔️:`{0}` choose an ennemy stand to attack",
-    "4": "turn: `{0}`",
-    "5": "Who `『{0}』` should attack ?",
-    "6": "{0} dodged {1} attack !",
-    "7": "Critical Hit ! {0} was hit with {1} damage !",
-    "8": "{0} was hit with {1} damage !",
-    "9": "Combat log",
-    "10": "{0} win the fight!"
+    "1": "{0}, voulez-vous combattre {1}?",
+    "2": "{0} a refusé de se battre!",
+    "3": "Combat ⚔️:'{0}` choisissez un stand ennemi à attaquer",
+    "4": "tour: `{0}`",
+    "5": "Qui `『{0}』` devrait attaquer ?",
+    "6": "{0} a esquivé l'attaque de {1}!",
+    "7": "Coup Critique ! {0} a été touché avec {1} de dégâts !",
+    "8": "{0} a été touché avec {1} de dégâts !",
+    "9": "Registre de combat",
+    "10": "{0} remporte la victoire!"
   },
   "begin": {
-    "1": "Welcome !",
-    "2": "`Begin your journey ! here is your staring stand`",
-    "3": "Welcome to the stfubot, it's a full / command bot use \n",
-    "4": "`/crusade` or `/job` and `/daily adventure` to start earning money \n",
-    "5": "then check out `/tower` for opertunity to gain stands\n",
-    "6": "You also received 2 arrows do `/item use` to use them ! ",
-    "7": "good luck\n"
+    "1": "Bienvenue !",
+    "2": "`Commencez votre voyage ! Voici votre stand de départ`",
+    "3": "Bienvenue dans stfubot, c'est un bot de qui utilise les / commandes\n",
+    "4": "`/crusade` Ou `/job` et `/daily adventure` pour commencer à gagner de l'argent \n",
+    "5": "Puis jetez un coup d'œil à `/tower` pour des opportunités gagne des stands\n",
+    "6": "Vous avez également reçu 2 flèches pour les utiliser `/item use` ! ",
+    "7": "bonne chance\n"
   },
   "profile": {
-    "1": "{0} profile's",
-    "2": "`Statistics`",
-    "3": "`Level`:",
-    "4": "`Coins`:",
-    "5": "`Rank`:",
+    "1": "Profil de {0}",
+    "2": "`Statistiques`",
+    "3": "`Niveau`:",
+    "4": "`Pièces`:",
+    "5": "`Classement`:",
     "6": "`Elo`:"
   },
   "crusade": {
-    "1": "We are going on a crusade !",
-    "2": "You have lost and won nothing.",
-    "3": "Here are some rewards !",
-    "4": "coins:",
-    "5": "items:"
+    "1": "Nous partons en croisade !",
+    "2": "Vous avez perdu et vous n'avez rien gagné.",
+    "3": "Voici quelques récompenses!",
+    "4": "pièces:",
+    "5": "objets:"
   },
   "tower": {
-    "1": "Welcome to the towers the entry cost is {0} but the rewards are greater ! do you want to enter ?\n you have {1}",
-    "2": "Come back another day",
-    "3": "You don't have enough money, you need {0},come back an other day.",
-    "4": "You have did not go far enought to receive any items.",
-    "5": "You completed the tower ! You may reep it's rewards, and advance to the next if it is available.",
-    "6": "You did well, but you need to finish the tower to advance."
+    "1": "Bienvenue dans les tours, le coût d'entrée est de {0} mais les récompenses sont plus élevées! Voulez-vous y participer?\n vous avez {1}",
+    "2": "Revenez un autre jour",
+    "3": "Vous n'avez pas assez d'argent, vous avez besoin de {0}, revenez un autre jour.",
+    "4": "Vous n'êtes pas allé assez loin pour recevoir des objets.",
+    "5": "Vous avez terminé la tour ! Vous pouvez recevoir ses récompenses, et passer à la tour suivante si elle est disponible.",
+    "6": "Vous avez bien réussi, mais vous devez finir la tour pour avancer."
   },
   "use": {
-    "1": "You have no usable item use `/crusade` or `/tower`",
-    "2": "Select an item to use.",
-    "3": "The stand was stored in : {0}:",
-    "4": "There is no available storage space ,use `/stand remove` to free up some space, or donate !",
-    "5": "Select a stand you want to use a requiem arrow on.",
-    "6": "This stand has reached it's peak !",
-    "7": "A new stand is born !",
-    "8": "{0} has evolved and has reached ascension:{1}",
-    "9": "You gained {0} from this bag"
+    "1": "Vous n'avez aucun objet utilisable , faites `/croisade` ou `/tower`",
+    "2": "Sélectionnez un objet à utiliser.",
+    "3": "Le stand a été stocké dans : {0}:",
+    "4": "Il n'y a pas d'espace de stockage disponible, utilisez `/stand remove` pour libérer de l'espace, ou faites un don !",
+    "5": "Sélectionnez un stand sur lequel vous souhaitez utiliser une flèche requiem.",
+    "6": "Ce stand a atteint son apogée !",
+    "7": "Un nouveau stand est né!",
+    "8": "{0} a évolué et a atteint l'ascension :{1}",
+    "9": "Vous avez gagné {0} grâce à ce sac"
   },
   "gacha": {
-    "1": "You obtained a stand it has been stored in : {0}"
+    "1": "Vous avez obtenu un stand qui a été stocké dans : {0}"
   },
   "ui": {
-    "1": "Choose your storage"
+    "1": "Choisissez votre espace de stockage"
   },
   "remove": {
-    "1": "Choose the stand to remove",
-    "2": "Are you sure you want to remove {0}",
-    "3": "{0} was sent to brazil.",
-    "4": "You kept {0}"
+    "1": "Choisissez le stand à supprimer",
+    "2": "Êtes-vous sûr de vouloir supprimer {0}",
+    "3": "{0} a été envoyé au brazil.",
+    "4": "Vous avez conservé {0}"
   },
   "mainstand": {
-    "1": "What stand shall be move ?",
-    "2": "Are you sure you want to move {0} ?",
-    "3": "{0} was not moved",
-    "4": "{0} was moved to mainstand",
-    "5": "Choose a stand to put into a storage",
-    "6": "{0} was moved to mainstand and {1} was stored"
+    "1": "Quel stand devrait être déplacé ?",
+    "2": "Êtes-vous sûr de vouloir déplacer {0}?",
+    "3": "{0} n'a pas été déplacé",
+    "4": "{0} A été déplacé vers les stands principaux",
+    "5": "Choisissez un stand à mettre dans un stockage",
+    "6": "{0} A été déplacé vers les stands principaux et {1} A été stocké"
   },
   "store": {
-    "1": "Choose a stand to store"
+    "1": "Choisissez un stand à stocker"
   },
   "storage": {
-    "1": "{0}'s storage"
+    "1": "Espace de stockage de {0}"
   },
   "inventory": {
-    "1": "{0}'s inventory"
+    "1": "Inventaire de {0}"
   },
   "equip": {
-    "1": "You have no items to equip",
-    "2": "Select a stand to equip an item on",
-    "3": "This stand cannot carry anymore items",
-    "4": "Select an item to equip",
-    "5": "{0} was equiped on {1}"
+    "1": "Vous n'avez aucun objet à équiper",
+    "2": "Sélectionnez un stand sur lequel équiper un objet",
+    "3": "Ce stand ne peut plus transporter d'autres objets",
+    "4": "Sélectionnez un objet à équiper",
+    "5": "{0} a été équipé sur {1}"
   },
   "unequip": {
-    "1": "Select a stand to unequip an item from",
-    "2": "This stand has no item",
-    "3": "Unequiped {0} from {1}"
+    "1": "Sélectionnez un stand pour déséquiper un objet",
+    "2": "Ce stand n'a pas d'objets",
+    "3": "{0} A été retiré de {1}"
   },
   "unequipall": {
-    "1": "all item where unequiped from {0}"
+    "1": "tous les objets ont été déséquiper de {0}"
   },
   "adventure": {
-    "1": "Your stands went on an adventure and found:",
-    "2": "Your stands found an item !",
-    "3": "Your stands found coins !"
+    "1": "Vos stands se sont aventurés et ont trouvé :",
+    "2": "Vos stands ont trouvé un objet !",
+    "3": "Vos stands ont trouvé des pièces !"
   }
 }
