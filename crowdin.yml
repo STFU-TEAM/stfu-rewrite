@@ -21,13 +21,13 @@ files: [
       # Source files filter
       # e.g. "/resources/en/*.json"
       #
-      "source": "/stfubot/lang/en_US.json",
+      "source": "en_US.json",
 
       #
       # Where translations will be placed
       # e.g. "/resources/%two_letters_code%/%original_file_name%"
       #
-      "translation": "/stfubot/lang/%locale_with_underscore%.json",
+      "translation": "%locale_with_underscore%.json",
 
       #
       # File type
