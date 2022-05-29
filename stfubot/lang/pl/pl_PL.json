@@ -1,114 +1,114 @@
 {
   "error_meesages": {
-    "error": "An error occurred:",
-    "sorry_but": "Sorry but",
-    "cool_down": "It seems you must wait before using this command again. next {0} in :`{1}`",
-    "not_registered": "It seems {0} is not registered to the database ! use `/begin` to register !",
-    "already_registered": "It seems you are already registered",
-    "empty_storages": "Your storage is empty"
+    "error": "Wydarzył się error:",
+    "sorry_but": "Przepraszamy, ale",
+    "cool_down": "Wygląda na to, że musisz poczekać przed ponownym użyciem tej komendy. Następne {0} w :`{1}`",
+    "not_registered": "Wygląda na to, że {0} nie jest zarejestrowane w bazie danych ! użyj `/begin` żeby zarejestrować !",
+    "already_registered": "Wygląda na to, że już jesteś zarejestrowany",
+    "empty_storages": "Twoja przechowywalnia jest pusta"
   },
   "fight": {
-    "1": "{0}, would you like to fight {1} ?",
-    "2": "{0} refused to fight !",
-    "3": "Fight ⚔️:`{0}` choose an ennemy stand to attack",
-    "4": "turn: `{0}`",
-    "5": "Who `『{0}』` should attack ?",
-    "6": "{0} dodged {1} attack !",
-    "7": "Critical Hit ! {0} was hit with {1} damage !",
-    "8": "{0} was hit with {1} damage !",
-    "9": "Combat log",
-    "10": "{0} win the fight!"
+    "1": "{0}, czy chciałbyś walczyć z {1} ?",
+    "2": "{0} nie zgodził się walczyć !",
+    "3": "Walka ⚔️:`{0}` wybierz standa przeciwnika, którego chcesz zaatakować",
+    "4": "tura: `{0}`",
+    "5": "Kto `『{0}』` powinien atakować ?",
+    "6": "{0} uniknął ataku {1} !",
+    "7": "Uderzenie Krytyczne ! {0} zabrano {1} punktów zdrowia !",
+    "8": "{0} odebrano {1} punktów zdrowia !",
+    "9": "Log walki",
+    "10": "{0} wygrał walkę!"
   },
   "begin": {
-    "1": "Welcome !",
-    "2": "`Begin your journey ! here is your staring stand`",
-    "3": "Welcome to the stfubot, it's a full / command bot use \n",
-    "4": "`/crusade` or `/job` and `/daily adventure` to start earning money \n",
-    "5": "then check out `/tower` for opertunity to gain stands\n",
-    "6": "You also received 2 arrows do `/item use` to use them ! ",
-    "7": "good luck\n"
+    "1": "Witaj !",
+    "2": "`Rozpocznij swoją przygodę ! oto jest twój początkowy stand`",
+    "3": "Przywitaj się z stfubot, obsługuje on komendy /\n",
+    "4": "`/crusade` lub `/job` oraz `/daily adventure` żeby zacząc zarabiać pieniądze\n",
+    "5": "potem sprawdź `/tower` żeby mieć szansę na zdobycie standów\n",
+    "6": "Również zdobyłeś 2 strzały, użyj `/item use` żeby nich użyć ! ",
+    "7": "powodzenia\n"
   },
   "profile": {
-    "1": "{0} profile's",
-    "2": "`Statistics`",
-    "3": "`Level`:",
-    "4": "`Coins`:",
-    "5": "`Rank`:",
+    "1": "profil {0}",
+    "2": "`Statystyki`",
+    "3": "`Poziom`:",
+    "4": "`Monety`:",
+    "5": "`Ranga`:",
     "6": "`Elo`:"
   },
   "crusade": {
-    "1": "We are going on a crusade !",
-    "2": "You have lost and won nothing.",
-    "3": "Here are some rewards !",
-    "4": "coins:",
-    "5": "items:"
+    "1": "Idziemy na krucjatę !",
+    "2": "Przegraliśmy i nic nie wygraliśmy.",
+    "3": "Oto jest trochę nagród !",
+    "4": "monety:",
+    "5": "itemy:"
   },
   "tower": {
-    "1": "Welcome to the towers the entry cost is {0} but the rewards are greater ! do you want to enter ?\n you have {1}",
-    "2": "Come back another day",
-    "3": "You don't have enough money, you need {0},come back an other day.",
-    "4": "You have did not go far enought to receive any items.",
-    "5": "You completed the tower ! You may reep it's rewards, and advance to the next if it is available.",
-    "6": "You did well, but you need to finish the tower to advance."
+    "1": "Witaj w wieżach, koszt wejścia to {0} ale nagrody są droższe ! czy chcesz wejść\n?\n masz {1}",
+    "2": "Wróć następnego dnia",
+    "3": "Nie masz wystarczająco pieniędzy, potrzebujesz {0}, wróć następnego dnia.",
+    "4": "Nie poszedłeś wystarczająco daleko i nie dostałeś itemów.",
+    "5": "Ukończyłeś wieżę ! Możesz zatrzymać sobie nagrody i przejść do następnej, jeżeli jest dostępna.",
+    "6": "Dobrze ci poszło, ale musisz ukończyć wieże, żeby przejść dalej."
   },
   "use": {
-    "1": "You have no usable item use `/crusade` or `/tower`",
-    "2": "Select an item to use.",
-    "3": "The stand was stored in : {0}:",
-    "4": "There is no available storage space ,use `/stand remove` to free up some space, or donate !",
-    "5": "Select a stand you want to use a requiem arrow on.",
-    "6": "This stand has reached it's peak !",
-    "7": "A new stand is born !",
-    "8": "{0} has evolved and has reached ascension:{1}",
-    "9": "You gained {0} from this bag"
+    "1": "Nie masz itemów, użyj `/crusade` lub `/tower`",
+    "2": "Wybierz item, który chcesz użyć.",
+    "3": "Stand został schowany w : {0}:",
+    "4": "Nie masz dostępnego miejsca w przechowywalni, użyj `/stand remove` żeby zwolnić trochę miejsca, lub donejtuj !",
+    "5": "Wybierz standa, na którym chcesz użyć strzały requiem.",
+    "6": "Ten stand osiągnął swój maksymalny potencjał !",
+    "7": "Nowy stand został narodzony !",
+    "8": "{0} ewoluował i osiągnął wniebowstąpienie:{1}",
+    "9": "Zdobyłeś {0} z tej torby"
   },
   "gacha": {
-    "1": "You obtained a stand it has been stored in : {0}"
+    "1": "Zdobyłeś standa, został przechowany w : {0}"
   },
   "ui": {
-    "1": "Choose your storage"
+    "1": "Wybierz swoją przechowywalnię"
   },
   "remove": {
-    "1": "Choose the stand to remove",
-    "2": "Are you sure you want to remove {0}",
-    "3": "{0} was sent to brazil.",
-    "4": "You kept {0}"
+    "1": "Wybierz standa do usunięcia",
+    "2": "Czy jesteś pewien, że chcesz usunąć {0}",
+    "3": "{0} został wysłany do Brazylii.",
+    "4": "Zachowałeś {0}"
   },
   "mainstand": {
-    "1": "What stand shall be move ?",
-    "2": "Are you sure you want to move {0} ?",
-    "3": "{0} was not moved",
-    "4": "{0} was moved to mainstand",
-    "5": "Choose a stand to put into a storage",
-    "6": "{0} was moved to mainstand and {1} was stored"
+    "1": "Jaki stand powinien być przemieszczony ?",
+    "2": "Czy jesteś pewien, że chcesz przemieścić {0} ?",
+    "3": "{0} nie został przemieszczony",
+    "4": "{0} został przemieszczony na głównego standa (możliwy błąd)",
+    "5": "Wybierz standa, którego chcesz przemieścić do przechowywalni",
+    "6": "{0} został przemieszczony na głównego standa (możliwy błąd), {1} został przechowany"
   },
   "store": {
-    "1": "Choose a stand to store"
+    "1": "Wybierz standa do przechowania"
   },
   "storage": {
-    "1": "{0}'s storage"
+    "1": "przechowywalnia {0}"
   },
   "inventory": {
-    "1": "{0}'s inventory"
+    "1": "inventory {0}"
   },
   "equip": {
-    "1": "You have no items to equip",
-    "2": "Select a stand to equip an item on",
-    "3": "This stand cannot carry anymore items",
-    "4": "Select an item to equip",
-    "5": "{0} was equiped on {1}"
+    "1": "Nie masz przedmiotów do użycia",
+    "2": "Wybierz standa, na którym chcesz użyć item",
+    "3": "Ten stand nie może nieść więcej itemów",
+    "4": "Wybierz item do użycia",
+    "5": "{0} został użyty na {1}"
   },
   "unequip": {
-    "1": "Select a stand to unequip an item from",
-    "2": "This stand has no item",
-    "3": "Unequiped {0} from {1}"
+    "1": "Wybierz standa, z którego chcesz zdjąć item",
+    "2": "Ten stand nie ma itemów",
+    "3": "Zdjęto {0} z {1}"
   },
   "unequipall": {
-    "1": "all item where unequiped from {0}"
+    "1": "wszystkie itemy zostały zdjęte z {0}"
   },
   "adventure": {
-    "1": "Your stands went on an adventure and found:",
-    "2": "Your stands found an item !",
-    "3": "Your stands found coins !"
+    "1": "Twoje standy poszły na przygodę i znalazły:",
+    "2": "Twoje standy znalazły item !",
+    "3": "Twoje standy znalazły monety !"
   }
 }
