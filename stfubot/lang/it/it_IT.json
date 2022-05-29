@@ -2,7 +2,7 @@
   "error_meesages": {
     "error": "Si è verificato un errore:",
     "sorry_but": "Scusa, ma",
-    "cool_down": "Sembra che tu debba aspettare prima di usare nuovamente questo comando. Prossimo utilizzo in:`{1}`",
+    "cool_down": "Sembra che tu debba aspettare prima di usare nuovamente questo comando. Prossimo/a {0} in:`{1}`",
     "not_registered": "Sembra che {0} non sia registrato nel database! Usa `/begin` per registrarti!",
     "already_registered": "Sembra che tu ti sia già registrato",
     "empty_storages": "Il tuo storage è vuoto"
@@ -12,36 +12,36 @@
     "2": "{0} si è rifiutato di combattere!",
     "3": "Lotta ⚔️:`{0}` scegli uno stand nemico da attaccare",
     "4": "turno: `{0}`",
-    "5": "Who `『{0}』` should attack ?",
-    "6": "{0} dodged {1} attack !",
-    "7": "Critical Hit ! {0} was hit with {1} damage !",
-    "8": "{0} was hit with {1} damage !",
-    "9": "Combat log",
-    "10": "{0} win the fight!"
+    "5": "Chi dovrebbe attaccare `『{0}』`?",
+    "6": "{0} ha schivato l'attacco di {1}!",
+    "7": "Colpo critico! {0} ha subito {1} danni!",
+    "8": "{0} ha subito {1} danni!",
+    "9": "Log del combattimento",
+    "10": "{0} ha vinto la lotta!"
   },
   "begin": {
-    "1": "Welcome !",
-    "2": "`Begin your journey ! here is your staring stand`",
-    "3": "Welcome to the stfubot, it's a full / command bot use \n",
-    "4": "`/crusade` or `/job` and `/daily adventure` to start earning money \n",
-    "5": "then check out `/tower` for opertunity to gain stands\n",
-    "6": "You also received 2 arrows do `/item use` to use them ! ",
-    "7": "good luck\n"
+    "1": "Benvenuto!",
+    "2": "`Il tuo viaggio ha inizio! Ecco il tuo stand iniziale`",
+    "3": "Benvenuto! Questo è STFU REQUIEM, un bot utilizzabile attraverso i comandi slash \"/\". Usa",
+    "4": "`/crusade`, `/job` e `/daily adventure` per cominciare a guadagnare delle monete \n",
+    "5": "dopo potrai anche provare `/tower` per avere l'opportunità di ottenere degli stand\n",
+    "6": "Inoltre, ecco a te 2 frecce. Usale con `/item use`! ",
+    "7": "buona fortuna\n"
   },
   "profile": {
-    "1": "{0} profile's",
-    "2": "`Statistics`",
-    "3": "`Level`:",
-    "4": "`Coins`:",
+    "1": "Profilo di {0}",
+    "2": "`Statistiche`",
+    "3": "`Livello`:",
+    "4": "`Monete`:",
     "5": "`Rank`:",
     "6": "`Elo`:"
   },
   "crusade": {
     "1": "We are going on a crusade !",
-    "2": "You have lost and won nothing.",
-    "3": "Here are some rewards !",
-    "4": "coins:",
-    "5": "items:"
+    "2": "Hai perso e non hai guadagnato niente.",
+    "3": "Ecco le tue ricompense!",
+    "4": "monete:",
+    "5": "oggetti:"
   },
   "tower": {
     "1": "Welcome to the towers the entry cost is {0} but the rewards are greater ! do you want to enter ?\n you have {1}",
