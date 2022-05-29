@@ -70,7 +70,6 @@ class daily(commands.Cog):
                 + "    ▬▬▬▬▬▬▬▬▬",
             )
             User.stands.append(stand)
-            User.last_adventure = datetime.datetime.now()
             # Give to arrows
             User.items.append(item_from_dict({"id": 2}))
             User.items.append(item_from_dict({"id": 2}))

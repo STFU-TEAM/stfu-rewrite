@@ -21,7 +21,7 @@ DODGENERF = 10
 
 # Fight Rewards
 
-COINSGAINS = 100
+COINSGAINS = 300
 PLAYER_XPGAINS = 10
 STAND_XPGAINS = 10
 
@@ -32,7 +32,7 @@ USRXPTOLEVEL = 100
 
 # Crusade Items
 
-CHANCEITEM = 5
+CHANCEITEM = 25
 
 # Tower constants
 

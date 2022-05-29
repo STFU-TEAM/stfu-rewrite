@@ -70,15 +70,18 @@ class Crusade(commands.Cog):
 
         user.last_crusade = datetime.datetime.now()
 
-        if user.level < 25:
+        if user.level < 5:
             star = 4
             n = random.randint(1, 2)
-        elif 25 <= user.level < 50:
+        elif 5 <= user.level < 25:
             star = 4
+            n = random.randint(1, 1)
+        elif 25 <= user.level < 50:
+            star = 5
             n = random.randint(2, 3)
         elif 50 <= user.level < 75:
             star = 5
-            n = random.randint(2, 3)
+            n = 3
         elif user.level >= 75:
             star = 6
             n = 3
