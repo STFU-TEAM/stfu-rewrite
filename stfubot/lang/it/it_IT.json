@@ -44,21 +44,21 @@
     "5": "oggetti:"
   },
   "tower": {
-    "1": "Welcome to the towers the entry cost is {0} but the rewards are greater ! do you want to enter ?\n you have {1}",
-    "2": "Come back another day",
-    "3": "You don't have enough money, you need {0},come back an other day.",
-    "4": "You have did not go far enought to receive any items.",
-    "5": "You completed the tower ! You may reep it's rewards, and advance to the next if it is available.",
-    "6": "You did well, but you need to finish the tower to advance."
+    "1": "Benvenuto alle towers, il costo d'entrata è {0}, ma le ricompense sono tantissime! Vuoi entrare? Hai {1}",
+    "2": "Torna un'altra volta",
+    "3": "Non hai abbastanza monete, hai bisogno di {0}, torna un'altra volta.",
+    "4": "Non hai fatto abbastanza progressi per ricevere alcun oggetto.",
+    "5": "Hai completato questa torre! Puoi raccogliere le ricompense e passare alla torre successiva se è disponibile.",
+    "6": "Hai fatto bene, ma è necessario finire la torre per progredire."
   },
   "use": {
-    "1": "You have no usable item use `/crusade` or `/tower`",
-    "2": "Select an item to use.",
-    "3": "The stand was stored in : {0}:",
-    "4": "There is no available storage space ,use `/stand remove` to free up some space, or donate !",
-    "5": "Select a stand you want to use a requiem arrow on.",
-    "6": "This stand has reached it's peak !",
-    "7": "A new stand is born !",
+    "1": "Non hai nessun oggetto utilizzabile. Usa `/crusade` o `/tower`",
+    "2": "Seleziona un oggetto da usare.",
+    "3": "Lo stand è stato depositato in: {0}:",
+    "4": "Non c'è spazio libero nello storage, usa `/stand remove` per liberare dello spazio, oppure considera la possibilità di fare una donazione!",
+    "5": "Seleziona uno stand su cui vuoi usare una freccia requiem.",
+    "6": "Questo stand ha raggiunto il suo massimo potenziale!",
+    "7": "Nasce un nuovo stand!",
     "8": "{0} has evolved and has reached ascension:{1}",
     "9": "You gained {0} from this bag"
   },
