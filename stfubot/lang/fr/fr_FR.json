@@ -4,15 +4,15 @@
     "sorry_but": "Sorry but",
     "cool_down": "It seems you must wait before using this command again. next {0} in :`{1}`",
     "not_registered": "It seems {0} is not registered to the database ! use `/begin` to register !",
-    "already_registered": "Il semble que vous êtes déjà inscrit",
+    "already_registered": "It seems you are already registered",
     "empty_storages": "Your storage is empty"
   },
   "fight": {
     "1": "{0}, would you like to fight {1} ?",
-    "2": "{0} a refusé de combattre !",
-    "3": "Combat ⚔️:`{0}` choisissez un stand ennemie pour attaquer",
-    "4": "tour: `{0}`",
-    "5": "Qui `『{0}』` devrait attaquer ?",
+    "2": "{0} refused to fight !",
+    "3": "Fight ⚔️:`{0}` choose an ennemy stand to attack",
+    "4": "turn: `{0}`",
+    "5": "Who `『{0}』` should attack ?",
     "6": "{0} dodged {1} attack !",
     "7": "Critical Hit ! {0} was hit with {1} damage !",
     "8": "{0} was hit with {1} damage !",
@@ -20,9 +20,9 @@
     "10": "{0} win the fight!"
   },
   "begin": {
-    "1": "Bienvenue !",
-    "2": "`Commencez votre voyage ! Voici votre stand de départ`",
-    "3": "Bienvenue dans stfubot, c'est un bot de qui utilise les / commandes\n",
+    "1": "Welcome !",
+    "2": "`Begin your journey ! here is your staring stand`",
+    "3": "Welcome to the stfubot, it's a full / command bot use \n",
     "4": "`/crusade` or `/job` and `/daily adventure` to start earning money \n",
     "5": "then check out `/tower` for opertunity to gain stands\n",
     "6": "You also received 2 arrows do `/item use` to use them ! ",
