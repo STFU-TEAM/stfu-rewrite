@@ -1,8 +1,8 @@
 {
   "error_meesages": {
     "error": "Une erreur est survenue :",
-    "sorry_but": "Désolé mais",
-    "cool_down": "Il semble que vous devez attendre avant d'utiliser cette commande à nouveau. {0} suivant dans :`{1}`",
+    "sorry_but": "Désolé, mais",
+    "cool_down": "Il semble que vous devez attendre avant d'utiliser cette commande à nouveau. {0} Suivant dans :'{1}`",
     "not_registered": "Il semble que {0} n'est pas enregistré dans la base de données ! Utilisez `/begin` pour vous enregistrer !",
     "already_registered": "Il semble que vous êtes déjà enregistré",
     "empty_storages": "Votre stockage est vide"
@@ -17,13 +17,13 @@
     "7": "Coup Critique ! {0} a été touché avec {1} de dégâts !",
     "8": "{0} a été touché avec {1} de dégâts !",
     "9": "Registre de combat",
-    "10": "{0} remporte la victoire!"
+    "10": "{0} Remporte la victoire !"
   },
   "begin": {
     "1": "Bienvenue !",
     "2": "`Commencez votre voyage ! Voici votre stand de départ`",
     "3": "Bienvenue dans stfubot, c'est un bot de qui utilise les / commandes\n",
-    "4": "`/crusade` Ou `/job` et `/daily adventure` pour commencer à gagner de l'argent \n",
+    "4": "`/crusade` Ou `/job` et `/daily aventure` pour commencer à gagner de l'argent \n",
     "5": "Puis jetez un coup d'œil à `/tower` pour des opportunités gagne des stands\n",
     "6": "Vous avez également reçu 2 flèches pour les utiliser `/item use` ! ",
     "7": "bonne chance\n"
@@ -34,17 +34,17 @@
     "3": "`Niveau`:",
     "4": "`Pièces`:",
     "5": "`Classement`:",
-    "6": "`Elo`:"
+    "6": "`Elo':"
   },
   "crusade": {
     "1": "Nous partons en croisade !",
     "2": "Vous avez perdu et vous n'avez rien gagné.",
-    "3": "Voici quelques récompenses!",
+    "3": "Voici quelques récompenses !",
     "4": "pièces:",
-    "5": "objets:"
+    "5": "Objets:"
   },
   "tower": {
-    "1": "Bienvenue dans les tours, le coût d'entrée est de {0} mais les récompenses sont plus élevées! Voulez-vous y participer?\n vous avez {1}",
+    "1": "Bienvenue dans les tours, le coût d'entrée est de {0} mais les récompenses sont plus élevées ! Voulez-Vous y participer ?\n Vous avez {1}",
     "2": "Revenez un autre jour",
     "3": "Vous n'avez pas assez d'argent, vous avez besoin de {0}, revenez un autre jour.",
     "4": "Vous n'êtes pas allé assez loin pour recevoir des objets.",
@@ -58,7 +58,7 @@
     "4": "Il n'y a pas d'espace de stockage disponible, utilisez `/stand remove` pour libérer de l'espace, ou faites un don !",
     "5": "Sélectionnez un stand sur lequel vous souhaitez utiliser une flèche requiem.",
     "6": "Ce stand a atteint son apogée !",
-    "7": "Un nouveau stand est né!",
+    "7": "Un nouveau stand est né !",
     "8": "{0} a évolué et a atteint l'ascension :{1}",
     "9": "Vous avez gagné {0} grâce à ce sac"
   },
@@ -71,7 +71,7 @@
   "remove": {
     "1": "Choisissez le stand à supprimer",
     "2": "Êtes-vous sûr de vouloir supprimer {0}",
-    "3": "{0} a été envoyé au brazil.",
+    "3": "{0} A été envoyé au Brésil.",
     "4": "Vous avez conservé {0}"
   },
   "mainstand": {
