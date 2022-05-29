@@ -171,9 +171,7 @@ class Database:
         if not await self.guild_in_database(id):
             await self.add_guild(id)
         guild = await self.get_guild_info(id)
-        with open(
-            f"stfubot/lang/{guild['lang']}/{guild['lang']}.json", "r", encoding="utf8"
-        ) as item:
+        with open(f"stfubot/lang/{guild['lang']}.json", "r", encoding="utf8") as item:
             translation = json.load(item)
         return translation
 
