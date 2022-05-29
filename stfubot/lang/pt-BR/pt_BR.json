@@ -1,7 +1,7 @@
 {
   "error_meesages": {
-    "error": "An error occurred:",
-    "sorry_but": "Sorry but",
+    "error": "Flecha:",
+    "sorry_but": "Perdão, mas",
     "cool_down": "It seems you must wait before using this command again. next {0} in :`{1}`",
     "not_registered": "It seems {0} is not registered to the database ! use `/begin` to register !",
     "already_registered": "It seems you are already registered",
