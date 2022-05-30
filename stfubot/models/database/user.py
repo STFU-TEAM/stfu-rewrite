@@ -58,6 +58,7 @@ class User:
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
+        self.shop_id: str = data["shop_id"]
         self.discord: disnake.Member = None
         self.message: disnake.Message = None
         self.level: int = self.xp // USRXPTOLEVEL
@@ -107,6 +108,7 @@ class User:
         self.data["donor_status"] = self.donor_status
         self.data["over_heaven_supporter"] = self.over_heaven_supporter
         self.data["early_supporter"] = self.early_supporter
+        self.data["shop_id"] = self.shop_id
         return self.data
 
 
@@ -114,6 +116,7 @@ def create_user(user_id: str):
     data = {
         "_id": user_id,
         "gang_id": None,
+        "shop_id": None,
         "stands": [],
         "stand_storage": [],
         "pstand_storage": [],
