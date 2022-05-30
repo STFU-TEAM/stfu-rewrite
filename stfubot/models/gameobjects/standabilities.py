@@ -45,7 +45,7 @@ def the_world_over_heaven(
     damage = 0
     for ennemy in ennemy_stand:
         damage += stand.attack(ennemy)
-    message = f"｢{stand.name}｣ ! and damage everyone for {int(damage)}"
+    message = f"｢{stand.name}｣! damaged everyone for {int(damage)}!"
     return payload, message
 
 
@@ -58,9 +58,9 @@ def star_platinum(
     if len(valid_stand) != 0:
         target: Stand = random.choice(valid_stand)
         stand.attack(target, multiplier=multiplier)
-        message = f"｢{stand.name}｣ punches ,{target.name} ,{multiplier} times dealing {stand.current_damage*multiplier}"
+        message = f"｢{stand.name}｣ punches, {target.name}, {multiplier} times dealing {stand.current_damage*multiplier}!"
     else:
-        message = f"｢{stand.name}｣ punches multiple times"
+        message = f"｢{stand.name}｣ punches multiple times!"
     return payload, message
 
 
@@ -70,7 +70,7 @@ def silver_chariot(
     payload = get_payload()
     stand.current_speed += 10
     stand.ressistance *= 0.75
-    message = f"｢{stand.name}｣ gain speed and loses ressistance"
+    message = f"｢{stand.name}｣ gains speed but loses resistance."
     return payload, message
 
 
@@ -82,7 +82,7 @@ def the_world(
     damage = 0
     for ennemy in ennemy_stand:
         damage += stand.attack(ennemy, multiplier=multiplier)
-    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
 
@@ -93,7 +93,7 @@ def cream(
     stand.current_speed += 5
     stand.current_damage += 5
     stand.effects.append(Effect(EffectType.STUN, 1, 0))
-    message = f"｢{stand.name}｣ get's faster"
+    message = f"｢{stand.name}｣ gets faster"
     return payload, message
 
 
@@ -105,7 +105,7 @@ def star_platinum_the_world(
     damage = 0
     for ennemy in ennemy_stand:
         damage += stand.attack(ennemy, multiplier=multiplier)
-    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
 
@@ -121,7 +121,7 @@ def crazy_diamond(
         ally.current_hp = heal
         message = f"｢{stand.name}｣ heals {ally.name}"
     else:
-        message = f"｢{stand.name}｣ enrage !"
+        message = f"｢{stand.name}｣ enraged!"
     return payload, message
 
 
@@ -134,7 +134,7 @@ def the_hand(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         damage = stand.attack(target, multipler=multiplier)
-        message = f"｢{stand.name}｣ throw out random items and deal {damage} damage"
+        message = f"｢{stand.name}｣ throws out random items and deals {damage} damage"
     return payload, message
 
 
@@ -147,9 +147,9 @@ def heavens_door(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
-        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds!"
     else:
-        message = f"｢{stand.name}｣ !"
+        message = f"｢{stand.name}｣!"
     return payload, message
 
 
@@ -162,9 +162,9 @@ def killer_queen(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.POISON, 1, multiplicator))
-        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds!"
     else:
-        message = f"｢{stand.name}｣ !"
+        message = f"｢{stand.name}｣!"
     return payload, message
 
 
@@ -177,7 +177,7 @@ def echoes_act_3(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
-        message = f"｢{stand.name}｣ stun {target.name} for {multiplicator} rounds"
+        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds"
     else:
         message = f"｢{stand.name}｣!"
     return payload, message
@@ -190,7 +190,7 @@ def killer_queen_bite_the_dust(
     heal = (stand.start_hp - stand.current_hp) // 3
     stand.current_hp += heal
     stand.current_hp = max(0, min(stand.current_hp, stand.start_hp))
-    message = f"｢{stand.name}｣ reset the timeline ! and healed for {heal}"
+    message = f"｢{stand.name}｣ resets the timeline! and heals for {heal}"
     return payload, message
 
 
@@ -212,7 +212,7 @@ def sticky_finger(
 ) -> tuple:
     payload = get_payload()
     stand.current_critical += 5
-    message = f"｢{stand.name}｣ becomes more precise"
+    message = f"｢{stand.name}｣ becomes more precise."
     return payload, message
 
 
@@ -225,7 +225,7 @@ def purple_haze(
         s.effects.append(
             Effect(EffectType.POISON, 3, stand.current_damage * multiplier)
         )
-    message = f"｢{stand.name}｣ poison everyone for {stand.current_damage*multiplier}"
+    message = f"｢{stand.name}｣ poisons everyone for {stand.current_damage*multiplier}!"
     return payload, message
 
 
@@ -248,7 +248,7 @@ def notorious_big(
         stand.effects.append(
             Effect(EffectType.REGENERATION, 1, stand.current_hp * multiplier)
         )
-    message = f"｢{stand.name}｣ Regenerate itself"
+    message = f"｢{stand.name}｣ Regenerates itself!"
     return payload, message
 
 
@@ -262,7 +262,7 @@ def metallica(
             if effect == EffectType.REGENERATION:
                 effect.value *= multiplier
         ennemy.effects.append(Effect(EffectType.POISON, 2, stand.current_damage * 0.1))
-    message = f"｢{stand.name}｣ infects their blood stream"
+    message = f"｢{stand.name}｣ infects their blood stream!"
     return payload, message
 
 
@@ -273,7 +273,7 @@ def green_day(
     payload = get_payload()
     for ennemy in ennemy_stand:
         ennemy.effects.append(Effect(EffectType.WEAKEN, 3, multiplier))
-    message = f"｢{stand.name}｣ green day weakens all ennemies"
+    message = f"｢{stand.name}｣ weakens all enemies!"
     return payload, message
 
 
@@ -287,7 +287,7 @@ def chariot_requiem(
         if target.id != stand.id:
             return specials[f"{target.id}"](stand, allied_stand, ennemy_stand)
     stand.current_damage += 5
-    message = f"｢{stand.name}｣ souls schearch the arrow"
+    message = f"｢{stand.name}｣'s soul searches for the arrow..."
     return payload, message
 
 
@@ -297,7 +297,7 @@ def gold_experience_requiem(
     payload = get_payload()
     payload["GER"] = True
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ You will never reach the truth , Return to Zero"
+    message = f"｢{stand.name}｣ You will never reach the truth, Return to Zero!"
     # reset their scaling
     for ennemy in ennemy_stand:
         ennemy: "Stand" = stand
@@ -307,7 +307,7 @@ def gold_experience_requiem(
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, 2, 0))
-        message += f", stunned {target.name}"
+        message += f"｢{stand.name}｣ stunned {target.name}!"
     return payload, message
 
 
@@ -317,7 +317,7 @@ def stone_free(
     multiplier = 0.90
     payload = get_payload()
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ !"
+    message = f"｢{stand.name}｣ frees the stone ocean!"
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, 1, 0))
@@ -334,7 +334,7 @@ def weather_report(
         ennemy.effects.append(
             Effect(EffectType.POISON, 3, stand.current_damage * multiplier)
         )
-    message = f"｢{stand.name}｣ make death rains... and poison everyone for {stand.current_damage*multiplier}"
+    message = f"｢{stand.name}｣ makes death rain... and poisons everyone for {stand.current_damage*multiplier}!"
     return payload, message
 
 
@@ -343,7 +343,7 @@ def jumpin_jack_flash(
 ) -> tuple:
     payload = get_payload()
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ !"
+    message = f"｢{stand.name}｣ removes gravity!"
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, stand.turn // 2, 0))
@@ -354,7 +354,7 @@ def bohemian_rhapsody(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:
     payload = get_payload()
-    message = f"｢{stand.name}｣ create a perfect version of itself"
+    message = f"｢{stand.name}｣ creates a perfect version of itself!"
     for ally in allied_stand:
         stand.current_hp = max(stand.current_hp, ally.current_hp)
         stand.current_damage = max(stand.current_damage, ally.current_damage)
@@ -369,13 +369,13 @@ def underworld(
     multiplier = 4
     payload = get_payload()
     if sum([s.is_alive() for s in allied_stand]) == len(allied_stand):
-        message = f"｢{stand.name}｣ waits for an ally to die"
+        message = f"｢{stand.name}｣ waits for an ally to die..."
         stand.special_meter = 2
         return payload, message
     valid_stand = [i for i in ennemy_stand if not i.is_alive()]
     revived = random.choice(valid_stand)
     revived.current_hp = revived.start_hp // 4
-    message = f"｢{stand.name}｣ bring a memory of {revived.name}"
+    message = f"｢{stand.name}｣ brings a memory of {revived.name}!"
     return payload, message
 
 
@@ -385,7 +385,7 @@ def c_moon(
     payload = get_payload()
     for ennemy in ennemy_stand:
         ennemy.current_speed -= 2
-    message = f"｢{stand.name}｣ change the gravity"
+    message = f"｢{stand.name}｣ alters the gravity!"
     return payload, message
 
 
@@ -396,7 +396,7 @@ def made_in_heaven(
     stand.current_speed += 5
     stand.current_damage += 20
     stand.current_critical += 5
-    message = f"｢{stand.name}｣ speed increase"
+    message = f"｢{stand.name}｣'s speed increases!"
     return payload, message
 
 
@@ -406,7 +406,7 @@ def tusk_act_4(
     payload = get_payload()
     multiplier = 0.75
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ lesson  5 !"
+    message = f"｢{stand.name}｣ lesson  5!"
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(
@@ -425,7 +425,7 @@ def ball_breaker(
         ennemy.effects.append(Effect(EffectType.WEAKEN, 1, multiplier))
     for ally in allied_stand:
         ally.current_damage += 5
-    message = f"｢{stand.name}｣ harness the power of the spin"
+    message = f"｢{stand.name}｣ harnesses the power of the spin!"
     return payload, message
 
 
@@ -434,7 +434,7 @@ def dirty_deed_done_dirt_cheap(
 ) -> tuple:
     payload = get_payload()
     stand.effects = [e for e in stand.effects if e.type == EffectType.REGENERATION]
-    message = f"｢{stand.name}｣ bring another one of itself"
+    message = f"｢{stand.name}｣ retrieves an alternate version!"
     return payload, message
 
 
@@ -449,7 +449,7 @@ def boku_no_rythm_wo_kiitekure(
         target.effects.append(
             Effect(EffectType.POISON, 1, multiplicator * stand.current_damage)
         )
-    message = f"｢{stand.name}｣ plant bombs on everyone"
+    message = f"｢{stand.name}｣ plants bombs on everyone."
     return payload, message
 
 
@@ -459,7 +459,7 @@ def mandom(
     payload = get_payload()
     for ally in allied_stand:
         ally.current_critical += 5
-    message = f"Welcome to a man world"
+    message = f"Welcome to the True Man's world!"
     return payload, message
 
 
@@ -471,7 +471,7 @@ def the_world_sbr(
     damage = 0
     for ennemy in ennemy_stand:
         damage += stand.attack(ennemy, multiplier=multiplier)["damage"]
-    message = f"｢{stand.name}｣ STOPS TIME ! and damage everyone for {int(damage)}"
+    message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
 
@@ -481,7 +481,7 @@ def soft_and_wet(
     multiplier = 0.75
     payload = get_payload()
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ !"
+    message = f"｢{stand.name}｣ breaks and weakens!"
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.WEAKEN, 1, multiplier))
@@ -494,7 +494,7 @@ def doobie_wah(
     payload = get_payload()
     multiplier = 0.1
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
-    message = f"｢{stand.name}｣ !"
+    message = f"｢{stand.name}｣ seeks it's enemy!"
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.effects.append(
@@ -525,7 +525,7 @@ def wonder_of_u(
     if len(valid_stand) != 0:
         target = random.choice(valid_stand)
         target.current_hp -= woudamage(stand.current_speed)
-        message = f"｢{stand.name}｣ redirect calamity ! to {target.name} for {woudamage(stand.current_speed)}"
+        message = f"｢{stand.name}｣ redirects calamity to {target.name} for {woudamage(stand.current_speed)}!"
     return payload, message
 
 
