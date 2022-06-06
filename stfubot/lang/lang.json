@@ -1,0 +1,12 @@
+{
+  "supported_lang": [
+    { "name": "English", "path": "en_US", "emoji": "🇺🇸" },
+    { "name": "Français", "path": "fr/fr_FR", "emoji": "🇫🇷" },
+    { "name": "Deutsch", "path": "de/de_DE", "emoji": "🇩🇪" },
+    { "name": "Italiano", "path": "it/it_IT", "emoji": "🇮🇹" },
+    { "name": "日本", "path": "ja/ja_JA", "emoji": "🇯🇵" },
+    { "name": "Português", "path": "pt-BR/pt_BR", "emoji": "🇧🇷" },
+    { "name": "中国人", "path": "zh-CN/zh_BR", "emoji": "🇨🇳" },
+    { "name": "español", "path": "es-ES/es_ES", "emoji": "🇪🇸" }
+  ]
+}

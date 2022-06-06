@@ -38,3 +38,15 @@ CHANCEITEM = 25
 
 ENTRYCOST = 100
 TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
+
+# Shop
+
+SHOPCREATIONCOST = 1500
+
+ITEMTYPE = ["damage", "utility", "stand", "misc"]
+ITEMBYTYPE = {
+    "damage": [{"id": 1}, {"id": 5}],
+    "utility": [{"id": 6}, {"id": 7}],
+    "stand": [{"id": 2}, {"id": 8}, {"id": 9}, {"id": 10}, {"id": 11}, {"id": 12}],
+    "misc": [{"id": 3}, {"id": 13}],
+}

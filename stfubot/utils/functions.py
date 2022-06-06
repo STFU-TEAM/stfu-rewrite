@@ -1,6 +1,7 @@
 import disnake
 import asyncio
 import random
+import requests
 
 from typing import List, Union, TYPE_CHECKING
 from discord.ext import commands
@@ -208,3 +209,14 @@ def stand_fields(stand: "Stand", embed: disnake.Embed):
     )
     embed.set_image(url=f"http://storage.stfurequiem.com/Image/{stand.id}.png")
     return embed
+
+
+def is_image_url(image_url: str):
+    image_formats = ("image/png", "image/jpeg", "image/jpg", "image/gif")
+    try:
+        r = requests.head(image_url)
+        if r.headers["content-type"] in image_formats:
+            return True
+        return False
+    except:
+        return False

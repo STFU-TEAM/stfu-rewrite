@@ -21,6 +21,7 @@ main_extension = {
     "extensions.crusade",
     "extensions.tower",
     "extensions.items",
+    "extensions.shop",
 }
 
 # loads file and stuff

@@ -32,6 +32,7 @@ class User:
         self.id: str = data["_id"]
         self.stands: List[Stand] = [stand_from_dict(s) for s in data["stands"]]
         self.gang_id: int = data["gang_id"]
+        self.shop_id: str = data["shop_id"]
         self.stand_storage: List[Stand] = [
             stand_from_dict(s) for s in data["stand_storage"]
         ]
@@ -58,7 +59,6 @@ class User:
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
-        self.shop_id: str = data["shop_id"]
         self.discord: disnake.Member = None
         self.message: disnake.Message = None
         self.level: int = self.xp // USRXPTOLEVEL

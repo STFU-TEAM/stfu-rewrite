@@ -1,14 +1,17 @@
-import re
 import motor.motor_asyncio
 import asyncio
 import os
 import disnake
 import json
+import math
 
-from typing import Union
+from typing import Union, List
+
 
 from stfubot.models.database.user import User, create_user
 from stfubot.models.database.cache import Cache
+from stfubot.models.gameobjects.shop import Shop, create_shop
+from stfubot.models.gameobjects.items import Item
 
 MONGO_URL = os.environ["MONGO_URL"]
 
@@ -30,6 +33,7 @@ class Database:
         self.logs: motor.motor_asyncio.AsyncIOMotorCollection = self.db["logs"]
         self.gangs: motor.motor_asyncio.AsyncIOMotorCollection = self.db["gangs"]
         self.ban: motor.motor_asyncio.AsyncIOMotorCollection = self.db["ban"]
+        self.shops: motor.motor_asyncio.AsyncIOMotorCollection = self.db["shops"]
 
     async def add_user(self, user_id: Union[str, int]):
         """Add a user to the database
@@ -175,21 +179,97 @@ class Database:
             translation = json.load(item)
         return translation
 
+    async def add_shop(self, name: str, description: str) -> str:
+        """add a shop into the database
+
+        Args:
+            name (str): name of the shop
+            description (str):
+
+        Returns:
+            str: id of the shop
+        """
+        document = create_shop(name, description)
+        # await self.cache.this_data(document)
+        await self.shops.insert_one(document)
+        return document["_id"]
+
+    async def get_shop_info(self, shop_id: str) -> Shop:
+        """Retrieve the Shop information from the database
+
+        Args:
+            shop_id str: The ID of the shop info
+
+        Returns:
+            Shop: the Shop class
+        """
+
+        # cache management
+        # if await self.cache.is_cached(shop_id):
+        # document = await self.cache.get_data(shop_id)
+        # return Shop(document, self)
+        document = await self.shops.find_one({"_id": shop_id})
+        # cache the data
+        # await self.cache.this_data(document)
+        return Shop(document, self)
+
+    async def update_shop(self, document: dict) -> None:
+        """Update the document in the database
+
+        Args:
+            document (dict): The New document
+        """
+        _id = document["_id"]
+        await self.shops.replace_one({"_id": _id}, document)
+        # if await self.cache.is_cached(_id):
+        #    await self.cache.this_data(document)
+
+    async def find_suitable_shop(self, item_to_find: Item):
+        shops: List[Shop] = []
+        docs = self.shops.find({"items": {"id": item_to_find.id}})
+        docs = await docs.to_list(length=100)
+        for doc in docs:
+            shops.append(Shop(doc, self))
+        # If no shops as the item
+        if len(shops) == 0:
+            return None, 0
+
+        def get_best_shop_item(Item: Item, shop: Shop):
+            minimum = math.inf
+            index = -1
+            for i, item in enumerate(shop.items):
+                if item.id == Item.id:
+                    if shop.prices[i] < minimum:
+                        minimum = shop.prices[i]
+                        index = i
+            return index, minimum
+
+        best_shop = shops[0]
+        index, minimum = get_best_shop_item(item_to_find, shops[0])
+        for shop in shops:
+            i, mini = get_best_shop_item(item_to_find, shop)
+            if mini < minimum:
+                best_shop = shop
+                index = i
+                minimum = mini
+        return best_shop, index
+
 
 if __name__ == "__main__":
 
     async def main():
         loop = asyncio.get_event_loop()
         db = Database(loop)
-        User = await db.get_user_info("242367586233352193")
+        with open("stfubot/data/static/stand_template.json", "r") as item:
+            stand_file: dict = json.load(item)["stand"]
+        user = await db.get_user_info("252405022766137346")
+        user.stands = []
+        from stfubot.models.gameobjects.stands import Stand, get_stand_from_template
 
-        from stfubot.models.gameobjects.items import (
-            get_item_from_template,
-            item_from_dict,
-        )
-
-        User.items.append(item_from_dict(get_item_from_template({"id": 2})))
-        await User.update()
+        user.stands.append(get_stand_from_template(stand_file[59 - 1]))
+        user.stands.append(get_stand_from_template(stand_file[58 - 1]))
+        user.stands.append(get_stand_from_template(stand_file[57 - 1]))
+        await user.update()
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
