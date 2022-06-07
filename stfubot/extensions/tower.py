@@ -128,6 +128,9 @@ class Tower(commands.Cog):
             await user.update()
             await Interaction.channel.send(embed=embed)
             return
+        for stand in user.stands:
+            stand.xp += STAND_XPGAINS * (tower["levels"] + 1 / (i + 1))
+        user.xp += PLAYER_XPGAINS * (tower["levels"] + 1 / (i + 1))
         tower["rewards"].sort(key=lambda x: x["p"], reverse=True)
         reward_items = [
             {"id": i["id"]} for i in tower["rewards"][0 : tower["unlocks"][i]]
