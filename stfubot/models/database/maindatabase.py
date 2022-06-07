@@ -179,7 +179,7 @@ class Database:
             translation = json.load(item)
         return translation
 
-    async def add_shop(self, name: str, description: str) -> str:
+    async def add_shop(self, name: str, description: str, user_id: str) -> str:
         """add a shop into the database
 
         Args:
@@ -189,7 +189,7 @@ class Database:
         Returns:
             str: id of the shop
         """
-        document = create_shop(name, description)
+        document = create_shop(name, description, user_id)
         # await self.cache.this_data(document)
         await self.shops.insert_one(document)
         return document["_id"]

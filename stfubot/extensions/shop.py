@@ -83,7 +83,7 @@ class Shop(commands.Cog):
         )
         shop_name = modal_inter.text_values["shop_name"]
         shop_description = modal_inter.text_values["shop_description"]
-        id = await self.stfubot.database.add_shop(shop_name, shop_description)
+        id = await self.stfubot.database.add_shop(shop_name, shop_description, user.id)
         user.shop_id = id
         await user.update()
 
