@@ -12,6 +12,7 @@ class StfuBot(commands.AutoShardedInteractionBot):
     def __init__(self, loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()):
         super().__init__(
             loop=loop,
+            test_guilds=[980282624792731728, 742654613282619473],
             sync_commands=True,
             sync_commands_debug=True,
         )
