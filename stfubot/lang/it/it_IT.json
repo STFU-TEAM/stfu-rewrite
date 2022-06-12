@@ -6,11 +6,11 @@
     "not_registered": "Sembra che {0} non sia registrato nel database! Usa `/begin` per registrarti!",
     "already_registered": "Sembra che tu ti sia già registrato",
     "empty_storages": "Il tuo storage è vuoto",
-    "shop_created": "You already have a shop.",
-    "shop_not_created": "You need to create a shop to use this command",
-    "not_an_image": "This url does not point to an image, please enter a valid url",
-    "no_shop_found": "No shop has the item you are looking for",
-    "not_enough_money": "You don't have enough money"
+    "shop_created": "Possiedi già uno shop.",
+    "shop_not_created": "Devi aver creato uno shop per usare questo comando",
+    "not_an_image": "Questo url non riconduce ad un'immagine. Inserisci un url valido",
+    "no_shop_found": "Nessuno shop ha l'oggetto che stai cercando",
+    "not_enough_money": "Non hai abbastanza monete"
   },
   "fight": {
     "1": "{0}, vorresti combattere {1}?",
@@ -73,12 +73,12 @@
   "ui": {
     "1": "Scegli il tuo storage",
     "shop_modal": {
-      "1": "Shop name",
-      "2": "Enter your shop name( 50 char max )",
-      "3": "Shop description",
-      "4": "Enter your shop description",
-      "5": "Create your shop.",
-      "6": "Here is your shop"
+      "1": "Nome dello shop",
+      "2": "Inserisci il nome del tuo shop (massimo 50 caratteri)",
+      "3": "Descrizione dello shop",
+      "4": "Inserisci la descrizione del tuo shop",
+      "5": "Crea il tuo shop.",
+      "6": "Ecco il tuo shop"
     }
   },
   "remove": {
@@ -125,12 +125,12 @@
     "3": "I tuoi stand hanno trovato delle monete!"
   },
   "shop_create": {
-    "1": "The price to create a shop is {0}, do you want to create a shop ?",
-    "2": "You can create a shop whenever you want"
+    "1": "Il prezzo per creare uno shop è {0}, desideri creare uno shop?",
+    "2": "Puoi creare uno shop quando vuoi"
   },
   "shop_sell": {
-    "1": "Select an item to sell",
-    "2": "You sold {0} for {1}"
+    "1": "Scegli un oggetto da vendere",
+    "2": "Hai venduto {0} per {1}"
   },
   "shop_remove": {
     "1": "Select an item to remove from your shop",
