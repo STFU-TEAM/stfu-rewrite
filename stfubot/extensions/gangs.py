@@ -496,7 +496,10 @@ class Gangs(commands.Cog):
 
     @gang_rank_check(minimum_rank=GangRank.BOSS)
     @manage.sub_command(name="demote", description="demote a user of your gang")
-    async def demote(self, Interaction: disnake.CommandInteraction, User: disnake.User):
+    async def demote(
+        self, Interaction: disnake.CommandInteraction, member: disnake.User
+    ):
+        User = member
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
 
         user2 = await self.stfubot.database.get_user_info(User.id)
