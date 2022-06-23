@@ -8,6 +8,7 @@
     "empty_storages": "Your storage is empty",
     "shop_created": "You already have a shop.",
     "shop_not_created": "You need to create a shop to use this command",
+    "gang_not_created": "You need to create or be part of a gang to use this command",
     "not_an_image": "This url does not point to an image, please enter a valid url",
     "no_shop_found": "No shop has the item you are looking for",
     "not_enough_money": "You don't have enough money"
@@ -54,7 +55,9 @@
     "3": "You don't have enough money, you need {0},come back an other day.",
     "4": "You have did not go far enought to receive any items.",
     "5": "You completed the tower ! You may reep it's rewards, and advance to the next if it is available.",
-    "6": "You did well, but you need to finish the tower to advance."
+    "6": "You did well, but you need to finish the tower to advance.",
+    "7": "🎊First Completion reward!🎊",
+    "8": "Reward:"
   },
   "use": {
     "1": "You have no usable item use `/crusade` or `/tower`",
@@ -79,6 +82,16 @@
       "4": "Enter your shop description",
       "5": "Create your shop.",
       "6": "Here is your shop"
+    },
+    "gang_modal": {
+      "1": "Gang name",
+      "2": "Enter the name of your gang",
+      "3": "Gang motd",
+      "4": "Enter your gang message of the day",
+      "5": "Gang motto",
+      "6": "Enter the main philosophy / guideline of your gang",
+      "7": "Gang creation",
+      "8": ""
     }
   },
   "remove": {
@@ -130,7 +143,8 @@
   },
   "shop_sell": {
     "1": "Select an item to sell",
-    "2": "You sold {0} for {1}"
+    "2": "You sold {0} for {1}",
+    "3": "You have 24 items. Please, remove some items before selling more."
   },
   "shop_remove": {
     "1": "Select an item to remove from your shop",
@@ -152,5 +166,55 @@
     "5": "Come back later !",
     "6": "Thanks for your purchase !",
     "7": "You received `{0}` in your inventory"
+  },
+  "gang_invite": {
+    "1": "This user is already in a gang",
+    "2": "This user has already been invited to join the gang",
+    "3": "You invited {0} to {1}"
+  },
+  "gang_stand_add": {
+    "1": "You cannot add anymore stand to defend your gang",
+    "2": "Select a stand to protect your gang",
+    "3": "{0} will now, be defending you gang"
+  },
+  "gang_stand_remove": {
+    "1": "Select a stand to remove"
+  },
+  "gang_create": {
+    "1": "You already have a gang leave your gang to create a new one !",
+    "2": "You need to pay {0} to create a new gang, you have :{1}",
+    "3": "You can create a gang anytime !",
+    "4": "You don't have enough money you need {0} to create a gang"
+  },
+  "gang_kick": {
+    "1": "This user is not in your gang",
+    "2": "You have no permission to kick this user",
+    "3": "{0} was kicked from {1}"
+  },
+  "gang_promote": {
+    "1": "You are about to make {0} the gang boss are you sure ?",
+    "2": "{0} was not made the gang leader",
+    "3": "{0} was made the new gang leader",
+    "4": "You have promoted {0} to {1}"
+  },
+  "gang_deposit": {
+    "1": "{0} was added to the gang vault"
+  },
+  "gang_pay": {
+    "1": "{0} was remove from the vault, {1} was paid !"
+  },
+  "gang_show": {
+    "1": "`Members:{0}`",
+    "2": "`Guarding Stands`",
+    "3": "Level:",
+    "4": "elo",
+    "5": "vault",
+    "6": "Donators"
+  },
+  "gang_join": {
+    "1": "You already have a gang leave your gang to have a new one",
+    "2": "You have no gang invite ask the boss or a capo, to be invited",
+    "3": "Select a gang",
+    "4": "You joined {0}"
   }
 }
