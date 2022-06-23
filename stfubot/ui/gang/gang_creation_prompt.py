@@ -1,5 +1,3 @@
-# At the top of the file.
-from turtle import color
 import disnake
 from disnake.ext import commands
 from disnake import TextInputStyle
