@@ -12,6 +12,7 @@ from stfubot.models.database.user import User, create_user
 from stfubot.models.database.cache import Cache
 from stfubot.models.gameobjects.shop import Shop, create_shop
 from stfubot.models.gameobjects.items import Item
+from stfubot.models.gameobjects.gang import Gang, create_gang
 
 MONGO_URL = os.environ["MONGO_URL"]
 
@@ -224,12 +225,13 @@ class Database:
         # if await self.cache.is_cached(_id):
         #    await self.cache.this_data(document)
 
-    async def find_suitable_shop(self, item_to_find: Item):
+    async def find_suitable_shop(self, item_to_find: Item, user_shop_id: str):
         shops: List[Shop] = []
         docs = self.shops.find({"items": {"id": item_to_find.id}})
         docs = await docs.to_list(length=100)
         for doc in docs:
-            shops.append(Shop(doc, self))
+            if doc["_id"] != user_shop_id:
+                shops.append(Shop(doc, self))
         # If no shops as the item
         if len(shops) == 0:
             return None, 0
@@ -253,6 +255,57 @@ class Database:
                 index = i
                 minimum = mini
         return best_shop, index
+
+    async def close(self):
+        await self.client.close()
+        await self.cache.close()
+
+    async def add_gang(self, user_id: str, name: str, motd: str, motto: str) -> str:
+        """add a gang to the database
+
+        Args:
+            user_id (str): the id of the user who created the gang
+            name (str): the name of the gang
+            motd (str): the motd of the gang
+            motto (str): the motto of the gang
+
+        Returns:
+            str: the id of the gang
+        """
+        document = create_gang(user_id, name, motd, motto)
+        # await self.cache.this_data(document)
+        await self.gangs.insert_one(document)
+        return document["_id"]
+
+    async def get_gang_info(self, gang_id: str) -> Gang:
+        """Retrieve the gang information from the database
+
+        Args:
+            gang_id str: The ID of the gang info
+
+        Returns:
+            gang: the gang class
+        """
+
+        # cache management
+        # if await self.cache.is_cached(gang_id):
+        # document = await self.cache.get_data(gang_id)
+        # return Shop(document, self)
+        document = await self.gangs.find_one({"_id": gang_id})
+        # cache the data
+        # await self.cache.this_data(document)
+        return Gang(document, self)
+
+    async def update_gang(self, document: dict) -> None:
+        """Update the document in the database
+
+        Args:
+            document (dict): The New document
+        """
+        _id = document["_id"]
+        await self.gangs.replace_one({"_id": _id}, document)
+        # if await self.cache.is_cached(_id):
+        #    await self.cache.this_data(document)
 
 
 if __name__ == "__main__":

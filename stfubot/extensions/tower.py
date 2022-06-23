@@ -116,22 +116,19 @@ class Tower(commands.Cog):
             if not winner.is_human:
                 # The Person has lost0
                 break
+        for stand in user.stands:
+            stand.xp += int(STAND_XPGAINS * (tower["levels"] + 1 / (i + 1)))
+        user.xp += int(PLAYER_XPGAINS * (tower["levels"] + 1 / (i + 1)))
+        tower["rewards"].sort(key=lambda x: x["p"], reverse=True)
         # What happens when you gain no items
         if tower["unlocks"][i] == 0:
             embed = disnake.Embed(
                 title=translation["tower"]["4"], color=disnake.Color.blue()
             )
-            for stand in user.stands:
-                stand.xp += STAND_XPGAINS * (tower["levels"] + 1 / (i + 1))
-            user.xp += PLAYER_XPGAINS * (tower["levels"] + 1 / (i + 1))
             embed.set_image(url=TOWERURL)
             await user.update()
             await Interaction.channel.send(embed=embed)
             return
-        for stand in user.stands:
-            stand.xp += STAND_XPGAINS * (tower["levels"] + 1 / (i + 1))
-        user.xp += PLAYER_XPGAINS * (tower["levels"] + 1 / (i + 1))
-        tower["rewards"].sort(key=lambda x: x["p"], reverse=True)
         reward_items = [
             {"id": i["id"]} for i in tower["rewards"][0 : tower["unlocks"][i]]
         ]
@@ -148,8 +145,15 @@ class Tower(commands.Cog):
         else:
             title = translation["tower"]["6"]
         embed = disnake.Embed(title=title, color=disnake.Color.blue())
+        if user.tower_level <= tower_id:
+            first_item = item_from_dict(tower["first_completion_reward"])
+            embed.add_field(
+                title=translation["tower"]["7"],
+                value=f"{first_item.name}|{first_item.emoji}",
+                inline=False,
+            )
         embed.add_field(
-            name="Rewards",
+            name=translation["tower"]["8"],
             value="    ▬▬▬▬▬▬▬▬▬\n",
             inline=False,
         )

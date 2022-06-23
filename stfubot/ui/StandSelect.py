@@ -3,7 +3,7 @@ import json
 
 from stfubot.globals.emojis import CustomEmoji
 from stfubot.models.gameobjects.stands import Stand
-from typing import List
+from typing import List, Union
 
 # drop downelement class
 class Dropdown(disnake.ui.Select):
@@ -87,7 +87,7 @@ class StandSelectDropdown(disnake.ui.View):
         custom_user: disnake.User = None,
     ):
         super().__init__()
-        self.value = None
+        self.value: Union[List[int], int] = None
         self.timeout = timeout
         self.interaction = interaction
         interaction.response.defer

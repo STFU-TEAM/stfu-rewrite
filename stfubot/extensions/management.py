@@ -212,7 +212,6 @@ class management(commands.Cog):
         user.discord = Interaction.author
 
         storage = user.stand_storage
-        premium = False
         if user.is_donator():
             embed = disnake.Embed(
                 title=translation["ui"]["1"], color=disnake.Color.blue()
@@ -221,7 +220,6 @@ class management(commands.Cog):
             await Interaction.send(embed=embed, view=view)
             await wait_for(view)
             Interaction = view.interaction
-            premium = True
             if not view.value:
                 storage = user.pstand_storage
 

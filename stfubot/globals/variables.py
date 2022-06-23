@@ -50,3 +50,8 @@ ITEMBYTYPE = {
     "stand": [{"id": 2}, {"id": 8}, {"id": 9}, {"id": 10}, {"id": 11}, {"id": 12}],
     "misc": [{"id": 3}, {"id": 13}],
 }
+
+# Gang
+
+GANGURL = "https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
+GANGCREATIONCOST = 10000
