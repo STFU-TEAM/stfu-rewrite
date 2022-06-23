@@ -4,6 +4,7 @@ import asyncio
 from disnake.ext import commands
 
 from stfubot.models.database.maindatabase import Database
+from stfubot.models.api.api_requests import StfuApi
 
 
 class StfuBot(commands.AutoShardedInteractionBot):
@@ -33,6 +34,7 @@ class StfuBot(commands.AutoShardedInteractionBot):
         ]
 
         self.database: Database = Database(loop)
+        self.api: StfuApi = StfuApi()
         with open("stfubot/data/static/stand_template.json", "r") as item:
             self.stand_file: dict = json.load(item)["stand"]
         self.avatar_url = "https://storage.stfurequiem.com/randomAsset/avatar.png"

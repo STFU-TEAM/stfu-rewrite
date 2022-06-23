@@ -5,7 +5,7 @@ from stfubot.globals.variables import SHOPCREATIONCOST, ITEMTYPE, ITEMBYTYPE
 from stfubot.globals.emojis import CustomEmoji
 
 # utils
-from stfubot.utils.decorators import database_check
+from stfubot.utils.decorators import database_check, shop_check
 from stfubot.utils.functions import wait_for, is_image_url
 
 
@@ -88,6 +88,7 @@ class Shop(commands.Cog):
         await user.update()
 
     @shop.sub_command(name="sell", description="sell an item to you shop")
+    @shop_check()
     async def sell(
         self, Interaction: disnake.ApplicationCommandInteraction, price: int
     ):
@@ -95,18 +96,13 @@ class Shop(commands.Cog):
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author
 
-        # Shop does no exists
-        if user.shop_id == None:
-            embed = disnake.Embed(
-                title=translation["error_meesages"]["shop_not_created"],
-                color=disnake.Color.red(),
-            )
-            embed.set_image(url=self.stfubot.avatar_url)
-            await Interaction.send(embed=embed)
-            return
-
         shop = await self.stfubot.database.get_shop_info(user.shop_id)
 
+        if len(shop.items) >= 24:
+            embed = disnake.Embed(title=translation["shop_sell"]["3"])
+            embed.set_image(url=shop.image_url)
+            await Interaction.send(embed=embed)
+            return
         embed = disnake.Embed(title=translation["shop_sell"]["1"])
         embed.set_image(url=shop.image_url)
         view = ItemSelectDropdown(Interaction, user.items)
@@ -127,6 +123,7 @@ class Shop(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @shop.sub_command(name="remove", description="remove an item from your shop")
+    @shop_check()
     async def remove(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -169,6 +166,7 @@ class Shop(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @shop.sub_command(name="show", description="show your own shop")
+    @shop_check()
     async def show(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -210,6 +208,7 @@ class Shop(commands.Cog):
         await Interaction.send(embed=embed)
 
     @shop.sub_command(name="changeimage", description="change the shop image")
+    @shop_check()
     async def changeimage(
         self, Interaction: disnake.ApplicationCommandInteraction, url: str
     ):
@@ -269,7 +268,7 @@ class Shop(commands.Cog):
 
         item = item_list[view.value]
 
-        shop, index = await self.stfubot.database.find_suitable_shop(item)
+        shop, index = await self.stfubot.database.find_suitable_shop(item, user.shop_id)
 
         if shop == None:
             embed = disnake.Embed(

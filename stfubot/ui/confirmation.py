@@ -7,7 +7,7 @@ class Confirm(disnake.ui.View):
     def __init__(
         self,
         interaction: disnake.ApplicationCommandInteraction,
-        user: disnake.User = None,
+        user: Union[disnake.User, None] = None,
         timeout: float = 180,
     ):
         super().__init__(timeout=timeout)

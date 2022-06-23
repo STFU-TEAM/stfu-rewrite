@@ -17,7 +17,6 @@ class social(commands.Cog):
         self.stfubot = stfubot
 
     @commands.slash_command(name="profile", description="show the profile of a player")
-    @database_check()
     async def profile(
         self, Interaction: disnake.ApplicationCommandInteraction, user=None
     ):

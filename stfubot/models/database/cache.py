@@ -73,3 +73,6 @@ class Cache:
         # delete the value
         await redis_con.delete(key)
         await redis_con.close()
+
+    async def close(self):
+        self.redis_pool.disconnect()

@@ -1,4 +1,5 @@
 import os
+import sys
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
@@ -21,6 +22,7 @@ main_extension = {
     "extensions.crusade",
     "extensions.tower",
     "extensions.items",
+    "extensions.gangs",
     "extensions.shop",
 }
 

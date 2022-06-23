@@ -1,7 +1,7 @@
 import datetime
 import disnake
 
-from typing import List
+from typing import List, Union, Optional
 
 from typing import TYPE_CHECKING
 
@@ -31,8 +31,8 @@ class User:
         # Inerant variables
         self.id: str = data["_id"]
         self.stands: List[Stand] = [stand_from_dict(s) for s in data["stands"]]
-        self.gang_id: int = data["gang_id"]
-        self.shop_id: str = data["shop_id"]
+        self.gang_id: Optional[str] = data["gang_id"]
+        self.shop_id: Optional[str] = data["shop_id"]
         self.stand_storage: List[Stand] = [
             stand_from_dict(s) for s in data["stand_storage"]
         ]
@@ -44,7 +44,7 @@ class User:
         self.gang_invites: List[int] = data["gang_invites"]
         self.custom_stand: int = data["custom_stand"]
         self.coins: int = data["coins"]
-        self.xp: int = data["xp"]
+        self.xp: int = int(data["xp"])
         self.job: dict = data["job"]
         self.prestige: int = data["prestige"]
         self.global_elo: int = data["global_elo"]
@@ -59,8 +59,8 @@ class User:
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
-        self.discord: disnake.Member = None
-        self.message: disnake.Message = None
+        self.discord: Union[disnake.User, disnake.Member] = None  # type: ignore
+        self.message: disnake.Message = None  # type: ignore
         self.level: int = self.xp // USRXPTOLEVEL
         self.is_human = True
 
@@ -86,6 +86,7 @@ class User:
         """
         self.data["stands"] = [s.to_dict() for s in self.stands]
         self.data["gang_id"] = self.gang_id
+        self.data["shop_id"] = self.shop_id
         self.data["stand_storage"] = [s.to_dict() for s in self.stand_storage]
         self.data["pstand_storage"] = [s.to_dict() for s in self.pstand_storage]
         self.data["items"] = [s.to_dict() for s in self.items]
@@ -108,7 +109,6 @@ class User:
         self.data["donor_status"] = self.donor_status
         self.data["over_heaven_supporter"] = self.over_heaven_supporter
         self.data["early_supporter"] = self.early_supporter
-        self.data["shop_id"] = self.shop_id
         return self.data
 
 
