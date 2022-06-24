@@ -6,6 +6,7 @@ from disnake.ext import commands
 
 # utils
 from stfubot.utils.decorators import database_check
+from stfubot.utils.functions import is_url_image
 
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
@@ -70,6 +71,30 @@ class social(commands.Cog):
             )
         embed.set_image(url=User.profile_image)
         embed.set_thumbnail(url=User.discord.avatar.url)
+        await Interaction.send(embed=embed)
+
+    @database_check()
+    @commands.slash_command(
+        name="changeprofileimage", description="Change your profile image"
+    )
+    async def changeprofileimage(
+        self, Interaction: disnake.ApplicationCommandInteraction, url: str
+    ):
+        if is_url_image(url) == False:
+            embed = disnake.Embed(
+                title="URL Error",
+                description="Please add a valid URL",
+                color=disnake.Colour.red(),
+            )
+            await Interaction.send(embed=embed)
+            return
+        user = await self.stfubot.database.get_user_info(Interaction.author.id)
+        user.discord = Interaction.author
+        translation = await self.stfubot.database.get_interaction_lang(Interaction)
+        user.profile_image = url
+        await user.update()
+        embed = disnake.Embed(title=translation["changeprofileimage"]["1"])
+        embed.set_image(url=url)
         await Interaction.send(embed=embed)
 
     @commands.slash_command(name="settings", description="change the bot")

@@ -238,7 +238,7 @@ class Database:
 
         def get_best_shop_item(Item: Item, shop: Shop):
             minimum = math.inf
-            index = -1
+            index = 0
             for i, item in enumerate(shop.items):
                 if item.id == Item.id:
                     if shop.prices[i] < minimum:

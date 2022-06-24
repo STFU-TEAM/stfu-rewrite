@@ -16,7 +16,7 @@ from stfubot.ui.gang.gang_join_select import GangSelectDropdown
 # utils
 from stfubot.utils.decorators import database_check, gang_check, gang_rank_check
 from stfubot.utils.fight_logic import fight_instance
-from stfubot.utils.functions import wait_for, add_to_available_storage
+from stfubot.utils.functions import wait_for, add_to_available_storage, is_url_image
 
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
@@ -152,7 +152,7 @@ class Gangs(commands.Cog):
         await gang.update()
         await user.update()
 
-        await Interaction(embed=embed)
+        await Interaction.send(embed=embed)
 
     @gang_check()
     @gang.sub_command(name="show", description="show your gang info's")
@@ -531,6 +531,29 @@ class Gangs(commands.Cog):
             color=disnake.Color.blue(),
         )
         embed.set_image(url=gang.image_url)
+        await Interaction.send(embed=embed)
+
+    @gang_rank_check(minimum_rank=GangRank.BOSS)
+    @manage.sub_command(name="changeimage", description="change your gang image")
+    async def changeimage(self, Interaction: disnake.CommandInteraction, url: str):
+        if is_url_image(url) == False:
+            embed = disnake.Embed(
+                title="URL Error",
+                description="Please add a valid URL",
+                color=disnake.Colour.red(),
+            )
+            await Interaction.send(embed=embed)
+            return
+        user = await self.stfubot.database.get_user_info(Interaction.author.id)
+        user.discord = Interaction.author
+        translation = await self.stfubot.database.get_interaction_lang(Interaction)
+        gang = await self.stfubot.database.get_gang_info(user.gang_id)
+        gang.image_url = url
+        await gang.update()
+        embed = disnake.Embed(
+            title=translation["gang_changeimage"]["1"], color=disnake.Color.blue()
+        )
+        embed.set_image(url=url)
         await Interaction.send(embed=embed)
 
     # VAUT MANAGEMENT
