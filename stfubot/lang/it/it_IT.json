@@ -216,5 +216,11 @@
     "2": "You have no gang invite ask the boss or a capo, to be invited",
     "3": "Select a gang",
     "4": "You joined {0}"
+  },
+  "gang_changeimage": {
+    "1": "You gang's image was changed"
+  },
+  "changeprofileimage": {
+    "1": "Your profile's image was changed"
   }
 }
