@@ -211,7 +211,7 @@ def stand_fields(stand: "Stand", embed: disnake.Embed):
     return embed
 
 
-def is_image_url(image_url: str):
+def is_url_image(image_url: str):
     image_formats = ("image/png", "image/jpeg", "image/jpg", "image/gif")
     try:
         r = requests.head(image_url)

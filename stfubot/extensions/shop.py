@@ -6,7 +6,7 @@ from stfubot.globals.emojis import CustomEmoji
 
 # utils
 from stfubot.utils.decorators import database_check, shop_check
-from stfubot.utils.functions import wait_for, is_image_url
+from stfubot.utils.functions import wait_for, is_url_image
 
 
 # stfu model
@@ -226,7 +226,7 @@ class Shop(commands.Cog):
             await Interaction.send(embed=embed)
             return
 
-        if not is_image_url(url):
+        if not is_url_image(url):
             embed = disnake.Embed(
                 title=translation["error_meesages"]["not_an_image"],
                 color=disnake.Color.red(),
