@@ -56,6 +56,7 @@ class User:
         self.last_adventure: datetime.datetime = data["last_adventure"]
         self.last_job: datetime.datetime = data["last_job"]
         self.last_vote: datetime.datetime = data["last_vote"]
+        self.last_adv: datetime.datetime = data["last_adv"]
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
@@ -106,6 +107,7 @@ class User:
         self.data["last_adventure"] = self.last_adventure
         self.data["last_vote"] = self.last_vote
         self.data["last_job"] = self.last_job
+        self.data["last_adv"] = self.last_adv
         self.data["donor_status"] = self.donor_status
         self.data["over_heaven_supporter"] = self.over_heaven_supporter
         self.data["early_supporter"] = self.early_supporter
@@ -137,6 +139,7 @@ def create_user(user_id: str):
         "last_adventure": datetime.datetime.min,
         "last_vote": datetime.datetime.min,
         "last_job": datetime.datetime.min,
+        "last_adv": datetime.datetime.min,
         "donor_status": datetime.datetime.min,
         "over_heaven_supporter": False,
         "early_supporter": False,

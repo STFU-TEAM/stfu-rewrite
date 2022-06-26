@@ -35,7 +35,7 @@ CHANCEITEM = 25
 
 # Tower constants
 
-ENTRYCOST = 150
+ENTRYCOST = 350
 TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
 
 # Shop
@@ -54,3 +54,8 @@ ITEMBYTYPE = {
 
 GANGURL = "https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
 GANGCREATIONCOST = 50000
+
+# Vote
+
+ARROW_VOTE = 3
+COINS_VOTE = 250

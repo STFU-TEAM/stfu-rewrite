@@ -79,7 +79,6 @@ class ErrorHandle(commands.Cog):
             user = await self.stfubot.database.get_user_info(Interaction.author.id)
             await user.update()
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
-
         # get the command where the error occurred
         command = Interaction.application_command
         # ignore these Exception
@@ -119,8 +118,8 @@ class ErrorHandle(commands.Cog):
         # Missing Permission error from bot
         if isinstance(error, disnake.errors.Forbidden):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["not_enough_permission"],
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["not_enough_permission"],
                 color=disnake.Color.red(),
             )
             embed.set_thumbnail(
@@ -140,8 +139,8 @@ class ErrorHandle(commands.Cog):
         # Missing Permission error from user
         if isinstance(error, errors.MissingPermissions):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["no_permission"],
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["no_permission"],
             )
             embed.set_thumbnail(
                 url="https://storage.stfurequiem.com/randomAsset/avatar.png"
@@ -152,8 +151,8 @@ class ErrorHandle(commands.Cog):
         # if someone doesn't give all the command argument
         if isinstance(error, errors.MissingRequiredArgument):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["missing_arguments"],
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["missing_arguments"],
                 color=disnake.Color.red(),
             )
             embed.set_thumbnail(
@@ -165,8 +164,8 @@ class ErrorHandle(commands.Cog):
         # if the arrow command was user more than one time
         if isinstance(error, errors.MaxConcurrencyReached):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["max_concurrency"].format(
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["max_concurrency"].format(
                     command.qualified_name
                 ),
                 color=disnake.Color.red(),
@@ -180,8 +179,8 @@ class ErrorHandle(commands.Cog):
         # if the top.gg server are dead.
         if isinstance(error, (topgg.errors.ServerError, topgg.errors.HTTPException)):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["TOPGG"],
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["TOPGG"],
                 color=disnake.Color.red(),
             )
             embed.set_thumbnail(
@@ -192,8 +191,8 @@ class ErrorHandle(commands.Cog):
         # bad embed form
         if isinstance(error, disnake.errors.HTTPException):
             embed = disnake.Embed(
-                title=translation["error_messages"]["error"],
-                description=translation["error_messages"]["http_error"],
+                title=translation["error_meesages"]["error"],
+                description=translation["error_meesages"]["http_error"],
                 color=disnake.Color.red(),
             )
             embed.set_thumbnail(

@@ -1,12 +1,13 @@
 import disnake
 import random
 import asyncio
+import datetime
 
 from disnake.ext import commands
 
 # utils
 from stfubot.utils.decorators import database_check
-from stfubot.utils.functions import is_url_image, wait_for
+from stfubot.utils.functions import is_url_image, wait_for, secondsToText
 
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
@@ -123,6 +124,120 @@ class social(commands.Cog):
 
         guild.lang = lang_dict["path"]
         await guild.update()
+
+    @commands.cooldown(1, 10, commands.BucketType.user)
+    @commands.slash_command(name="advert", description="display advert link")
+    @database_check()
+    async def advert(self, Interaction: disnake.ApplicationCommandInteraction):
+        embed = disnake.Embed(
+            title="Advert.",
+            description="The easiest way to win more arrows, and to support our work !",
+        )
+        embed.set_image(
+            url="https://i.pinimg.com/originals/a5/e8/2d/a5e82d700ff336637489b44f32d36095.gif"
+        )
+        embed.add_field(
+            name="Link to the ads, consider disabling Adblock, for us at least..",
+            value="https://stfurequiem.com/ads",
+        )
+        await Interaction.send(embed=embed)
+
+    @commands.slash_command(name="cooldowns", description="Show a cooldown list")
+    @database_check()
+    async def cooldowns(self, Interaction: disnake.ApplicationCommandInteraction):
+        user = await self.stfubot.database.get_user_info(Interaction.author.id)
+
+        # get the times
+        past_time_ad = user.last_adventure
+        past_time_vote = user.last_vote
+        past_time_cr = user.last_crusade
+        past_time_adv = user.last_adv
+
+        # get the current time
+        now = datetime.datetime.now()
+
+        # compute each wait time
+        wait_time_vote = 12
+        wait_time_cr = 1 + (not user.is_donator()) * 1
+        wait_time_ad = 6 + (not user.is_donator()) * 6
+        wait_time_adv = 6
+
+        # create the embed
+        # sorry for the f string I was not really inspired
+        embed = disnake.Embed(title="Your cooldowns:", color=disnake.Colour.blue())
+        embed.set_thumbnail(
+            url="https://cdn.iconscout.com/icon/free/png-256/clock-1605637-1360989.png"
+        )
+        if not user.is_donator():
+            embed.add_field(
+                name="Want lower cooldown ? consider donating",
+                value="use donate command for more information",
+            )
+        embed.add_field(
+            name=f"Adventure cooldown:",
+            value=f'{"✅ ready" if (now - past_time_ad).total_seconds()//3600 > wait_time_ad or now - past_time_ad <= datetime.timedelta(hours=0) else f"🕛 {secondsToText((datetime.timedelta(hours=wait_time_ad) -(now - past_time_ad)).total_seconds())} left"}',
+            inline=False,
+        )
+        embed.add_field(
+            name=f"Vote cooldown",
+            value=f'{"✅ ready" if (now - past_time_vote).total_seconds()//3600 > wait_time_vote or  now - past_time_vote <= datetime.timedelta(hours=0)  else f"🕛 {secondsToText((datetime.timedelta(hours=wait_time_vote) -(now - past_time_vote)).total_seconds())} left"}',
+            inline=False,
+        )
+        embed.add_field(
+            name=f"Crusade cooldown",
+            value=f'{"✅ ready" if (now - past_time_cr).total_seconds()//3600 > wait_time_cr or  now - past_time_cr <= datetime.timedelta(hours=0) else f"🕛 {secondsToText((datetime.timedelta(hours=wait_time_cr) -(now - past_time_cr)).total_seconds())} left"}',
+            inline=False,
+        )
+        embed.add_field(
+            name=f"Advert cooldown",
+            value=f'{"✅ ready" if (now - past_time_adv).total_seconds()//3600 > wait_time_adv or  now - past_time_adv <= datetime.timedelta(hours=0) else f"🕛 {secondsToText((datetime.timedelta(hours=wait_time_adv) -(now - past_time_adv)).total_seconds())} left"}',
+            inline=False,
+        )
+        view = disnake.ui.View()
+        if (
+            now - past_time_adv
+        ).total_seconds() // 3600 > wait_time_adv or now - past_time_adv <= datetime.timedelta(
+            hours=0
+        ):
+            view.add_item(
+                disnake.ui.Button(
+                    label="Advert link",
+                    style=disnake.ButtonStyle.url,
+                    url="https://stfurequiem.com/ads",
+                )
+            )
+        if (
+            now - past_time_vote
+        ).total_seconds() // 3600 > wait_time_vote or now - past_time_vote <= datetime.timedelta(
+            hours=0
+        ):
+            view.add_item(
+                disnake.ui.Button(
+                    label="Vote link",
+                    style=disnake.ButtonStyle.url,
+                    url="https://stfurequiem.com/vote",
+                )
+            )
+        if view.children != []:
+            await Interaction.send(embed=embed, view=view)
+            return
+        await Interaction.send(embed=embed)
+
+    @commands.slash_command(
+        name="donate", description="show information about donation"
+    )
+    async def donate(self, Interaction: disnake.ApplicationCommandInteraction):
+        embed = disnake.Embed(
+            title="Donation",
+            url="https://patreon.com/EIRBLAST",
+            description="Donate to support the team and get cool loot !",
+            color=disnake.Colour.blue(),
+        )
+        embed.set_footer(
+            text="Donate only if you can, and if you really want to support us!"
+        )
+        embed.add_field(name="Link:", value="https://patreon.com/EIRBLAST", inline=True)
+        await Interaction.send(embed=embed)
 
 
 def setup(client: StfuBot):

@@ -34,3 +34,4 @@ class CustomEmoji(str, Enum):
     FIRSTEGG: disnake.PartialEmoji = "<:FirstEggHuntChampion:863486725233573888>"
     DONOR: disnake.PartialEmoji = "<:donor:863485405893885972>"
     ITEM_REQUIEM: disnake.PartialEmoji = "<:746638605463846983:871488755972849734>"
+    LOADING_ICON: disnake.PartialEmoji = "<a:load:882057440122793994>"

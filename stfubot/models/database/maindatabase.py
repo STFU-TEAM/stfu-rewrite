@@ -351,13 +351,10 @@ if __name__ == "__main__":
         loop = asyncio.get_event_loop()
         db = Database(loop)
         fields = [
-            "war_attacks",
-            "raid_attacks",
-            "damage_to_current_war",
-            "damage_to_current_raid",
+            "last_adv",
         ]
-        values = [[], [], 0, 0]
-        await add_field(db.gangs, fields, values)
+        values = [datetime.datetime.min]
+        await add_field(db.users, fields, values)
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())

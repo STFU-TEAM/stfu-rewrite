@@ -110,8 +110,14 @@ async def fight_instance(
                         await player.message.edit(embed=embed, view=view)
                     else:
                         await player.message.edit(embed=embed, view=view)
-                    if await view.wait():
-                        raise asyncio.TimeoutError
+                    try:
+                        if await view.wait():
+                            raise asyncio.TimeoutError
+                    except asyncio.TimeoutError:
+                        for i in player.stands:
+                            i.current_hp = 0
+                        combat_log.append("Combat terminated because of inactivity.")
+                        break
 
                     await view.interaction.response.edit_message(
                         embed=embed, view=PlaceHolder()
