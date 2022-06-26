@@ -24,6 +24,7 @@ class daily(commands.Cog):
         self.stfubot = stfubot
 
     @commands.slash_command(name="begin", description="Start your daily journey")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def begin(self, Interaction: disnake.ApplicationCommandInteraction):
         # get the translation
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -87,6 +88,7 @@ class daily(commands.Cog):
             await Interaction.send(embed=embed)
 
     @commands.slash_command(name="daily", description="daily adventure")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @database_check()
     async def daily(self, Interaction: disnake.ApplicationCommandInteraction):
         pass

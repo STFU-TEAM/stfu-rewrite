@@ -59,9 +59,9 @@ class User:
         self.donor_status: datetime.datetime = data["donor_status"]
         self.over_heaven_supporter: bool = data["over_heaven_supporter"]
         self.early_supporter: bool = data["early_supporter"]
-        self.discord: Union[disnake.User, disnake.Member] = None  # type: ignore
-        self.message: disnake.Message = None  # type: ignore
-        self.level: int = self.xp // USRXPTOLEVEL
+        self.discord: Optional[Union[disnake.User, disnake.Member]] = None
+        self.message: Optional[disnake.Message] = None
+        self.level: int = min(self.xp // USRXPTOLEVEL, 100)
         self.is_human = True
 
     async def update(self) -> None:

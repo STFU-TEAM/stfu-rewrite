@@ -4,15 +4,18 @@ import os
 import disnake
 import json
 import math
+import datetime
 
 from typing import Union, List
 
 
 from stfubot.models.database.user import User, create_user
+from stfubot.models.database.guild import Guild, create_guild
 from stfubot.models.database.cache import Cache
 from stfubot.models.gameobjects.shop import Shop, create_shop
 from stfubot.models.gameobjects.items import Item
 from stfubot.models.gameobjects.gang import Gang, create_gang
+
 
 MONGO_URL = os.environ["MONGO_URL"]
 
@@ -57,8 +60,8 @@ class Database:
         # set integers as a string
         if isinstance(guild_id, int):
             guild_id = str(guild_id)
-        d = {"_id": guild_id, "lang": "en", "donor_status": False}
-        await self.servers.insert_one(d)
+        document = create_guild(guild_id)
+        await self.servers.insert_one(document)
 
     async def get_user_info(self, user_id: Union[str, int]) -> User:
         """Retrieve the User information from the database
@@ -81,7 +84,7 @@ class Database:
         # await self.cache.this_data(document)
         return User(document, self)
 
-    async def get_guild_info(self, guild_id: Union[str, int]) -> dict:
+    async def get_guild_info(self, guild_id: Union[str, int]) -> Guild:
         """Retrieve the guild information from the database
 
         Args:
@@ -100,7 +103,7 @@ class Database:
         document = await self.servers.find_one({"_id": guild_id})
         # cache the data
         # await self.cache.this_data(document)
-        return document
+        return Guild(document, self)
 
     async def update_user(self, document: dict) -> None:
         """Update the document in the database
@@ -176,7 +179,7 @@ class Database:
         if not await self.guild_in_database(id):
             await self.add_guild(id)
         guild = await self.get_guild_info(id)
-        with open(f"stfubot/lang/{guild['lang']}.json", "r", encoding="utf8") as item:
+        with open(f"stfubot/lang/{guild.lang}.json", "r", encoding="utf8") as item:
             translation = json.load(item)
         return translation
 
@@ -307,22 +310,54 @@ class Database:
         # if await self.cache.is_cached(_id):
         #    await self.cache.this_data(document)
 
+    async def add_log(
+        self,
+        date: datetime.datetime,
+        command_name: str,
+        error_name: str,
+        traceback: str,
+    ) -> None:
+        """add an error log to the database
+
+        Args:
+            date (datetime.datetime): date of the error
+            command_name (str): command that triggered the error
+            error_name (str): the error name
+            traceback (str): the error traceback
+        """
+
+        log = {
+            "date": date,
+            "command": command_name,
+            "error_name": error_name,
+            "traceback": traceback,
+        }
+        await self.logs.insert_one(log)
+
+
+async def add_field(
+    collection: motor.motor_asyncio.AsyncIOMotorCollection,
+    fields: List[str],
+    default_values: List,
+):
+    for value, field in zip(default_values, fields):
+        result = await collection.update_many({}, {"$set": {field: value}})
+        print("matched %d, modified %d" % (result.matched_count, result.modified_count))
+
 
 if __name__ == "__main__":
 
     async def main():
         loop = asyncio.get_event_loop()
         db = Database(loop)
-        with open("stfubot/data/static/stand_template.json", "r") as item:
-            stand_file: dict = json.load(item)["stand"]
-        user = await db.get_user_info("252405022766137346")
-        user.stands = []
-        from stfubot.models.gameobjects.stands import Stand, get_stand_from_template
-
-        user.stands.append(get_stand_from_template(stand_file[59 - 1]))
-        user.stands.append(get_stand_from_template(stand_file[58 - 1]))
-        user.stands.append(get_stand_from_template(stand_file[57 - 1]))
-        await user.update()
+        fields = [
+            "war_attacks",
+            "raid_attacks",
+            "damage_to_current_war",
+            "damage_to_current_raid",
+        ]
+        values = [[], [], 0, 0]
+        await add_field(db.gangs, fields, values)
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())

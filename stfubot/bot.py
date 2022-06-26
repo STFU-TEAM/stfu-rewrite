@@ -24,6 +24,9 @@ main_extension = {
     "extensions.items",
     "extensions.gangs",
     "extensions.shop",
+    "extensions.admincommand",
+    "extensions.errors",
+    "extensions.statcord",
 }
 
 # loads file and stuff

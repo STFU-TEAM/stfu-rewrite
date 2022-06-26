@@ -5,10 +5,9 @@ import json
 from stfubot.models.gameobjects.items import Item, item_from_dict
 from stfubot.models.gameobjects.effects import Effect, EffectType
 from stfubot.models.gameobjects.standabilities import specials
-from typing import List, TypeVar, Union
+from typing import List, TypeVar
 
 from stfubot.globals.variables import (
-    XPRATE,
     HPSCALING,
     DAMAGESCALING,
     SPEEDSCALING,
@@ -39,6 +38,7 @@ class Stand:
         self.turn_for_ability: int = stand_file[self.id - 1]["turn_for_ability"]
         self.special_description: str = stand_file[self.id - 1]["special_description"]
         self.items: List[Item] = [item_from_dict(s) for s in data["items"]]
+        self.level: int = min(100, self.xp // STXPTOLEVEL)
 
         # Compute the starting Items and XP scaling.
         bonus_hp = 0
@@ -51,33 +51,11 @@ class Stand:
             bonus_speed += item.bonus_speed
             bonus_critical += item.bonus_critical
         # LEVEL SCALING
-        bonus_hp += (
-            XPRATE
-            * self.xp
-            // STXPTOLEVEL
-            * (7 - (self.stars + self.ascension))
-            * HPSCALING
-        )
-        bonus_damage += (
-            XPRATE
-            * self.xp
-            // STXPTOLEVEL
-            * (7 - (self.stars + self.ascension))
-            * DAMAGESCALING
-        )
-        bonus_speed += (
-            XPRATE
-            * self.xp
-            // STXPTOLEVEL
-            * (7 - (self.stars + self.ascension))
-            * SPEEDSCALING
-        )
+        bonus_hp += self.level * (7 - (self.stars + self.ascension)) * HPSCALING
+        bonus_damage += self.level * (7 - (self.stars + self.ascension)) * DAMAGESCALING
+        bonus_speed += self.level * (7 - (self.stars + self.ascension)) * SPEEDSCALING
         bonus_critical += (
-            XPRATE
-            * self.xp
-            // STXPTOLEVEL
-            * (7 - (self.stars + self.ascension))
-            * CRITICALSCALING
+            self.level * (7 - (self.stars + self.ascension)) * CRITICALSCALING
         )
         # Define the starting STATS and variables
         self.current_hp = self.base_hp + bonus_hp * (1 + self.ascension / 3)
@@ -94,7 +72,6 @@ class Stand:
         self.special_meter: int = 0
         self.turn: int = 0
         self.ressistance: int = 1
-        self.level: int = self.xp // STXPTOLEVEL
 
     def is_alive(self) -> bool:
         """Check if a stand is alive
@@ -107,7 +84,7 @@ class Stand:
         return self.current_hp > 0
 
     def attack(self, ennemy_stand: stand, multiplier: int = 1) -> dict:
-        """Attack the stand
+        """Attack a stand
 
         Args:
             ennemy_stand (stand): the stand to attack
@@ -120,7 +97,7 @@ class Stand:
         crit = random.randint(0, 100)
         # classic attack have no modifiers so x1
         multi = multiplier
-        if self.current_critical < crit:
+        if self.current_critical >= crit:
             multi *= CRITMULTIPLIER
             atck["critical"] = True
         dodge_roll = False

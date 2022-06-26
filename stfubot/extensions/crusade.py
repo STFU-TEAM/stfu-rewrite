@@ -36,6 +36,7 @@ class Crusade(commands.Cog):
     @commands.slash_command(
         name="crusade", description="fight random generated stand based on your level"
     )
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @database_check()
     async def crusade(self, Interaction: disnake.ApplicationCommandInteraction):
 
