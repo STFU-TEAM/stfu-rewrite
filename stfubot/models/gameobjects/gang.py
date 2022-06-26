@@ -35,6 +35,10 @@ class Gang:
         self.items: List[Item] = [item_from_dict(s) for s in data["items"]]
         self.raid_level: int = data["raid_level"]
         self.war_elo: int = data["war_elo"]
+        self.war_attacks:List[str] = data["war_attacks"],
+        self.raid_attacks:List[str] = data["raid_attacks"]
+        self.damage_to_current_war: int = data["damage_to_current_war"]
+        self.damage_to_current_raid: int = data["damage_to_current_raid"]
         self.end_of_raid: datetime.datetime = data["end_of_raid"]
         self.end_of_war: datetime.datetime = data["end_of_war"]
         self.last_raid: datetime.datetime = data["last_raid"]
@@ -56,6 +60,10 @@ class Gang:
         self.data["items"] = [s.to_dict() for s in self.items]
         self.data["raid_level"] = self.raid_level
         self.data["war_elo"] = self.war_elo
+        self.data["war_attacks"] = self.war_attacks
+        self.data["raid_attacks"] = self.raid_attacks
+        self.data["damage_to_current_war"] = self.damage_to_current_war
+        self.data["damage_to_current_raid"] = self.damage_to_current_raid
         self.data["end_of_raid"] = self.end_of_raid
         self.data["end_of_war"] = self.end_of_war
         self.data["last_raid"] = self.last_raid
@@ -80,6 +88,10 @@ def create_gang(user_id: str, name: str, motd: str, motto: str) -> dict:
         "items": [],
         "raid_level": 1,
         "war_elo": 0,
+        "war_attacks":[],
+        "raid_attacks":[],
+        "damage_to_current_war": 0,
+        "damage_to_current_raid": 0,
         "end_of_raid": datetime.datetime.min,
         "end_of_war": datetime.datetime.min,
         "last_raid": datetime.datetime.min,

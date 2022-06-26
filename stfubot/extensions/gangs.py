@@ -30,6 +30,7 @@ class Gangs(commands.Cog):
 
     # GANG MAIN COMMANDS
     @commands.slash_command(name="gang", description="Gangs related commands")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @database_check()
     async def gang(self, Interaction: disnake.CommandInteraction):
         pass

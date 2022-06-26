@@ -10,13 +10,12 @@ LOOP = asyncio.get_event_loop()
 
 # Stand Scaling
 
-STXPTOLEVEL = 100
-XPRATE = 0.1
-HPSCALING = 50
+STXPTOLEVEL = 1000
+HPSCALING = 5
 SPEEDSCALING = 1
 DAMAGESCALING = 5
 CRITICALSCALING = 0.5
-CRITMULTIPLIER = 1.25
+CRITMULTIPLIER = 1.5
 DODGENERF = 10
 
 # Fight Rewards
@@ -28,7 +27,7 @@ STAND_XPGAINS = 10
 
 # User scalings
 
-USRXPTOLEVEL = 100
+USRXPTOLEVEL = 1000
 
 # Crusade Items
 
@@ -36,12 +35,12 @@ CHANCEITEM = 25
 
 # Tower constants
 
-ENTRYCOST = 100
+ENTRYCOST = 150
 TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
 
 # Shop
 
-SHOPCREATIONCOST = 1500
+SHOPCREATIONCOST = 3000
 
 ITEMTYPE = ["damage", "utility", "stand", "misc"]
 ITEMBYTYPE = {
@@ -54,4 +53,4 @@ ITEMBYTYPE = {
 # Gang
 
 GANGURL = "https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
-GANGCREATIONCOST = 10000
+GANGCREATIONCOST = 50000

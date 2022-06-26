@@ -42,6 +42,7 @@ class Shop(commands.Cog):
         pass
 
     @shop.sub_command(name="create", description="Create a public shop.")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def create(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -88,6 +89,7 @@ class Shop(commands.Cog):
         await user.update()
 
     @shop.sub_command(name="sell", description="sell an item to you shop")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @shop_check()
     async def sell(
         self, Interaction: disnake.ApplicationCommandInteraction, price: int
@@ -123,6 +125,7 @@ class Shop(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @shop.sub_command(name="remove", description="remove an item from your shop")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @shop_check()
     async def remove(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -166,6 +169,7 @@ class Shop(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @shop.sub_command(name="show", description="show your own shop")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @shop_check()
     async def show(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -208,6 +212,7 @@ class Shop(commands.Cog):
         await Interaction.send(embed=embed)
 
     @shop.sub_command(name="changeimage", description="change the shop image")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @shop_check()
     async def changeimage(
         self, Interaction: disnake.ApplicationCommandInteraction, url: str
@@ -248,6 +253,7 @@ class Shop(commands.Cog):
     @shop.sub_command(
         name="buy", description="buy the cheapest items from other player"
     )
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def buy(
         self,
         Interaction: disnake.ApplicationCommandInteraction,

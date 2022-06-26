@@ -6,11 +6,14 @@ from disnake.ext import commands
 
 # utils
 from stfubot.utils.decorators import database_check
-from stfubot.utils.functions import is_url_image
+from stfubot.utils.functions import is_url_image, wait_for
 
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
 from stfubot.globals.emojis import CustomEmoji
+
+# ui
+from stfubot.ui.social.lang_select import LangSelectDropdown
 
 
 class social(commands.Cog):
@@ -74,6 +77,7 @@ class social(commands.Cog):
         await Interaction.send(embed=embed)
 
     @database_check()
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @commands.slash_command(
         name="changeprofileimage", description="Change your profile image"
     )
@@ -97,11 +101,28 @@ class social(commands.Cog):
         embed.set_image(url=url)
         await Interaction.send(embed=embed)
 
-    @commands.slash_command(name="settings", description="change the bot")
+    @commands.slash_command(name="changedefaultlang", description="change the bot lang")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @commands.has_permissions(administrator=True)
     @database_check()
-    async def settings(self, Interaction: disnake.ApplicationCommandInteraction):
-        pass
+    async def changedefaultlang(
+        self, Interaction: disnake.ApplicationCommandInteraction
+    ):
+        translation = await self.stfubot.database.get_interaction_lang(Interaction)
+        embed = disnake.Embed(
+            title=translation["changedefaultlang"]["1"], color=disnake.Color.blue()
+        )
+        embed.set_image(url=self.stfubot.avatar_url)
+        view = LangSelectDropdown(Interaction)
+        await Interaction.send(embed=embed, view=view)
+        await wait_for(view)
+
+        lang_dict = view.value
+
+        guild = await self.stfubot.database.get_guild_info(Interaction.guild.id)
+
+        guild.lang = lang_dict["path"]
+        await guild.update()
 
 
 def setup(client: StfuBot):

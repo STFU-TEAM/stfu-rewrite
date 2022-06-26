@@ -24,6 +24,7 @@ class fight(commands.Cog):
         self.stfubot = stfubot
 
     @commands.slash_command(name="fight", description="fight someone in your server")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def fight(
         self,
         Interaction: disnake.ApplicationCommandInteraction,

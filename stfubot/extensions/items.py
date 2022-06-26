@@ -30,6 +30,7 @@ class Items(commands.Cog):
         self.stfubot = stfubot
 
     @commands.slash_command(name="item", description="manage item")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     @database_check()
     async def item(self, Interaction: disnake.ApplicationCommandInteraction):
         pass
@@ -58,6 +59,7 @@ class Items(commands.Cog):
         await Interaction.send(embed=embed)
 
     @item.sub_command(name="equip", description="equip an item on a stand")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def equip(self, Interaction: disnake.ApplicationCommandInteraction):
         # translation
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -105,6 +107,7 @@ class Items(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @item.sub_command(name="unequip", description="unequip an item")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def unequip(self, Interaction: disnake.ApplicationCommandInteraction):
         # translation
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -141,6 +144,7 @@ class Items(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @item.sub_command(name="unequipall", description="unequip all items from a stand")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def unequip_all(self, Interaction: disnake.ApplicationCommandInteraction):
         # translation
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -175,6 +179,7 @@ class Items(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @item.sub_command(name="use", description="use one of your non equipable items.")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def use(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
