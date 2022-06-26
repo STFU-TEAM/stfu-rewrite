@@ -1,5 +1,4 @@
 import os
-import sys
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
@@ -27,6 +26,7 @@ main_extension = {
     "extensions.admincommand",
     "extensions.errors",
     "extensions.statcord",
+    "extensions.topgg",
 }
 
 # loads file and stuff

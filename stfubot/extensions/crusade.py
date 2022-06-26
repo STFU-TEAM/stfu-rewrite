@@ -111,6 +111,7 @@ class Crusade(commands.Cog):
             )
             embed.set_image(url=self.stfubot.avatar_url)
             await Interaction.channel.send(embed=embed)
+            await user.update()
             return
         # Win
         # Guarented drops and stuff
