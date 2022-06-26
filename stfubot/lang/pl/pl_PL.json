@@ -1,0 +1,226 @@
+{
+  "error_meesages": {
+    "error": "Wydarzył się error:",
+    "sorry_but": "Przepraszamy, ale",
+    "cool_down": "Wygląda na to, że musisz poczekać przed ponownym użyciem tej komendy. Następne {0} w :`{1}`",
+    "not_registered": "Wygląda na to, że {0} nie jest zarejestrowane w bazie danych ! użyj `/begin` żeby zarejestrować !",
+    "already_registered": "Wygląda na to, że już jesteś zarejestrowany",
+    "empty_storages": "Twoja przechowywalnia jest pusta",
+    "shop_created": "You already have a shop.",
+    "shop_not_created": "You need to create a shop to use this command",
+    "gang_not_created": "You need to create or be part of a gang to use this command",
+    "not_an_image": "This url does not point to an image, please enter a valid url",
+    "no_shop_found": "No shop has the item you are looking for",
+    "not_enough_money": "You don't have enough money"
+  },
+  "fight": {
+    "1": "{0}, czy chciałbyś walczyć z {1} ?",
+    "2": "{0} nie zgodził się walczyć !",
+    "3": "Walka ⚔️:`{0}` wybierz standa przeciwnika, którego chcesz zaatakować",
+    "4": "tura: `{0}`",
+    "5": "Kto `『{0}』` powinien atakować ?",
+    "6": "{0} uniknął ataku {1} !",
+    "7": "Uderzenie Krytyczne ! {0} zabrano {1} punktów zdrowia !",
+    "8": "{0} odebrano {1} punktów zdrowia !",
+    "9": "Log walki",
+    "10": "{0} wygrał walkę!"
+  },
+  "begin": {
+    "1": "Witaj !",
+    "2": "`Rozpocznij swoją przygodę ! oto jest twój początkowy stand`",
+    "3": "Przywitaj się z stfubot, obsługuje on komendy /\n",
+    "4": "`/crusade` lub `/job` oraz `/daily adventure` żeby zacząc zarabiać pieniądze\n",
+    "5": "potem sprawdź `/tower` żeby mieć szansę na zdobycie standów\n",
+    "6": "Również zdobyłeś 2 strzały, użyj `/item use` żeby nich użyć ! ",
+    "7": "powodzenia\n"
+  },
+  "profile": {
+    "1": "profil {0}",
+    "2": "`Statystyki`",
+    "3": "`Poziom`:",
+    "4": "`Monety`:",
+    "5": "`Ranga`:",
+    "6": "`Elo`:"
+  },
+  "crusade": {
+    "1": "Idziemy na krucjatę !",
+    "2": "Przegraliśmy i nic nie wygraliśmy.",
+    "3": "Oto jest trochę nagród !",
+    "4": "monety:",
+    "5": "itemy:"
+  },
+  "tower": {
+    "1": "Witaj w wieżach, koszt wejścia to {0} ale nagrody są droższe ! czy chcesz wejść\n?\n masz {1}",
+    "2": "Wróć następnego dnia",
+    "3": "Nie masz wystarczająco pieniędzy, potrzebujesz {0}, wróć następnego dnia.",
+    "4": "Nie poszedłeś wystarczająco daleko i nie dostałeś itemów.",
+    "5": "Ukończyłeś wieżę ! Możesz zatrzymać sobie nagrody i przejść do następnej, jeżeli jest dostępna.",
+    "6": "Dobrze ci poszło, ale musisz ukończyć wieże, żeby przejść dalej.",
+    "7": "🎊First Completion reward!🎊",
+    "8": "Reward:"
+  },
+  "use": {
+    "1": "Nie masz itemów, użyj `/crusade` lub `/tower`",
+    "2": "Wybierz item, który chcesz użyć.",
+    "3": "Stand został schowany w : {0}:",
+    "4": "Nie masz dostępnego miejsca w przechowywalni, użyj `/stand remove` żeby zwolnić trochę miejsca, lub donejtuj !",
+    "5": "Wybierz standa, na którym chcesz użyć strzały requiem.",
+    "6": "Ten stand osiągnął swój maksymalny potencjał !",
+    "7": "Nowy stand został narodzony !",
+    "8": "{0} ewoluował i osiągnął wniebowstąpienie:{1}",
+    "9": "Zdobyłeś {0} z tej torby"
+  },
+  "gacha": {
+    "1": "Zdobyłeś standa, został przechowany w : {0}"
+  },
+  "ui": {
+    "1": "Wybierz swoją przechowywalnię",
+    "shop_modal": {
+      "1": "Shop name",
+      "2": "Enter your shop name( 50 char max )",
+      "3": "Shop description",
+      "4": "Enter your shop description",
+      "5": "Create your shop.",
+      "6": "Here is your shop"
+    },
+    "gang_modal": {
+      "1": "Gang name",
+      "2": "Enter the name of your gang",
+      "3": "Gang motd",
+      "4": "Enter your gang message of the day",
+      "5": "Gang motto",
+      "6": "Enter the main philosophy / guideline of your gang",
+      "7": "Gang creation",
+      "8": ""
+    }
+  },
+  "remove": {
+    "1": "Wybierz standa do usunięcia",
+    "2": "Czy jesteś pewien, że chcesz usunąć {0}",
+    "3": "{0} został wysłany do Brazylii.",
+    "4": "Zachowałeś {0}"
+  },
+  "mainstand": {
+    "1": "Jaki stand powinien być przemieszczony ?",
+    "2": "Czy jesteś pewien, że chcesz przemieścić {0} ?",
+    "3": "{0} nie został przemieszczony",
+    "4": "{0} został przemieszczony na głównego standa (możliwy błąd)",
+    "5": "Wybierz standa, którego chcesz przemieścić do przechowywalni",
+    "6": "{0} został przemieszczony na głównego standa (możliwy błąd), {1} został przechowany"
+  },
+  "store": {
+    "1": "Wybierz standa do przechowania"
+  },
+  "storage": {
+    "1": "przechowywalnia {0}"
+  },
+  "inventory": {
+    "1": "inventory {0}"
+  },
+  "equip": {
+    "1": "Nie masz przedmiotów do użycia",
+    "2": "Wybierz standa, na którym chcesz użyć item",
+    "3": "Ten stand nie może nieść więcej itemów",
+    "4": "Wybierz item do użycia",
+    "5": "{0} został użyty na {1}"
+  },
+  "unequip": {
+    "1": "Wybierz standa, z którego chcesz zdjąć item",
+    "2": "Ten stand nie ma itemów",
+    "3": "Zdjęto {0} z {1}"
+  },
+  "unequipall": {
+    "1": "wszystkie itemy zostały zdjęte z {0}"
+  },
+  "adventure": {
+    "1": "Twoje standy poszły na przygodę i znalazły:",
+    "2": "Twoje standy znalazły item !",
+    "3": "Twoje standy znalazły monety !"
+  },
+  "shop_create": {
+    "1": "The price to create a shop is {0}, do you want to create a shop ?",
+    "2": "You can create a shop whenever you want"
+  },
+  "shop_sell": {
+    "1": "Select an item to sell",
+    "2": "You sold {0} for {1}",
+    "3": "You have 24 items. Please, remove some items before selling more."
+  },
+  "shop_remove": {
+    "1": "Select an item to remove from your shop",
+    "2": "{0} was removed from your shop and added to your inventory"
+  },
+  "shop_show": {
+    "1": "{0}'s shop",
+    "2": "`Items`",
+    "3": "price:`{0}`"
+  },
+  "shop_changeimage": {
+    "1": "Shop image was changed"
+  },
+  "shop_buy": {
+    "1": "Select an item to buy",
+    "2": "Do you want to buy:",
+    "3": "{0} for {1}",
+    "4": "You did not buy any time",
+    "5": "Come back later !",
+    "6": "Thanks for your purchase !",
+    "7": "You received `{0}` in your inventory"
+  },
+  "gang_invite": {
+    "1": "This user is already in a gang",
+    "2": "This user has already been invited to join the gang",
+    "3": "You invited {0} to {1}"
+  },
+  "gang_stand_add": {
+    "1": "You cannot add anymore stand to defend your gang",
+    "2": "Select a stand to protect your gang",
+    "3": "{0} will now, be defending you gang"
+  },
+  "gang_stand_remove": {
+    "1": "Select a stand to remove"
+  },
+  "gang_create": {
+    "1": "You already have a gang leave your gang to create a new one !",
+    "2": "You need to pay {0} to create a new gang, you have :{1}",
+    "3": "You can create a gang anytime !",
+    "4": "You don't have enough money you need {0} to create a gang"
+  },
+  "gang_kick": {
+    "1": "This user is not in your gang",
+    "2": "You have no permission to kick this user",
+    "3": "{0} was kicked from {1}"
+  },
+  "gang_promote": {
+    "1": "You are about to make {0} the gang boss are you sure ?",
+    "2": "{0} was not made the gang leader",
+    "3": "{0} was made the new gang leader",
+    "4": "You have promoted {0} to {1}"
+  },
+  "gang_deposit": {
+    "1": "{0} was added to the gang vault"
+  },
+  "gang_pay": {
+    "1": "{0} was remove from the vault, {1} was paid !"
+  },
+  "gang_show": {
+    "1": "`Members:{0}`",
+    "2": "`Guarding Stands`",
+    "3": "Level:",
+    "4": "elo",
+    "5": "vault",
+    "6": "Donators"
+  },
+  "gang_join": {
+    "1": "You already have a gang leave your gang to have a new one",
+    "2": "You have no gang invite ask the boss or a capo, to be invited",
+    "3": "Select a gang",
+    "4": "You joined {0}"
+  },
+  "gang_changeimage": {
+    "1": "You gang's image was changed"
+  },
+  "changeprofileimage": {
+    "1": "Your profile's image was changed"
+  }
+}
