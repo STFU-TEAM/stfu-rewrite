@@ -15,7 +15,7 @@
     "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
     "no_permission": "It seems you don't have the permissions to use this command",
     "missing_arguments": "This command is missing an argument, please use /help for more information",
-    "max_concurency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
+    "max_concurrency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
     "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
     "http_error": "We made a mistake, and the bot could not send the embed"
   },
