@@ -1,0 +1,16 @@
+{
+  "raids": {
+    "0": {
+      "name": "Dio Brando",
+      "stands": [
+        {
+          "id": 10,
+          "xp": 1000,
+          "ascension": 1,
+          "items": [{ "id": 1 }, { "id": 1 }, { "id": 7 }]
+        }
+      ]
+    },
+    "1": {}
+  }
+}

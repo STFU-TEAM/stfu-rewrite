@@ -220,3 +220,28 @@ def is_url_image(image_url: str):
         return False
     except:
         return False
+
+
+async def view_timeout(interaction: disnake.ApplicationCommandInteraction):
+    """add an expired button to views
+
+    Args:
+        interaction (disnake.ApplicationCommandInteraction): [description]
+    """
+    view = disnake.ui.View()
+    view.add_item(
+        disnake.ui.Button(
+            label=f"Expired",
+            emoji="⌚",
+            style=disnake.ButtonStyle.grey,
+            disabled=True,
+        )
+    )
+    try:
+        await interaction.edit_original_message(view=view)
+    except:
+        try:
+            await interaction.response.edit_message(view=view)
+        except:
+            pass
+        pass

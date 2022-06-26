@@ -6,9 +6,6 @@
   <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html#SEC1" target="_blank">
     <img alt="License: GNU GPL version 2" src="https://img.shields.io/badge/License-GNU GPL version 2-yellow.svg" />
   </a>
-  <a href="https://top.gg/bot/715184823144153090">
-    <img src="https://top.gg/api/widget/owner/715184823144153090.svg">
-  </a>
   <a title="Crowdin" target="_blank" href="https://crowdin.com/project/stfubot">
     <img src="https://badges.crowdin.net/stfubot/localized.svg">
   </a>

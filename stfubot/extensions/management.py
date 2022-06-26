@@ -36,6 +36,7 @@ class management(commands.Cog):
         pass
 
     @stand.sub_command(name="show", description="show one of your main stand stats.")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def show(self, Interaction: disnake.ApplicationCommandInteraction):
         User = await self.stfubot.database.get_user_info(Interaction.author.id)
         if User.stands == []:
@@ -135,6 +136,7 @@ class management(commands.Cog):
                 await play_files(Interaction, [play])
 
     @stand.sub_command(name="remove", description="Remove a stand from your storage")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def remove(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -206,6 +208,7 @@ class management(commands.Cog):
         await Interaction.response.edit_message(embed=embed, view=PlaceHolder())
 
     @stand.sub_command(name="storage", description="show your storage")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def storage(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -339,6 +342,7 @@ class management(commands.Cog):
         await Interaction.channel.send(embed=embed)
 
     @stand.sub_command(name="store", description="store a main stand into storage")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
     async def store(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
