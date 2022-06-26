@@ -11,7 +11,13 @@
     "gang_not_created": "You need to create or be part of a gang to use this command",
     "not_an_image": "Questo url non riconduce ad un'immagine. Inserisci un url valido",
     "no_shop_found": "Nessuno shop ha l'oggetto che stai cercando",
-    "not_enough_money": "Non hai abbastanza monete"
+    "not_enough_money": "Non hai abbastanza monete",
+    "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
+    "no_permission": "It seems you don't have the permissions to use this command",
+    "missing_arguments": "This command is missing an argument, please use /help for more information",
+    "max_concurency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
+    "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
+    "http_error": "We made a mistake, and the bot could not send the embed"
   },
   "fight": {
     "1": "{0}, vorresti combattere {1}?",
@@ -62,7 +68,7 @@
   "use": {
     "1": "Non hai nessun oggetto utilizzabile. Usa `/crusade` o `/tower`",
     "2": "Seleziona un oggetto da usare.",
-    "3": "Lo stand è stato depositato in: {0}:",
+    "3": "The stand was stored in : {0}",
     "4": "Non c'è spazio libero nello storage, usa `/stand remove` per liberare dello spazio, oppure considera la possibilità di fare una donazione!",
     "5": "Seleziona uno stand su cui vuoi usare una freccia requiem.",
     "6": "Questo stand ha raggiunto il suo massimo potenziale!",
@@ -222,5 +228,14 @@
   },
   "changeprofileimage": {
     "1": "Your profile's image was changed"
+  },
+  "errors": {
+    "1": "Invite the bot with this link !",
+    "2": "In particular:",
+    "3": "Manage webhooks, Manage message ,add reaction",
+    "4": "Need Help ? Our discord: https://discord.gg/CQtxPw2"
+  },
+  "changedefaultlang": {
+    "1": "Choose a language to use."
   }
 }
