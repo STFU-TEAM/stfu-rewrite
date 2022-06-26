@@ -95,7 +95,7 @@ class admincommands(commands.Cog):
         stand = get_stand_from_template(stand)
         user = await self.stfubot.database.get_user_info(member.id)
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
-        msg = await add_to_available_storage(user, stand)
+        msg = add_to_available_storage(user, stand)
 
         if msg:
             embed = disnake.Embed(
