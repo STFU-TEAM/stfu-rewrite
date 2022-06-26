@@ -1,4 +1,5 @@
 import os
+import disnake
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
@@ -39,6 +40,12 @@ for file in main_extension:
     else:
         print(f"loaded {file}")
 print(textart)
+
+
+@Client.event
+async def on_ready():
+    await Client.change_presence(activity=disnake.Game(f"Stfurequiem but better"))
+
 
 if __name__ == "__main__":
     # run the bot
