@@ -28,4 +28,4 @@ class Guild:
 
 
 def create_guild(id: str):
-    return {"_id": id, "lang": "en", "donor_status": False}
+    return {"_id": id, "lang": "en_US", "donor_status": False}
