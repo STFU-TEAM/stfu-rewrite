@@ -11,7 +11,13 @@
     "gang_not_created": "You need to create or be part of a gang to use this command",
     "not_an_image": "This url does not point to an image, please enter a valid url",
     "no_shop_found": "No shop has the item you are looking for",
-    "not_enough_money": "You don't have enough money"
+    "not_enough_money": "You don't have enough money",
+    "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
+    "no_permission": "It seems you don't have the permissions to use this command",
+    "missing_arguments": "This command is missing an argument, please use /help for more information",
+    "max_concurency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
+    "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
+    "http_error": "We made a mistake, and the bot could not send the embed"
   },
   "fight": {
     "1": "{0}, czy chciałbyś walczyć z {1} ?",
@@ -62,7 +68,7 @@
   "use": {
     "1": "Nie masz itemów, użyj `/crusade` lub `/tower`",
     "2": "Wybierz item, który chcesz użyć.",
-    "3": "Stand został schowany w : {0}:",
+    "3": "The stand was stored in : {0}",
     "4": "Nie masz dostępnego miejsca w przechowywalni, użyj `/stand remove` żeby zwolnić trochę miejsca, lub donejtuj !",
     "5": "Wybierz standa, na którym chcesz użyć strzały requiem.",
     "6": "Ten stand osiągnął swój maksymalny potencjał !",
@@ -222,5 +228,14 @@
   },
   "changeprofileimage": {
     "1": "Your profile's image was changed"
+  },
+  "errors": {
+    "1": "Invite the bot with this link !",
+    "2": "In particular:",
+    "3": "Manage webhooks, Manage message ,add reaction",
+    "4": "Need Help ? Our discord: https://discord.gg/CQtxPw2"
+  },
+  "changedefaultlang": {
+    "1": "Choose a language to use."
   }
 }
