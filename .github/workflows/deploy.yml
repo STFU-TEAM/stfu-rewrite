@@ -17,5 +17,5 @@ jobs:
         uses: dokku/github-action@v1.0.1
         with:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          git_remote_url: "ssh://dokku@stfurequiem.com:3582/stfulegacy"
+          git_remote_url: "ssh://dokku@stfurequiem.com:3582/stfu"
           git_push_flags: "--force"
