@@ -237,5 +237,11 @@
   },
   "changedefaultlang": {
     "1": "Choose a language to use."
+  },
+  "vote": {
+    "1": "You need to vote to earn rewards !",
+    "2": "to vote you need to visit this page,the bot will be waiting for your vote {0}",
+    "3": "Visit: https://stfurequiem.com/vote",
+    "4": "Thanks for voting here are your rewards !"
   }
 }
