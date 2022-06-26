@@ -124,7 +124,7 @@ class admincommands(commands.Cog):
         user.discord = member
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
 
-        user.items + [item_from_dict({"id": 2})] * ammount
+        user.items = user.items + [item_from_dict({"id": 2})] * ammount
         await user.update()
         embed = disnake.Embed(
             title=f"added {ammount}{CustomEmoji.ARROW} to {user.discord.display_name}"
