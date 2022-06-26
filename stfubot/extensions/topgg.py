@@ -82,6 +82,7 @@ class TopGG(commands.Cog):
             if delta.total_seconds() > 5 * 60:
                 raise TimeoutError
             await asyncio.sleep(10)
+        user.last_vote = datetime.datetime.now()
         user.coins += COINS_VOTE
         user.items + [item_from_dict({"id": 2})] * ARROW_VOTE
         embed = disnake.Embed(
