@@ -10,14 +10,14 @@
     "shop_not_created": "Musisz stworzyć sklep, żeby użyć tej komendy",
     "gang_not_created": "Musisz stworzyć lub być częścią gangu, żeby użyć tej komendy",
     "not_an_image": "Ten url nie przekierowywuje do zdjęcia, proszę użyć poprawnego url",
-    "no_shop_found": "No shop has the item you are looking for",
-    "not_enough_money": "You don't have enough money",
-    "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
-    "no_permission": "It seems you don't have the permissions to use this command",
-    "missing_arguments": "This command is missing an argument, please use /help for more information",
-    "max_concurrency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
-    "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
-    "http_error": "We made a mistake, and the bot could not send the embed"
+    "no_shop_found": "Żaden sklep nie posiada tego czego szukasz",
+    "not_enough_money": "Nie masz wystarczającej ilości pieniędzy",
+    "not_enough_permission": "Bot potrzebuje dalszych uprawnień do pracy! Zaproś go ponownie! Jeśli to nie rozwiąże problemu, rozważ dołączenie do naszego discorda, aby nam o tym powiedzieć!",
+    "no_permission": "Wygląda na to, że nie masz dostępu do tej komendy",
+    "missing_arguments": "Tej komendzie brakuje argumentu, użyj /help aby uzyskać więcej informacji",
+    "max_concurrency": "Musisz dokończyć swoją komendę `{0}`, żeby użyć nią ponownie, naciśnij ❌ lub dokończ wymagane akcje",
+    "TOPGG": "Top.gg ma problemy z serwerem. Proszę spróbować ponownie w parę minut. NIE KONTAKTUJ SIĘ Z NAMI Z POWODU ERRORÓW TOPGG!",
+    "http_error": "Popełniliśmy błąd i bot nie mógł wysłać osadzenia"
   },
   "fight": {
     "1": "{0}, czy chciałbyś walczyć z {1} ?",
@@ -62,8 +62,8 @@
     "4": "Nie poszedłeś wystarczająco daleko i nie dostałeś itemów.",
     "5": "Ukończyłeś wieżę ! Możesz zatrzymać sobie nagrody i przejść do następnej, jeżeli jest dostępna.",
     "6": "Dobrze ci poszło, ale musisz ukończyć wieże, żeby przejść dalej.",
-    "7": "🎊First Completion reward!🎊",
-    "8": "Reward:"
+    "7": "🎊Pierwsza nagroda za Ukończenie!🎊",
+    "8": "Nagroda:"
   },
   "use": {
     "1": "Nie masz itemów, użyj `/crusade` lub `/tower`",
