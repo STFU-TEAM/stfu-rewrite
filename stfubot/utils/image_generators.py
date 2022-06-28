@@ -10,10 +10,10 @@ async def get_part_3_tower_image(user: disnake.User, stage: int) -> disnake.File
     AVATAR_SIZE = 128
 
     # get both avatars
-    avatar1 = user.avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    avatar1 = user.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
     buffer_avatar1 = io.BytesIO(await avatar1.read())
     avatar_image1 = Image.open(buffer_avatar1)
-    # create a 200s*200 round avatar
+    # create a 200s*200 round display_avatar
     avatar_image1 = avatar_image1.resize((150, 150))
     # make the image a circle
 
@@ -53,10 +53,10 @@ async def get_tower_victory_image(user: disnake.User) -> disnake.File:
     # create object for drawing
     AVATAR_SIZE = 128
     # get both avatars
-    avatar1 = user.avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    avatar1 = user.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
     buffer_avatar1 = io.BytesIO(await avatar1.read())
     avatar_image1 = Image.open(buffer_avatar1)
-    # create a 128*128 round avatar
+    # create a 128*128 round display_avatar
     avatar_image1 = avatar_image1.resize((AVATAR_SIZE, AVATAR_SIZE))
     # make the image a circle
 
@@ -84,10 +84,10 @@ async def get_win_image(user1: disnake.User) -> disnake.File:
     # create object for drawing
     AVATAR_SIZE = 128
     # get both avatars
-    avatar1 = user1.avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    avatar1 = user1.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
     buffer_avatar1 = io.BytesIO(await avatar1.read())
     avatar_image1 = Image.open(buffer_avatar1)
-    # create a 128*128 round avatar
+    # create a 128*128 round display_avatar
     avatar_image1 = avatar_image1.resize((AVATAR_SIZE, AVATAR_SIZE))
     # make the image a circle
 
@@ -112,13 +112,13 @@ async def get_fight_image(user1: disnake.User, user2: disnake.User) -> disnake.F
     # create object for drawing
     AVATAR_SIZE = 128
     # get both avatars
-    avatar1 = user1.avatar.with_format("jpg").with_size(AVATAR_SIZE)
-    avatar2 = user2.avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    avatar1 = user1.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    avatar2 = user2.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
     buffer_avatar1 = io.BytesIO(await avatar1.read())
     buffer_avatar2 = io.BytesIO(await avatar2.read())
     avatar_image1 = Image.open(buffer_avatar1)
     avatar_image2 = Image.open(buffer_avatar2)
-    # create a 128*128 round avatar
+    # create a 128*128 round display_avatar
     avatar_image1 = avatar_image1.resize((AVATAR_SIZE, AVATAR_SIZE))
     avatar_image2 = avatar_image2.resize((AVATAR_SIZE, AVATAR_SIZE))
     # make the image a circle

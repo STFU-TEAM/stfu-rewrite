@@ -148,7 +148,7 @@ class Tower(commands.Cog):
         if user.tower_level <= tower_id:
             first_item = item_from_dict(tower["first_completion_reward"])
             embed.add_field(
-                title=translation["tower"]["7"],
+                name=translation["tower"]["7"],
                 value=f"{first_item.name}|{first_item.emoji}",
                 inline=False,
             )

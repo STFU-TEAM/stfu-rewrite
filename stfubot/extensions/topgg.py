@@ -84,7 +84,7 @@ class TopGG(commands.Cog):
             await asyncio.sleep(10)
         user.last_vote = datetime.datetime.now()
         user.coins += COINS_VOTE
-        user.items + [item_from_dict({"id": 2})] * ARROW_VOTE
+        user.items = user.items + [item_from_dict({"id": 2})] * ARROW_VOTE
         embed = disnake.Embed(
             title=translation["vote"]["4"], color=disnake.Colour.blue()
         )

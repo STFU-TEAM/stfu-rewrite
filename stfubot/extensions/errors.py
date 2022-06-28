@@ -85,7 +85,6 @@ class ErrorHandle(commands.Cog):
         ignore = [
             errors.CommandNotFound,
             errors.CheckFailure,
-            errors.CommandNotFound,
             # RuntimeError,
         ]
         # if it's an invokeError we get what caused it
@@ -188,6 +187,7 @@ class ErrorHandle(commands.Cog):
             )
             embed.set_footer(text=translation["errors"]["4"])
             await self.try_sending_message(Interaction, embed)
+            return  # avoid logging
         # bad embed form
         if isinstance(error, disnake.errors.HTTPException):
             embed = disnake.Embed(

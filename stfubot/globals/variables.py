@@ -31,12 +31,19 @@ USRXPTOLEVEL = 1000
 
 # Crusade Items
 
-CHANCEITEM = 25
+CHANCEITEM = 10
+DONOR_CR_WAIT_TIME = 1
+NORMAL_CR_WAIT_TIME = 1.5
 
 # Tower constants
 
-ENTRYCOST = 350
+ENTRYCOST = 500
 TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
+
+# ADV
+
+DONOR_ADV_WAIT_TIME = 6
+NORMAL_ADV_WAIT_TIME = 6
 
 # Shop
 

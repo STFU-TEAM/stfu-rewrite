@@ -25,6 +25,8 @@ from stfubot.globals.variables import (
     STAND_XPGAINS,
     CRUSADEURL,
     CHANCEITEM,
+    DONOR_CR_WAIT_TIME,
+    NORMAL_CR_WAIT_TIME,
 )
 from stfubot.globals.emojis import CustomEmoji
 
@@ -50,7 +52,7 @@ class Crusade(commands.Cog):
         now = datetime.datetime.now()
 
         delta = now - past_time
-        wait_time = 1 + (not user.is_donator()) * 1
+        wait_time = DONOR_CR_WAIT_TIME + (not user.is_donator()) * NORMAL_CR_WAIT_TIME
 
         if delta.total_seconds() // 3600 < wait_time:
             wait_for = datetime.timedelta(hours=wait_time) - delta

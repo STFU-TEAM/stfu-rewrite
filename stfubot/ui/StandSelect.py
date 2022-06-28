@@ -90,7 +90,6 @@ class StandSelectDropdown(disnake.ui.View):
         self.value: Union[List[int], int] = None
         self.timeout = timeout
         self.interaction = interaction
-        interaction.response.defer
         self.custom_user = custom_user
         # Adds the dropdown to our view object.
         self.add_item(

@@ -529,6 +529,18 @@ def wonder_of_u(
     return payload, message
 
 
+def victorious_star_platinum(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.4
+    damage = 0
+    for ennemy in ennemy_stand:
+        damage += stand.attack(ennemy, multiplier=multiplier)
+    message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
+    return payload, message
+
+
 specials = {
     "1": star_platinum,
     "6": silver_chariot,
@@ -566,5 +578,6 @@ specials = {
     "137": soft_and_wet,
     "150": doobie_wah,
     "154": walking_heart,
-    "162": wonder_of_u,
+    "161": wonder_of_u,
+    "163": victorious_star_platinum,
 }

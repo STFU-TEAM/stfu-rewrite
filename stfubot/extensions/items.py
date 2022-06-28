@@ -92,6 +92,12 @@ class Items(commands.Cog):
             title=translation["equip"]["4"], color=disnake.Color.blue()
         )
         equipable = [i for i in user.items if i.is_equipable]
+        if len(equipable) == 0:
+            embed = disnake.Embed(
+                title=translation["use"]["1"], color=disnake.Color.blue()
+            )
+            await Interaction.channel.send(embed=embed)
+            return
         view = ItemSelectDropdown(Interaction, equipable)
         await Interaction.channel.send(embed=embed, view=view)
         await wait_for(view)

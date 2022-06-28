@@ -23,7 +23,9 @@ class social(commands.Cog):
 
     @commands.slash_command(name="profile", description="show the profile of a player")
     async def profile(
-        self, Interaction: disnake.ApplicationCommandInteraction, user=None
+        self,
+        Interaction: disnake.ApplicationCommandInteraction,
+        user: disnake.User = None,
     ):
         # Checks
         if user == None:
@@ -74,7 +76,7 @@ class social(commands.Cog):
                 inline=True,
             )
         embed.set_image(url=User.profile_image)
-        embed.set_thumbnail(url=User.discord.avatar.url)
+        embed.set_thumbnail(url=User.discord.display_avatar.url)
         await Interaction.send(embed=embed)
 
     @database_check()
