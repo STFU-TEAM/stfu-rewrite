@@ -5,6 +5,7 @@ import datetime
 
 from disnake.ext import commands
 
+
 # utils
 from stfubot.utils.decorators import database_check
 from stfubot.utils.functions import is_url_image, wait_for, secondsToText
@@ -12,6 +13,12 @@ from stfubot.utils.functions import is_url_image, wait_for, secondsToText
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
 from stfubot.globals.emojis import CustomEmoji
+from stfubot.globals.variables import (
+    DONOR_CR_WAIT_TIME,
+    NORMAL_CR_WAIT_TIME,
+    DONOR_ADV_WAIT_TIME,
+    NORMAL_ADV_WAIT_TIME,
+)
 
 # ui
 from stfubot.ui.social.lang_select import LangSelectDropdown
@@ -160,8 +167,12 @@ class social(commands.Cog):
 
         # compute each wait time
         wait_time_vote = 12
-        wait_time_cr = 1 + (not user.is_donator()) * 1
-        wait_time_ad = 6 + (not user.is_donator()) * 6
+        wait_time_cr = (
+            DONOR_CR_WAIT_TIME + (not user.is_donator()) * NORMAL_CR_WAIT_TIME
+        )
+        wait_time_ad = (
+            DONOR_ADV_WAIT_TIME + (not user.is_donator()) * NORMAL_ADV_WAIT_TIME
+        )
         wait_time_adv = 6
 
         # create the embed

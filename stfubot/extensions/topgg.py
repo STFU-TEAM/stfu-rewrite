@@ -17,6 +17,7 @@ from stfubot.utils.functions import secondsToText
 # stfu model
 from stfubot.models.bot.stfubot import StfuBot
 from stfubot.models.gameobjects.items import item_from_dict
+from stfubot.models.database.user import User
 
 
 class TopGG(commands.Cog):
@@ -91,9 +92,24 @@ class TopGG(commands.Cog):
         embed.set_image(url=self.stfubot.avatar_url)
         embed.add_field(name=f"`Arrows:`", value=f"{ARROW_VOTE}{CustomEmoji.ARROW}"),
         embed.add_field(name=f"`Coins`:", value=f"{COINS_VOTE}{CustomEmoji.COIN}")
+
+        try:
+            await self.post_to_stfurequiem_server(user)
+        except:
+            pass  # We don't log because it's not necessary !
+
         await user.update()
         await Interaction.delete_original_message()
         await Interaction.channel.send(embed=embed)
+
+    async def post_to_stfurequiem_server(self, user: User):
+        post_channel = await self.stfubot.fetch_channel(990668989074141244)
+        embed = disnake.Embed(
+            name=f"🎊 {user.discord.display_name} has just voted 🗳️ on: https://top.gg/bot/715184823144153090 🎊 (Thank you !)",
+            color=disnake.Colour.green(),
+        )
+        embed.set_thumbnail(url=user.discord.display_avatar.url)
+        await post_channel.send(embed=embed)
 
 
 def setup(stfubot: StfuBot):

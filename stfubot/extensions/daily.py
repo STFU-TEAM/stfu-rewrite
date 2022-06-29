@@ -10,7 +10,8 @@ from stfubot.utils.decorators import database_check
 from stfubot.utils.functions import secondsToText
 
 # stfu model
-from globals.emojis import CustomEmoji
+from stfubot.globals.emojis import CustomEmoji
+from stfubot.globals.variables import DONOR_ADV_WAIT_TIME, NORMAL_ADV_WAIT_TIME
 from stfubot.models.bot.stfubot import StfuBot
 from stfubot.models.gameobjects.stands import get_stand_from_template
 from stfubot.models.gameobjects.items import Item, item_from_dict
@@ -107,7 +108,7 @@ class daily(commands.Cog):
         now = datetime.datetime.now()
 
         delta = now - past_time
-        wait_time = 6 + (not user.is_donator()) * 6
+        wait_time = DONOR_ADV_WAIT_TIME + (not user.is_donator()) * NORMAL_ADV_WAIT_TIME
 
         if delta.total_seconds() // 3600 < wait_time:
             wait_for = datetime.timedelta(hours=wait_time) - delta
