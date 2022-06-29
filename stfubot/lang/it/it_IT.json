@@ -12,12 +12,12 @@
     "not_an_image": "Questo url non riconduce ad un'immagine. Inserisci un url valido",
     "no_shop_found": "Nessuno shop ha l'oggetto che stai cercando",
     "not_enough_money": "Non hai abbastanza monete",
-    "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
-    "no_permission": "It seems you don't have the permissions to use this command",
-    "missing_arguments": "This command is missing an argument, please use /help for more information",
-    "max_concurrency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
-    "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
-    "http_error": "We made a mistake, and the bot could not send the embed"
+    "not_enough_permission": "Il bot ha bisogno di ulteriori autorizzazioni per funzionare! Prova a reinvitarlo! Se ciò non funziona, entra nel nostro server discord per contattarci direttamente!",
+    "no_permission": "Sembra che tu non abbia il permesso di usare questo comando",
+    "missing_arguments": "Questo comando manca di un parametro, usa /help per maggiori informazioni",
+    "max_concurrency": "Devi terminare il tuo comando `{0}` per usarlo di nuovo, premi ❌ o completa le azioni richieste",
+    "TOPGG": "Sembra che i server di Top.gg stiano avendo qualche problema. Riprova tra qualche minuto. NON CONTATTATECI PER I PROBLEMI DI TOP.GG!",
+    "http_error": "Sì è verificato un errore, il bot non è riuscito a inviare l'allegato"
   },
   "fight": {
     "1": "{0}, vorresti combattere {1}?",
@@ -62,13 +62,13 @@
     "4": "Non hai fatto abbastanza progressi per ricevere alcun oggetto.",
     "5": "Hai completato questa torre! Puoi raccogliere le ricompense e passare alla torre successiva se è disponibile.",
     "6": "Hai fatto bene, ma è necessario finire la torre per progredire.",
-    "7": "🎊First Completion reward!🎊",
-    "8": "Reward:"
+    "7": "🎊Ricompensa per il primo completamento!🎊",
+    "8": "Ricompensa:"
   },
   "use": {
     "1": "Non hai nessun oggetto utilizzabile. Usa `/crusade` o `/tower`",
     "2": "Seleziona un oggetto da usare.",
-    "3": "The stand was stored in : {0}",
+    "3": "Lo stand è stato depositato in: {0}",
     "4": "Non c'è spazio libero nello storage, usa `/stand remove` per liberare dello spazio, oppure considera la possibilità di fare una donazione!",
     "5": "Seleziona uno stand su cui vuoi usare una freccia requiem.",
     "6": "Questo stand ha raggiunto il suo massimo potenziale!",
@@ -90,13 +90,13 @@
       "6": "Ecco il tuo shop"
     },
     "gang_modal": {
-      "1": "Gang name",
-      "2": "Enter the name of your gang",
-      "3": "Gang motd",
-      "4": "Enter your gang message of the day",
-      "5": "Gang motto",
-      "6": "Enter the main philosophy / guideline of your gang",
-      "7": "Gang creation",
+      "1": "Nome della gang",
+      "2": "Inserisci il nome della tua gang",
+      "3": "Motd della gang",
+      "4": "Inserisci il tuo messaggio giornaliero della gang",
+      "5": "Motto della gang",
+      "6": "Inserisci i principi/la filosofia della tua gang",
+      "7": "Creazione della gang",
       "8": ""
     }
   },
@@ -150,7 +150,7 @@
   "shop_sell": {
     "1": "Scegli un oggetto da vendere",
     "2": "Hai venduto {0} per {1}",
-    "3": "You have 24 items. Please, remove some items before selling more."
+    "3": "Hai 24 oggetti. Rimuovine alcuni prima di venderne altri."
   },
   "shop_remove": {
     "1": "Seleziona un oggetto da rimuovere dal tuo shop",
@@ -174,74 +174,74 @@
     "7": "Hai ricevuto `{0}` nel tuo inventario"
   },
   "gang_invite": {
-    "1": "This user is already in a gang",
-    "2": "This user has already been invited to join the gang",
-    "3": "You invited {0} to {1}"
+    "1": "Questo utente è già in una gang",
+    "2": "Questo utente è già stato invitato ad unirsi alla tua gang",
+    "3": "Hai invitato {0} a {1}"
   },
   "gang_stand_add": {
-    "1": "You cannot add anymore stand to defend your gang",
-    "2": "Select a stand to protect your gang",
-    "3": "{0} will now, be defending you gang"
+    "1": "Non puoi aggiungere altri stand a guardia della tua gang",
+    "2": "Seleziona uno stand che difenderà la tua gang",
+    "3": "{0} difenderà la gang"
   },
   "gang_stand_remove": {
-    "1": "Select a stand to remove"
+    "1": "Seleziona uno stand da rimuovere"
   },
   "gang_create": {
-    "1": "You already have a gang leave your gang to create a new one !",
-    "2": "You need to pay {0} to create a new gang, you have :{1}",
-    "3": "You can create a gang anytime !",
-    "4": "You don't have enough money you need {0} to create a gang"
+    "1": "Sei già in una gang. Lascia la tua gang per crearne una!",
+    "2": "Hai bisogno di {0} per creare una gang. Hai:{1}",
+    "3": "Puoi creare una gang in qualsiasi momento!",
+    "4": "Non hai abbastanza monete. Hai bisogno di {0} per creare una gang"
   },
   "gang_kick": {
-    "1": "This user is not in your gang",
-    "2": "You have no permission to kick this user",
-    "3": "{0} was kicked from {1}"
+    "1": "Questo utente non è nella tua gang",
+    "2": "Non hai il permesso di espellere questo utente",
+    "3": "{0} è stato espulso da {1}"
   },
   "gang_promote": {
-    "1": "You are about to make {0} the gang boss are you sure ?",
-    "2": "{0} was not made the gang leader",
-    "3": "{0} was made the new gang leader",
-    "4": "You have promoted {0} to {1}"
+    "1": "Stai per rendere {0} il boss della gang. Sei sicuro?",
+    "2": "{0} non è stato reso il boss della gang",
+    "3": "{0} è ora il nuovo boss della gang",
+    "4": "Hai promosso {0} a {1}"
   },
   "gang_deposit": {
-    "1": "{0} was added to the gang vault"
+    "1": "{0} è stato aggiunto al deposito della gang"
   },
   "gang_pay": {
-    "1": "{0} was remove from the vault, {1} was paid !"
+    "1": "{0} è stato rimosso dal deposito e {1} è stato pagato!"
   },
   "gang_show": {
-    "1": "`Members:{0}`",
-    "2": "`Guarding Stands`",
-    "3": "Level:",
+    "1": "`Membri:{0}`",
+    "2": "`Stand guardiani`",
+    "3": "Livello:",
     "4": "elo",
-    "5": "vault",
-    "6": "Donators"
+    "5": "deposito",
+    "6": "Donatori"
   },
   "gang_join": {
-    "1": "You already have a gang leave your gang to have a new one",
-    "2": "You have no gang invite ask the boss or a capo, to be invited",
-    "3": "Select a gang",
-    "4": "You joined {0}"
+    "1": "Hai già una gang. Lascia la tua gang per entrare in un'altra",
+    "2": "Non hai nessun invito a entrare nella gang. Chiedere al boss o a un capo di essere invitato",
+    "3": "Seleziona una gang",
+    "4": "Ti sei unito a {0}"
   },
   "gang_changeimage": {
-    "1": "You gang's image was changed"
+    "1": "L'immagine della tua gang è stata cambiata"
   },
   "changeprofileimage": {
-    "1": "Your profile's image was changed"
+    "1": "L'immagine del tuo profilo è stata cambiata"
   },
   "errors": {
-    "1": "Invite the bot with this link !",
-    "2": "In particular:",
-    "3": "Manage webhooks, Manage message ,add reaction",
-    "4": "Need Help ? Our discord: https://discord.gg/CQtxPw2"
+    "1": "Invita il bot con questo link!",
+    "2": "In particolare:",
+    "3": "Gestisci webhooks, gestisci i messaggi, aggiungi reazioni",
+    "4": "Hai bisogno di aiuto? Entra nel nostro server discord: https://discord.gg/CQtxPw2"
   },
   "changedefaultlang": {
-    "1": "Choose a language to use."
+    "1": "Scegli un linguaggio da utilizzare."
   },
   "vote": {
-    "1": "You need to vote to earn rewards !",
-    "2": "to vote you need to visit this page,the bot will be waiting for your vote {0}",
-    "3": "Visit: https://stfurequiem.com/vote",
-    "4": "Thanks for voting here are your rewards !"
+    "1": "Devi votare per poter guadagnare delle ricompense!",
+    "2": "per votare devi visitare questa pagina, il bot attenderà il tuo voto {0}",
+    "3": "Visita: https://stfurequiem.com/vote",
+    "4": "Grazie per aver votato! Ecco le tue ricompense!"
   }
 }
