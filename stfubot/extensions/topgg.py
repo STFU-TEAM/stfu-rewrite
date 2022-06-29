@@ -105,7 +105,7 @@ class TopGG(commands.Cog):
     async def post_to_stfurequiem_server(self, user: User):
         post_channel = await self.stfubot.fetch_channel(990668989074141244)
         embed = disnake.Embed(
-            name=f"🎊 {user.discord.display_name} has just voted 🗳️ on: https://top.gg/bot/715184823144153090 🎊 (Thank you !)",
+            title=f"🎊 {user.discord.display_name} has just voted 🗳️ on: https://top.gg/bot/715184823144153090 🎊 (Thank you !)",
             color=disnake.Colour.green(),
         )
         embed.set_thumbnail(url=user.discord.display_avatar.url)
