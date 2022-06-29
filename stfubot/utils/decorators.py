@@ -65,7 +65,6 @@ def shop_check():
     async def check(Interaction: disnake.ApplicationCommandInteraction) -> bool:
         user = await database.get_user_info(Interaction.author.id)
         translation = await database.get_interaction_lang(Interaction)
-        await database.close()
         # Shop does no exists
         if user.shop_id == None:
             embed = disnake.Embed(
@@ -88,7 +87,6 @@ def gang_check():
     async def check(Interaction: disnake.ApplicationCommandInteraction) -> bool:
         user = await database.get_user_info(Interaction.author.id)
         translation = await database.get_interaction_lang(Interaction)
-        await database.close()
         # gang does no exists
         if user.gang_id == None:
             embed = disnake.Embed(
@@ -129,11 +127,10 @@ def gang_rank_check(minimum_rank: GangRank = GangRank.SOLDIER):
                 url="https://storage.stfurequiem.com/randomAsset/avatar.png"
             )
             await Interaction.send(embed=embed)
-            await database.close()
+
             return False
 
         gang = await database.get_gang_info(user.gang_id)
-        await database.close()
         rank = gang.ranks[user.id]
         return rank <= minimum_rank
 
