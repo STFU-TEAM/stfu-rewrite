@@ -6,18 +6,18 @@
     "not_registered": "¡Parece que {0} no está registrado en la base de datos! ¡Usa /begin para registrarte!",
     "already_registered": "Parece que ya estás registrado",
     "empty_storages": "Tu almacén está vacío",
-    "shop_created": "You already have a shop.",
-    "shop_not_created": "You need to create a shop to use this command",
-    "gang_not_created": "You need to create or be part of a gang to use this command",
-    "not_an_image": "This url does not point to an image, please enter a valid url",
-    "no_shop_found": "No shop has the item you are looking for",
-    "not_enough_money": "You don't have enough money",
-    "not_enough_permission": "The bot need further permissions to work ! Please reinvite him ! If this doesn't fix the issue, consider joining our discord to reach us !",
-    "no_permission": "It seems you don't have the permissions to use this command",
-    "missing_arguments": "This command is missing an argument, please use /help for more information",
-    "max_concurrency": "You need to finish your `{0}` command to use it ounce again , please press ❌ or finish the required actions",
-    "TOPGG": "Top.gg seems to be experiencing some server issue. Please retry in few minutes. DO NOT CONTACT US ABOUT TOPGG ERRORS!",
-    "http_error": "We made a mistake, and the bot could not send the embed"
+    "shop_created": "Ya tienes una tienda.",
+    "shop_not_created": "Necesitas crear una tienda para usar este comando",
+    "gang_not_created": "Necesitas crear o ser parte de un grupo para usar este comando",
+    "not_an_image": "Esta Url no apunta a una imagen, por favor ingresa una Url válida",
+    "no_shop_found": "Ninguna tienda tiene el objeto que estás buscando",
+    "not_enough_money": "No tienes el dinero suficiente",
+    "not_enough_permission": "¡El bot necesita más permisos para funcionar! ¡Por favor vuelve a invitarlo! Si esto no arregla el problema, ¡considera unirte a nuestro Discord para que podamos ayudarte!",
+    "no_permission": "Parece que no tienes los permisos necesarios para usar este comando",
+    "missing_arguments": "Este comando carece de un argumento, por favor usa /help para más información",
+    "max_concurrency": "Necesitas terminar tu `{0}` comando para usarlo de nuevo, por favor presiona ❌ o termina las acciones requeridas",
+    "TOPGG": "Top.gg parece estar sufriendo algunos errores de servidor. Por favor reintenta en un par de minutos. ¡NO NOS CONTACTES POR ERRORES DE TOP.GG!",
+    "http_error": "Hemos cometido un error, y el bot no pudo enviar el link embed"
   },
   "fight": {
     "1": "{0},¿te gustaría combatir contra {1}?",
@@ -62,13 +62,13 @@
     "4": "No has llegado lo suficientemente lejos para recibir un objeto.",
     "5": "¡Has completado la torre! Puedes rebatir sus recompensas, y avanzar al siguiente si está disponible.",
     "6": "Lo has hecho bien, pero necesitas terminar la torre para avanzar.",
-    "7": "🎊First Completion reward!🎊",
-    "8": "Reward:"
+    "7": "🎊¡Primera recompensa de finalización!🎊",
+    "8": "Recompensa:"
   },
   "use": {
     "1": "No tienes ningún objeto útil, usa /cruzada o /torre",
     "2": "Elige un objeto para usar.",
-    "3": "The stand was stored in : {0}",
+    "3": "El stand fue almacenado en: {0}",
     "4": "No hay más espacio de almacenamiento disponible,¡usa /stand remove para liberar espacio o dona!",
     "5": "Elige un stand en el que quieras usar una flecha Requiem.",
     "6": "¡El stand ha llegado a su punto más alto!",
@@ -82,21 +82,21 @@
   "ui": {
     "1": "Elige tu almacenamiento",
     "shop_modal": {
-      "1": "Shop name",
-      "2": "Enter your shop name( 50 char max )",
-      "3": "Shop description",
-      "4": "Enter your shop description",
-      "5": "Create your shop.",
-      "6": "Here is your shop"
+      "1": "Nombre de tienda",
+      "2": "Introduce el nombre de tu tienda (50 carácteres máximos)",
+      "3": "Descripción de la tienda",
+      "4": "Introduce la descripción de tu tienda",
+      "5": "Crea tu tienda.",
+      "6": "Aquí está tu tienda"
     },
     "gang_modal": {
-      "1": "Gang name",
-      "2": "Enter the name of your gang",
-      "3": "Gang motd",
-      "4": "Enter your gang message of the day",
-      "5": "Gang motto",
-      "6": "Enter the main philosophy / guideline of your gang",
-      "7": "Gang creation",
+      "1": "Nombre de banda",
+      "2": "Introduce el nombre de tu banda",
+      "3": "Lema del día de la banda",
+      "4": "Introduce tu mensaje de banda del día",
+      "5": "Lema de la banda",
+      "6": "Introduce la filosofía principal / guía de tu banda",
+      "7": "Creación de banda",
       "8": ""
     }
   },
@@ -144,104 +144,104 @@
     "3": "¡Tus stands han encontrado monedas!"
   },
   "shop_create": {
-    "1": "The price to create a shop is {0}, do you want to create a shop ?",
-    "2": "You can create a shop whenever you want"
+    "1": "El precio para crear una tienda es {0}, ¿quieres crear una tienda?",
+    "2": "Puedes crear una tienda cuando quieras"
   },
   "shop_sell": {
-    "1": "Select an item to sell",
-    "2": "You sold {0} for {1}",
-    "3": "You have 24 items. Please, remove some items before selling more."
+    "1": "Elige un objeto para vender",
+    "2": "Has vendido {0} por {1}",
+    "3": "Tienes 24 objetos. Por favor, elimina algunos objetos antes de vender más."
   },
   "shop_remove": {
-    "1": "Select an item to remove from your shop",
-    "2": "{0} was removed from your shop and added to your inventory"
+    "1": "Elige un objeto para eliminar de tu tienda",
+    "2": "{0} fue eliminado de tu tienda y añadido a tu inventario"
   },
   "shop_show": {
-    "1": "{0}'s shop",
-    "2": "`Items`",
-    "3": "price:`{0}`"
+    "1": "Tienda de {0}",
+    "2": "`Objetos`",
+    "3": "precio:`{0}`"
   },
   "shop_changeimage": {
-    "1": "Shop image was changed"
+    "1": "La imagen de la tienda fue cambiada"
   },
   "shop_buy": {
-    "1": "Select an item to buy",
-    "2": "Do you want to buy:",
-    "3": "{0} for {1}",
-    "4": "You did not buy any time",
-    "5": "Come back later !",
-    "6": "Thanks for your purchase !",
-    "7": "You received `{0}` in your inventory"
+    "1": "Elige un objeto para comprar",
+    "2": "¿Quieres comprar?:",
+    "3": "{0} por {1}",
+    "4": "No has comprado en ningún momento",
+    "5": "¡Vuelve más tarde!",
+    "6": "¡Gracias por tu compra!",
+    "7": "Has recibido `{0}` en tu inventario"
   },
   "gang_invite": {
-    "1": "This user is already in a gang",
-    "2": "This user has already been invited to join the gang",
-    "3": "You invited {0} to {1}"
+    "1": "Este usuario ya está en una banda",
+    "2": "Este usuario ya ha sido invitado a unirse a la banda",
+    "3": "Has invitado a {0} a {1}"
   },
   "gang_stand_add": {
-    "1": "You cannot add anymore stand to defend your gang",
-    "2": "Select a stand to protect your gang",
-    "3": "{0} will now, be defending you gang"
+    "1": "No puedes añadir más stands para defender tu banda",
+    "2": "Elige un stand para proteger tu banda",
+    "3": "{0} ahora estará defendiendo a tu banda"
   },
   "gang_stand_remove": {
-    "1": "Select a stand to remove"
+    "1": "Elige un stand para eliminar"
   },
   "gang_create": {
-    "1": "You already have a gang leave your gang to create a new one !",
-    "2": "You need to pay {0} to create a new gang, you have :{1}",
-    "3": "You can create a gang anytime !",
-    "4": "You don't have enough money you need {0} to create a gang"
+    "1": "¡Ya tienes una banda, deja tu banda para crear una nueva!",
+    "2": "Necesitas pagar {0} para crear una nueva banda, tienes :{1}",
+    "3": "¡Puedes crear una banda en cualquier momento!",
+    "4": "No tienes dinero suficiente, necesitas {0} para crear una banda"
   },
   "gang_kick": {
-    "1": "This user is not in your gang",
-    "2": "You have no permission to kick this user",
-    "3": "{0} was kicked from {1}"
+    "1": "Este usuario no está en tu banda",
+    "2": "No tienes permiso para expulsar a este usuario",
+    "3": "{0} fue expulsado de {1}"
   },
   "gang_promote": {
-    "1": "You are about to make {0} the gang boss are you sure ?",
-    "2": "{0} was not made the gang leader",
-    "3": "{0} was made the new gang leader",
-    "4": "You have promoted {0} to {1}"
+    "1": "Estás a punto de hacer que {0} sea el jefe de la banda, ¿estás seguro?",
+    "2": "{0} no fue nombrado líder de la banda",
+    "3": "{0} fue nombrado el nuevo líder de la banda",
+    "4": "Has ascendido a {0} a {1}"
   },
   "gang_deposit": {
-    "1": "{0} was added to the gang vault"
+    "1": "{0} fue añadido a la bóveda de la banda"
   },
   "gang_pay": {
-    "1": "{0} was remove from the vault, {1} was paid !"
+    "1": "{0} fue removido de la bóveda, ¡{1} fue pagado!"
   },
   "gang_show": {
-    "1": "`Members:{0}`",
-    "2": "`Guarding Stands`",
-    "3": "Level:",
+    "1": "`Miembros:{0}`",
+    "2": "`Stand Guardián`",
+    "3": "Nivel:",
     "4": "elo",
-    "5": "vault",
-    "6": "Donators"
+    "5": "bóveda",
+    "6": "Donadores"
   },
   "gang_join": {
-    "1": "You already have a gang leave your gang to have a new one",
-    "2": "You have no gang invite ask the boss or a capo, to be invited",
-    "3": "Select a gang",
-    "4": "You joined {0}"
+    "1": "Ya tienes una banda, deja tu banda para tener una nueva",
+    "2": "No tienes ninguna invitación de banda, pídele al jefe o a un capo, que te inviten",
+    "3": "Elige una banda",
+    "4": "Te uniste a {0}"
   },
   "gang_changeimage": {
-    "1": "You gang's image was changed"
+    "1": "La imagen de tu banda fue cambiada"
   },
   "changeprofileimage": {
-    "1": "Your profile's image was changed"
+    "1": "Tu foto de perfil fue cambiada"
   },
   "errors": {
-    "1": "Invite the bot with this link !",
-    "2": "In particular:",
-    "3": "Manage webhooks, Manage message ,add reaction",
-    "4": "Need Help ? Our discord: https://discord.gg/CQtxPw2"
+    "1": "¡Invita al bot con este link!",
+    "2": "En particular:",
+    "3": "Administrar webhooks, Administrar mensaje, añadir reacción",
+    "4": "¿Necesitas ayuda? Únete a nuestro Discord: https://discord.gg/CQtxPw2"
   },
   "changedefaultlang": {
-    "1": "Choose a language to use."
+    "1": "Elige un idioma para usar."
   },
   "vote": {
-    "1": "You need to vote to earn rewards !",
-    "2": "to vote you need to visit this page,the bot will be waiting for your vote {0}",
-    "3": "Visit: https://stfurequiem.com/vote",
-    "4": "Thanks for voting here are your rewards !"
+    "1": "¡Debes votar para obtener recompensas!",
+    "2": "Para votar debes visitar esta página, el bot estará esperando tu votación {0}",
+    "3": "Visita: https://stfurequiem.com/vote",
+    "4": "¡Gracias por votar, aquí están tus recompensas!"
   }
 }
