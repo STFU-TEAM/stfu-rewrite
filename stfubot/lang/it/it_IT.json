@@ -8,7 +8,7 @@
     "empty_storages": "Il tuo storage è vuoto",
     "shop_created": "Possiedi già uno shop.",
     "shop_not_created": "Devi aver creato uno shop per usare questo comando",
-    "gang_not_created": "You need to create or be part of a gang to use this command",
+    "gang_not_created": "Devi far parte di una gang o averne creata una per usare questo comando",
     "not_an_image": "Questo url non riconduce ad un'immagine. Inserisci un url valido",
     "no_shop_found": "Nessuno shop ha l'oggetto che stai cercando",
     "not_enough_money": "Non hai abbastanza monete",
