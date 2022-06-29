@@ -158,18 +158,20 @@ def get_drop_from_list(stand_list: List["Stand"], number_of_drop: int = 1) -> li
     for i in stand_list:
         nums[i.stars - 1] += 1
     # probability pondered by the number of stand in the star category
-    weight = [
-        0.5 / nums[0],
-        0.3 / nums[1],
-        0.15 / nums[2],
-        0.04 / nums[3],
-        0.009 / nums[4],
-        0.001 / nums[5],
+    stars = [1, 2, 3, 4, 5, 6]
+    weights = [
+        0.35,
+        0.3,
+        0.2,
+        0.1,
+        0.04,
+        0.01,
     ]
-    # each probability for each stand
-    prob = [weight[i.stars - 1] for i in stand_list]
+    star = random.choices(stars, weights=weights, k=1)[0]
+
+    stand_list = [stand for stand in stand_list if stand.stars == star]
     # return one of the stand
-    drops = random.choices(stand_list, weights=prob, k=number_of_drop)
+    drops = random.choices(stand_list, k=number_of_drop)
     return drops
 
 
