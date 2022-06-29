@@ -15,6 +15,7 @@ from stfubot.globals.variables import (
     CRITMULTIPLIER,
     DODGENERF,
     STXPTOLEVEL,
+    MAX_LEVEL,
 )
 
 stand = TypeVar("stand", bound="Stand")
@@ -38,7 +39,7 @@ class Stand:
         self.turn_for_ability: int = stand_file[self.id - 1]["turn_for_ability"]
         self.special_description: str = stand_file[self.id - 1]["special_description"]
         self.items: List[Item] = [item_from_dict(s) for s in data["items"]]
-        self.level: int = min(100, self.xp // STXPTOLEVEL)
+        self.level: int = min(MAX_LEVEL, self.xp // STXPTOLEVEL)
 
         # Compute the starting Items and XP scaling.
         bonus_hp = 0
@@ -51,12 +52,11 @@ class Stand:
             bonus_speed += item.bonus_speed
             bonus_critical += item.bonus_critical
         # LEVEL SCALING
-        bonus_hp += self.level * (7 - (self.stars + self.ascension)) * HPSCALING
-        bonus_damage += self.level * (7 - (self.stars + self.ascension)) * DAMAGESCALING
-        bonus_speed += self.level * (7 - (self.stars + self.ascension)) * SPEEDSCALING
-        bonus_critical += (
-            self.level * (7 - (self.stars + self.ascension)) * CRITICALSCALING
-        )
+        bonus_hp += self.level * HPSCALING
+        bonus_damage += self.level * DAMAGESCALING
+        bonus_speed += self.level * SPEEDSCALING
+        bonus_critical += self.level * CRITICALSCALING
+
         # Define the starting STATS and variables
         self.current_hp = self.base_hp + bonus_hp * (1 + self.ascension / 3)
         self.current_damage = self.base_damage + bonus_damage * (1 + self.ascension / 3)
