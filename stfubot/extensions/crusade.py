@@ -49,7 +49,7 @@ class Crusade(commands.Cog):
 
         # Check the time
         past_time = user.last_crusade
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
         delta = now - past_time
         wait_time = DONOR_CR_WAIT_TIME + (not user.is_donator()) * NORMAL_CR_WAIT_TIME
@@ -71,7 +71,7 @@ class Crusade(commands.Cog):
         )
         await Interaction.send(embed=embed)
 
-        user.last_crusade = datetime.datetime.now()
+        user.last_crusade = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
         if user.level < 5:
             star = 3

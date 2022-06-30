@@ -233,6 +233,7 @@ class Gangs(commands.Cog):
     async def stand(self, Interaction: disnake.CommandInteraction):
         pass
 
+    @gang_check()
     @stand.sub_command(name="add", description="add a stand to guard your gang")
     async def add(self, Interaction: disnake.CommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
@@ -303,6 +304,7 @@ class Gangs(commands.Cog):
         await gang.update()
         await Interaction.channel.send(embed=embed)
 
+    @gang_check()
     @stand.sub_command(
         name="remove", description="remove a stand from guarding your guild"
     )
@@ -563,6 +565,7 @@ class Gangs(commands.Cog):
     async def vault(self, Interaction: disnake.CommandInteraction):
         pass
 
+    @gang_check()
     @vault.sub_command(name="deposit", description="deposit money into your gang vault")
     async def deposit(self, Interaction: disnake.CommandInteraction, ammount: int):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)

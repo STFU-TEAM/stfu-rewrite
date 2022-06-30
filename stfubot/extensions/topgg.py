@@ -51,7 +51,7 @@ class TopGG(commands.Cog):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
 
         past_time = user.last_vote
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         Delta = now - past_time
         wait_time = 12
         if Delta.total_seconds() // 3600 <= wait_time:
@@ -77,13 +77,13 @@ class TopGG(commands.Cog):
         )
         embed.set_image(url=self.stfubot.avatar_url)
         await Interaction.send(embed=embed)
-        time = datetime.datetime.now()
+        time = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         while not await self.dblpy.get_user_vote(user.discord.id):
-            delta = datetime.datetime.now() - time
+            delta = (datetime.datetime.utcnow() + datetime.timedelta(hours=2)) - time
             if delta.total_seconds() > 5 * 60:
                 raise TimeoutError
             await asyncio.sleep(10)
-        user.last_vote = datetime.datetime.now()
+        user.last_vote = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         user.coins += COINS_VOTE
         user.items = user.items + [item_from_dict({"id": 2})] * ARROW_VOTE
         embed = disnake.Embed(

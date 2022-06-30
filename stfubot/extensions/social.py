@@ -140,7 +140,7 @@ class social(commands.Cog):
     async def advert(self, Interaction: disnake.ApplicationCommandInteraction):
         embed = disnake.Embed(
             title="Advert.",
-            description="The easiest way to win more arrows, and to support our work !",
+            description="The easiest way to win more coins !, and to support our work !",
         )
         embed.set_image(
             url="https://i.pinimg.com/originals/a5/e8/2d/a5e82d700ff336637489b44f32d36095.gif"
@@ -163,7 +163,7 @@ class social(commands.Cog):
         past_time_adv = user.last_adv
 
         # get the current time
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
         # compute each wait time
         wait_time_vote = 12

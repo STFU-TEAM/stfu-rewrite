@@ -19,7 +19,7 @@ class Dropdown(disnake.ui.Select):
         self.prices: List[int] = prices
         options = [
             disnake.SelectOption(
-                label=f"{item.name}|{prices[i]}{CustomEmoji.COIN}",
+                label=f"{item.name}|{prices[i]}💰",
                 emoji=item.emoji,
                 value=i,
             )

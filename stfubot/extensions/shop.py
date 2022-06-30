@@ -144,6 +144,14 @@ class Shop(commands.Cog):
 
         shop = await self.stfubot.database.get_shop_info(user.shop_id)
 
+        if len(shop.items) == 0:
+            embed = disnake.Embed(
+                title=translation["shop_remove"]["3"], color=disnake.Color.blue()
+            )
+            embed.set_image(url=self.stfubot.avatar_url)
+            await Interaction.send(embed=embed)
+            return
+
         view = ShopItemSelectDropdown(Interaction, shop.items, shop.prices)
         embed = disnake.Embed(
             title=translation["shop_remove"]["1"],

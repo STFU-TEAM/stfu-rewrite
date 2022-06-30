@@ -32,7 +32,7 @@ class Stand:
         self.stars: int = stand_file[self.id - 1]["stars"]
         self.xp: int = data["xp"]
         self.ascension: int = data["ascension"]
-        self.base_critical: int = stand_file[self.id - 1]["base_critical"]
+        self.base_critical: float = stand_file[self.id - 1]["base_critical"]
         self.base_hp: int = stand_file[self.id - 1]["base_hp"]
         self.base_damage: int = stand_file[self.id - 1]["base_damage"]
         self.base_speed: int = stand_file[self.id - 1]["base_speed"]

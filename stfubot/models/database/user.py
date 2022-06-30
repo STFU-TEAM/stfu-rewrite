@@ -73,7 +73,8 @@ class User:
         status = self.early_supporter | self.over_heaven_supporter
         # regular donor status
         status |= (
-            self.donor_status >= datetime.datetime.now()
+            self.donor_status
+            >= (datetime.datetime.utcnow() + datetime.timedelta(hours=2))
             and self.donor_status != datetime.datetime.max
         )
         # answer
@@ -134,7 +135,7 @@ def create_user(user_id: str):
         "crusade_level": 0,
         "tower_level": 0,
         "profile_image": "https://i.pinimg.com/originals/77/ba/e4/77bae4f9d1c02f732e9271976539ed48.gif",
-        "join_date": datetime.datetime.now(),
+        "join_date": (datetime.datetime.utcnow() + datetime.timedelta(hours=2)),
         "last_crusade": datetime.datetime.min,
         "last_adventure": datetime.datetime.min,
         "last_vote": datetime.datetime.min,

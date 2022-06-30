@@ -105,7 +105,7 @@ class daily(commands.Cog):
         user.discord = Interaction.author
         # Check the time
         past_time = user.last_adventure
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
         delta = now - past_time
         wait_time = DONOR_ADV_WAIT_TIME + (not user.is_donator()) * NORMAL_ADV_WAIT_TIME
