@@ -154,7 +154,8 @@
   },
   "shop_remove": {
     "1": "Seleziona un oggetto da rimuovere dal tuo shop",
-    "2": "{0} è stato rimosso dal tuo negozio ed è stato aggiunto al tuo inventario"
+    "2": "{0} è stato rimosso dal tuo negozio ed è stato aggiunto al tuo inventario",
+    "3": "Your shop has no items"
   },
   "shop_show": {
     "1": "Lo shop di {0}",
