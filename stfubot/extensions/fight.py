@@ -54,6 +54,15 @@ class fight(commands.Cog):
             embed.set_image(url=self.stfubot.avatar_url)
             await Interaction.send(embed=embed)
             return
+        if ennemy.id == Interaction.author.id:
+            embed = disnake.Embed(
+                title="Don't fight yourself, get therapy",
+                color=disnake.Colour.blue(),
+            )
+            embed.set_image(url=self.stfubot.avatar_url)
+            await Interaction.send(embed=embed)
+            return
+
         # Get the users
         user_1 = await self.stfubot.database.get_user_info(ennemy.id)
         user_2 = await self.stfubot.database.get_user_info(Interaction.author.id)
