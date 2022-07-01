@@ -68,7 +68,8 @@ class Stand:
         bonus_critical += (
             self.level
             // LEVEL_TO_STAT_INCREASE
-            * self.base_critical(CRITICALSCALING / 100)
+            * self.base_critical
+            * (CRITICALSCALING / 100)
         )
 
         # Define the starting STATS and variables

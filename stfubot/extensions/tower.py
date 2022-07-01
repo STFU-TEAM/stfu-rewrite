@@ -40,7 +40,6 @@ class Tower(commands.Cog):
     )
     @database_check()
     async def tower(self, Interaction: disnake.ApplicationCommandInteraction):
-
         # translation
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
@@ -82,7 +81,7 @@ class Tower(commands.Cog):
         # Level selection
 
         user.coins -= ENTRYCOST
-        # await user.update()
+        await user.update()
         view = TowerSelectDropdown(Interaction)
         await Interaction.response.edit_message(embed=embed, view=view)
         await wait_for(view)
