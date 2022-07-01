@@ -12,9 +12,7 @@ class StfuBot(commands.AutoShardedInteractionBot):
     """AutoShardedBot with added methods and caviats"""
 
     def __init__(self, loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()):
-        self.intents = disnake.Intents.default()
         super().__init__(
-            intents=self.intents,
             max_messages=100000,
             loop=loop,
             sync_commands=True,
