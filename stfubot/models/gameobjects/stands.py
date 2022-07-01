@@ -16,6 +16,7 @@ from stfubot.globals.variables import (
     DODGENERF,
     STXPTOLEVEL,
     MAX_LEVEL,
+    LEVEL_TO_STAT_INCREASE,
 )
 
 stand = TypeVar("stand", bound="Stand")
@@ -52,18 +53,36 @@ class Stand:
             bonus_speed += item.bonus_speed
             bonus_critical += item.bonus_critical
         # LEVEL SCALING
-        bonus_hp += self.level * HPSCALING
-        bonus_damage += self.level * DAMAGESCALING
-        bonus_speed += self.level * SPEEDSCALING
-        bonus_critical += self.level * CRITICALSCALING
+        bonus_hp += (
+            self.level // LEVEL_TO_STAT_INCREASE * self.base_damage * (HPSCALING / 100)
+        )
+        bonus_damage += (
+            self.level // LEVEL_TO_STAT_INCREASE * self.base_hp * (DAMAGESCALING / 100)
+        )
+        bonus_speed += (
+            self.level
+            // LEVEL_TO_STAT_INCREASE
+            * self.base_speed
+            * (SPEEDSCALING / 100)
+        )
+        bonus_critical += (
+            self.level
+            // LEVEL_TO_STAT_INCREASE
+            * self.base_critical(CRITICALSCALING / 100)
+        )
 
         # Define the starting STATS and variables
-        self.current_hp = self.base_hp + bonus_hp * (1 + self.ascension / 3)
-        self.current_damage = self.base_damage + bonus_damage * (1 + self.ascension / 3)
-        self.current_speed = self.base_speed + bonus_speed * (1 + self.ascension / 3)
+        self.current_hp = int(self.base_hp + bonus_hp * (1 + self.ascension / 3))
+        self.current_damage = int(
+            self.base_damage + bonus_damage * (1 + self.ascension / 3)
+        )
+        self.current_speed = int(
+            self.base_speed + bonus_speed * (1 + self.ascension / 3)
+        )
         self.current_critical = self.base_critical + bonus_critical * (
             1 + self.ascension / 3
         )
+
         self.start_hp = self.current_hp
         self.start_damage = self.current_damage
         self.start_speed = self.current_speed

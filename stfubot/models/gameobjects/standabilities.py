@@ -161,8 +161,10 @@ def killer_queen(
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
-        target.effects.append(Effect(EffectType.POISON, 1, multiplicator))
-        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds!"
+        target.effects.append(
+            Effect(EffectType.POISON, 1, multiplicator * stand.current_damage)
+        )
+        message = f"｢{stand.name}｣ place a bomb on {target.name} for {multiplicator*stand.current_damage} damage !"
     else:
         message = f"｢{stand.name}｣!"
     return payload, message
@@ -576,7 +578,7 @@ specials = {
     "126": mandom,
     "134": the_world_sbr,
     "137": soft_and_wet,
-    "150": doobie_wah,
+    "149": doobie_wah,
     "154": walking_heart,
     "161": wonder_of_u,
     "163": victorious_star_platinum,

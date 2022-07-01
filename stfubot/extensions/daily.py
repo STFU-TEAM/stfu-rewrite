@@ -111,7 +111,11 @@ class daily(commands.Cog):
         wait_time = DONOR_ADV_WAIT_TIME + (not user.is_donator()) * NORMAL_ADV_WAIT_TIME
 
         if delta.total_seconds() // 3600 < wait_time:
-            wait_for = datetime.timedelta(hours=wait_time) - delta
+            wait_for = (
+                datetime.timedelta(hours=wait_time) - delta
+                if datetime.timedelta(hours=wait_time) > delta
+                else delta - datetime.timedelta(hours=wait_time)
+            )
             embed = disnake.Embed(
                 title=translation["error_meesages"]["sorry_but"],
                 description=translation["error_meesages"]["cool_down"].format(
@@ -139,6 +143,7 @@ class daily(commands.Cog):
                 inline=True,
             )
         coins = random.randint(90, 120)
+        user.coins += coins
         embed.add_field(
             name=translation["adventure"]["3"],
             value=f"`{coins}`{CustomEmoji.COIN}",

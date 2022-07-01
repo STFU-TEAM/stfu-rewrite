@@ -108,10 +108,10 @@ class management(commands.Cog):
             embed.set_image(url=url)
             embed.add_field(
                 name="▬▬▬`STATS`▬▬▬",
-                value=f"HP:`{stand.base_hp}{sign(bonus_hp)}❤️`\n"
-                + f"DAMAGE:`{stand.base_damage}{sign(bonus_damage)}⚔️`\n"
-                + f"SPEED:`{stand.base_speed}{sign(bonus_speed)}💨`\n"
-                + f"CRITICAL RATE:`{stand.base_critical}{sign(bonus_critical)}✨`\n"
+                value=f"HP:`{int(stand.base_hp)}{sign(bonus_hp)}❤️`\n"
+                + f"DAMAGE:`{int(stand.base_damage)}{sign(bonus_damage)}⚔️`\n"
+                + f"SPEED:`{int(stand.base_speed)}{sign(bonus_speed)}💨`\n"
+                + f"CRITICAL RATE:`{int(stand.base_critical)}{sign(bonus_critical)}✨`\n"
                 + f"LEVEL:`{stand.xp//100}`\n"
                 + f"XP:`{stand.xp}`\n    ▬▬▬▬▬▬▬▬▬",
             )
