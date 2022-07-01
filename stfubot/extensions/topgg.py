@@ -56,9 +56,9 @@ class TopGG(commands.Cog):
         wait_time = 12
         if Delta.total_seconds() // 3600 <= wait_time:
             wait_for = (
-                datetime.timedelta(hours=wait_time) - delta
-                if datetime.timedelta(hours=wait_time) > delta
-                else delta - datetime.timedelta(hours=wait_time)
+                datetime.timedelta(hours=wait_time) - Delta
+                if datetime.timedelta(hours=wait_time) > Delta
+                else Delta - datetime.timedelta(hours=wait_time)
             )
             embed = disnake.Embed(
                 title=translation["error_meesages"]["error"],
