@@ -243,7 +243,7 @@ class social(commands.Cog):
             inline=False,
         )
         view = disnake.ui.View()
-        if delta_adv.total_seconds() // 3600 <= wait_time_adv:
+        if delta_adv.total_seconds() // 3600 >= wait_time_adv:
             view.add_item(
                 disnake.ui.Button(
                     label="Advert link",
@@ -251,7 +251,7 @@ class social(commands.Cog):
                     url="https://stfurequiem.com/ads",
                 )
             )
-        if delta_vote.total_seconds() // 3600 <= wait_time_vote:
+        if delta_vote.total_seconds() // 3600 >= wait_time_vote:
             view.add_item(
                 disnake.ui.Button(
                     label="Vote link",
