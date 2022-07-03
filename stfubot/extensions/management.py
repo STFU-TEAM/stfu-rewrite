@@ -112,7 +112,7 @@ class management(commands.Cog):
                 + f"DAMAGE:`{int(stand.base_damage)}{sign(bonus_damage)}⚔️`\n"
                 + f"SPEED:`{int(stand.base_speed)}{sign(bonus_speed)}💨`\n"
                 + f"CRITICAL RATE:`{int(stand.base_critical)}{sign(bonus_critical)}✨`\n"
-                + f"LEVEL:`{stand.xp//100}`\n"
+                + f"LEVEL:`{stand.level}`\n"
                 + f"XP:`{stand.xp}`\n    ▬▬▬▬▬▬▬▬▬",
             )
             if len(items) != 0:

@@ -54,20 +54,22 @@ class Stand:
             bonus_critical += item.bonus_critical
         # LEVEL SCALING
         bonus_hp += (
-            self.level // LEVEL_TO_STAT_INCREASE * self.base_damage * (HPSCALING / 100)
+            (self.level // LEVEL_TO_STAT_INCREASE)
+            * self.base_damage
+            * (HPSCALING / 100)
         )
         bonus_damage += (
-            self.level // LEVEL_TO_STAT_INCREASE * self.base_hp * (DAMAGESCALING / 100)
+            (self.level // LEVEL_TO_STAT_INCREASE)
+            * self.base_hp
+            * (DAMAGESCALING / 100)
         )
         bonus_speed += (
-            self.level
-            // LEVEL_TO_STAT_INCREASE
+            (self.level // LEVEL_TO_STAT_INCREASE)
             * self.base_speed
             * (SPEEDSCALING / 100)
         )
         bonus_critical += (
-            self.level
-            // LEVEL_TO_STAT_INCREASE
+            (self.level // LEVEL_TO_STAT_INCREASE)
             * self.base_critical
             * (CRITICALSCALING / 100)
         )

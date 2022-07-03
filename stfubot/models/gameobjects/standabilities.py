@@ -422,7 +422,7 @@ def ball_breaker(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:
     payload = get_payload()
-    multiplier = 0.80
+    multiplier = 0.65
     for ennemy in ennemy_stand:
         ennemy.effects.append(Effect(EffectType.WEAKEN, 1, multiplier))
     for ally in allied_stand:
@@ -480,7 +480,7 @@ def the_world_sbr(
 def soft_and_wet(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:
-    multiplier = 0.75
+    multiplier = 0.50
     payload = get_payload()
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
     message = f"｢{stand.name}｣ breaks and weakens!"

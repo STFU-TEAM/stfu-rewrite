@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from stfubot.models.gameobjects.stands import Stand
 
 from stfubot.models.gameobjects.ia import Ia
-from stfubot.models.gameobjects.effects import Effect
+from stfubot.models.gameobjects.effects import Effect, EffectType
 from stfubot.models.database.user import User
 
 # playing one or multiple file a better version of playfile bassicly
@@ -72,6 +72,9 @@ def get_stand_status(stand: "Stand") -> str:
     else:
         status = ""
         unique: List[Effect] = []
+        actual_effect = stand.effects
+        if stand.ressistance < 1:
+            actual_effect.append(Effect(EffectType.WEAKEN, 1, 0))
         for effect in stand.effects:
             if effect.type not in [e.type for e in unique]:
                 unique.append(effect)
