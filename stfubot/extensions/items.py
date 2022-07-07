@@ -212,7 +212,7 @@ class Items(commands.Cog):
         gacha_item = [2, 12]
         # Stand chip
         chip_ids = [8, 9, 10, 11, 14, 17, 18, 19, 20, 21, 22, 23]
-        actual_id = [9, 0, 5, 29, 162, 31, 58, 32, 34, 45, 49, 50]
+        actual_id = [9, 0, 5, 29, 162, 30, 57, 31, 33, 44, 48, 49]
         # Requiem IDs
         requiemable = [49, 6, 59]
         requiem_stand = [57, 82, 83]
