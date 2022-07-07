@@ -6,6 +6,7 @@ Emoji = {
     "POISON": "<:poison:952619038746501170>",
     "WEAKEN": "<:weakened:952620861762985994>",
     "REGENERATION": "<:regeneration:974407195426947143>",
+    "SLOW": "<:slowed:993988645520412702>",
 }
 
 
@@ -14,6 +15,7 @@ class EffectType(Enum):
     POISON = "POISON"
     WEAKEN = "WEAKEN"
     REGENERATION = "REGENERATION"
+    SLOW = "SLOW"
 
 
 class Effect:

@@ -48,6 +48,44 @@ async def get_part_3_tower_image(user: disnake.User, stage: int) -> disnake.File
     return file
 
 
+async def get_part_4_tower_image(user: disnake.User, stage: int) -> disnake.File:
+    image = Image.open("stfubot/data/image/towertemplate_part4.png")
+    # create object for drawing
+    AVATAR_SIZE = 256
+
+    # get both avatars
+    avatar1 = user.display_avatar.with_format("jpg").with_size(AVATAR_SIZE)
+    buffer_avatar1 = io.BytesIO(await avatar1.read())
+    avatar_image1 = Image.open(buffer_avatar1)
+    # create a 200s*200 round display_avatar
+    avatar_image1 = avatar_image1.resize((AVATAR_SIZE, AVATAR_SIZE))
+    # make the image a circle
+
+    circle_image = Image.new("L", (AVATAR_SIZE, AVATAR_SIZE))
+    circle_draw = ImageDraw.Draw(circle_image)
+    circle_draw.ellipse((0, 0, AVATAR_SIZE, AVATAR_SIZE), fill=255)
+    # stage
+    if stage == 1:
+        pos = (1780 - AVATAR_SIZE // 2, 200 - AVATAR_SIZE // 2)
+    if stage == 2:
+        pos = (1560 - AVATAR_SIZE // 2, 840 - AVATAR_SIZE // 2)
+    if stage == 3:
+        pos = (940 - AVATAR_SIZE // 2, 1200 - AVATAR_SIZE // 2)
+    if stage == 4:
+        pos = (460 - AVATAR_SIZE // 2, 751 - AVATAR_SIZE // 2)
+    if stage == 5:
+        pos = (787 - AVATAR_SIZE // 2, 476 - AVATAR_SIZE // 2)
+    image.paste(avatar_image1, pos, circle_image)
+    # create buffer
+    buffer_output = io.BytesIO()
+    # save PNG in buffer
+    image.save(buffer_output, format="PNG")
+    # move to beginning of buffer so `send()` it will read from beginning
+    buffer_output.seek(0)
+    file = disnake.File(buffer_output, "myimage.png")
+    return file
+
+
 async def get_tower_victory_image(user: disnake.User) -> disnake.File:
     image = Image.open("stfubot/data/image/finalbattleview.png")
     # create object for drawing
@@ -76,7 +114,7 @@ async def get_tower_victory_image(user: disnake.User) -> disnake.File:
 
 
 # easier to retrive programmatically
-tower_images = {"1": get_part_3_tower_image}
+tower_images = {"1": get_part_3_tower_image, "2": get_part_4_tower_image}
 
 # this returns a image used for fight
 async def get_win_image(user1: disnake.User) -> disnake.File:

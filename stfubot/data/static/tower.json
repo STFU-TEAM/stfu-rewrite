@@ -116,6 +116,94 @@
         "Dio"
       ],
       "first_completion_reward": { "id": 14 }
+    },
+    "2": {
+      "name": "Part 4",
+      "levels": 5,
+      "fighters": [
+        [
+          { "id": 33, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] },
+          { "id": 35, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] },
+          { "id": 46, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] }
+        ],
+        [
+          { "id": 41, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] },
+          { "id": 42, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] },
+          { "id": 50, "xp": 5000, "ascension": 1, "items": [{ "id": 15 }] }
+        ],
+        [
+          {
+            "id": 37,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          },
+          {
+            "id": 53,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          },
+          {
+            "id": 56,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          }
+        ],
+        [
+          {
+            "id": 32,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          },
+          {
+            "id": 34,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          },
+          {
+            "id": 45,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          }
+        ],
+        [
+          { "id": 49, "xp": 5000, "ascension": 1, "items": [{ "id": 5 }] },
+          {
+            "id": 54,
+            "xp": 5000,
+            "ascension": 1,
+            "items": [{ "id": 15 }, { "id": 15 }]
+          },
+          { "id": 58, "xp": 5000, "ascension": 2, "items": [{ "id": 5 }] }
+        ]
+      ],
+      "rewards": [
+        { "id": 13, "p": 0.3 },
+        { "id": 2, "p": 0.1 },
+        { "id": 15, "p": 0.1 },
+        { "id": 19, "p": 0.07 },
+        { "id": 20, "p": 0.07 },
+        { "id": 21, "p": 0.07 },
+        { "id": 22, "p": 0.07 },
+        { "id": 23, "p": 0.07 },
+        { "id": 17, "p": 0.05 },
+        { "id": 18, "p": 0.05 },
+        { "id": 5, "p": 0.05 }
+      ],
+      "unlocks": [0, 0, 3, 8, 11],
+      "names": [
+        "Lower Morioh ennemy",
+        "Koychi's act",
+        "Ennemies of Morioh",
+        "Morioh's friends",
+        "Yoshikage Kira"
+      ],
+      "first_completion_reward": { "id": 18 }
     }
   }
 }

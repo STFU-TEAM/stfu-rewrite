@@ -75,6 +75,8 @@ def get_stand_status(stand: "Stand") -> str:
         actual_effect = stand.effects
         if stand.ressistance < 1:
             actual_effect.append(Effect(EffectType.WEAKEN, 1, 0))
+        if stand.current_speed < stand.start_speed:
+            actual_effect.append(Effect(EffectType.SLOW, 1, 0))
         for effect in stand.effects:
             if effect.type not in [e.type for e in unique]:
                 unique.append(effect)
