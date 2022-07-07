@@ -390,6 +390,15 @@ class management(commands.Cog):
         embed.set_image(url=f"https://storage.stfurequiem.com/Image/{stand.id}.png")
         await Interaction.channel.send(embed=embed)
 
+    """
+    @stand.sub_command(name="ascend", description="ascend a main stand to a higher plain of existence")
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
+    async def store(self, Interaction: disnake.ApplicationCommandInteraction):
+        translation = await self.stfubot.database.get_interaction_lang(Interaction)
+        user = await self.stfubot.database.get_user_info(Interaction.author.id)
+        user.discord = Interaction.author
+    """
+
 
 def setup(client: StfuBot):
     client.add_cog(management(client))

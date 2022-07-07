@@ -136,15 +136,19 @@ class Tower(commands.Cog):
         items = random.choices(reward_items, probabilities, k=number_of_drops)
 
         items = [item_from_dict(get_item_from_template(item)) for item in items]
+        title = "Tower"
+
         if i + 1 == tower["levels"] and winner.is_human:
             # the tower is completed
             title = translation["tower"]["5"]
             if user.tower_level <= tower_id:
                 user.tower_level = tower_id + 1
-        else:
-            title = translation["tower"]["6"]
-        embed = disnake.Embed(title=title, color=disnake.Color.blue())
-        if user.tower_level <= tower_id and winner.is_human:
+            embed = disnake.Embed(title=title, color=disnake.Color.blue())
+            embed.add_field(
+                name=translation["tower"]["8"],
+                value="    ▬▬▬▬▬▬▬▬▬\n",
+                inline=False,
+            )
             first_item = item_from_dict(tower["first_completion_reward"])
             embed.add_field(
                 name=translation["tower"]["7"],
@@ -152,11 +156,14 @@ class Tower(commands.Cog):
                 inline=False,
             )
             items.append(first_item)
-        embed.add_field(
-            name=translation["tower"]["8"],
-            value="    ▬▬▬▬▬▬▬▬▬\n",
-            inline=False,
-        )
+        else:
+            title = translation["tower"]["6"]
+            embed = disnake.Embed(title=title, color=disnake.Color.blue())
+            embed.add_field(
+                name=translation["tower"]["8"],
+                value="    ▬▬▬▬▬▬▬▬▬\n",
+                inline=False,
+            )
 
         for item in items:
             embed.add_field(name=f"{item.name}", value=f"{item.emoji}", inline=False)
@@ -164,6 +171,17 @@ class Tower(commands.Cog):
         await user.update()
         embed.set_image(url=TOWERURL)
         await Interaction.channel.send(embed=embed)
+
+    @commands.slash_command(
+        name="test", description="Enter towers to farm items and stands !"
+    )
+    @database_check()
+    async def test(self, Interaction: disnake.ApplicationCommandInteraction):
+        for i in range(1, 6):
+            file = await tower_images["2"](Interaction.author, i)
+            embed = disnake.Embed(color=disnake.Color.blue())
+            embed.set_image(file=file)
+            await Interaction.send(embed=embed)
 
 
 def setup(stfubot: StfuBot):

@@ -179,7 +179,10 @@ def echoes_act_3(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
-        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds"
+        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds and slow everyone else"
+        for st in valid_stand:
+            if st != target:
+                st.effects.append(Effect(EffectType.SLOW, 2, 10))
     else:
         message = f"｢{stand.name}｣!"
     return payload, message
@@ -494,7 +497,7 @@ def doobie_wah(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:
     payload = get_payload()
-    multiplier = 0.1
+    multiplier = 0.4
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
     message = f"｢{stand.name}｣ seeks it's enemy!"
     if len(valid_stand) != 0:
@@ -542,6 +545,615 @@ def victorious_star_platinum(
     message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
+
+def magician_red(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.5
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        target.effects.append(
+            Effect(EffectType.POISON, 1, multiplier * stand.current_damage)
+        )
+    return payload, message
+
+
+def hierophant_green(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.5
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"No one can deflect the emerald splash!"
+    damage = 0
+    for s in valid_stand:
+        damage += stand.attack(s, multiplier=multiplier)["damage"]
+    message = f"Damages everyone for {damage}!"
+    return payload, message
+
+
+def the_fool(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    message = f"｢{stand.name}｣ ! become more resiliant"
+    multiplier = 1.1
+    stand.ressistance *= multiplier
+    return payload, message
+
+
+def hanged_man(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    message = f"｢{stand.name}｣ find the weak spoT !"
+    multiplier = 1.1
+    stand.current_critical *= multiplier
+    return payload, message
+
+
+def emperor(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 1.5
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ headshot !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=multiplier)["damage"]
+        message = f"｢{stand.name}｣ headshot {target.name} for {damage}｣!"
+    return payload, message
+
+
+def justice(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 25
+    message = f"｢{stand.name}｣ become more elusive"
+    stand.current_speed += multiplier
+    return payload, message
+
+
+def death_13(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier_impared = 5
+    multiplier_classic = 0.3
+    damage = 0
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    for target in valid_stand:
+        if (
+            EffectType.STUN in [e.type for e in target.effects]
+            or EffectType.SLOW in [e.type for e in target.effects]
+            or target.current_speed < target.start_speed
+        ):
+            damage += stand.attack(target, multiplier=multiplier_impared)["damage"]
+        else:
+            damage += stand.attack(target, multiplier=multiplier_classic)["damage"]
+
+    message = f"｢{stand.name}｣"
+    return payload, message
+
+
+def high_pristess(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    message = f"｢{stand.name}｣ hardened"
+    stand.ressistance *= 1.25
+    return payload, message
+
+
+def geb(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 1.5
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    message = f"｢{stand.name}｣ sneak attack ! !"
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=multiplier)["damage"]
+        message = f"｢{stand.name}｣ sneak attack {target.name} for {damage}｣!"
+    return payload, message
+
+
+def horus(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplicator = 2
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        target.effects.append(Effect(EffectType.STUN, multiplicator, 0))
+        message = f"｢{stand.name}｣ stuns {target.name} for {multiplicator} rounds!"
+    else:
+        message = f"｢{stand.name}｣!"
+    return payload, message
+
+
+def atum(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    dice_roll = random.randint(0, 6)
+    multiplier = dice_roll
+    message = f"｢{stand.name}｣ roll the dices"
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=multiplier)["damage"]
+        message = f"｢{stand.name}｣ roll the dices and land on {dice_roll} ! and damage {target.name} for {damage}"
+    return payload, message
+
+
+def osiris(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    dice_roll = random.randint(0, 6)
+    multiplier = dice_roll
+    message = f"｢{stand.name}｣ roll the dices"
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=multiplier)["damage"]
+        message = f"｢{stand.name}｣ roll the dices and land on {dice_roll} ! and damage {target.name} for {damage}"
+    return payload, message
+
+
+def red_hot_chili_peper(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.01
+    dif_damge = (stand.current_hp - stand.start_hp) * multiplier
+    stand.current_speed += int(dif_damge)
+    message = f"｢{stand.name}｣ gains more speed ! {int(dif_damge)} speed !"
+    return payload, message
+
+
+def echoes_act_2(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 5
+    for ennemy in ennemy_stand:
+        ennemy.effects.append(Effect(EffectType.SLOW, 3, multiplier))
+    message = f"｢{stand.name}｣ slow everyone for {multiplier}!"
+    return payload, message
+
+
+def cinderella(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 5
+    for ally in [s for s in allied_stand if s.is_alive()]:
+        ally.current_critical += multiplier
+    message = f"｢{stand.name}｣ make everyone prettier"
+    return payload, message
+
+
+def highway_star(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 0.5
+    message = f"｢{stand.name}｣ schearch nutrient"
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=multiplier)["damage"]
+        stand.current_hp += damage
+        message = f"｢{stand.name}｣ damage {target.name} for {damage} and heal himself for {damage}"
+    return payload, message
+
+
+def stray_cat(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    multiplier = 10
+    message = f"｢{stand.name}｣ prepares an explosive bubble."
+    atck_multiplier = stand.current_critical / multiplier
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+    if len(valid_stand) != 0:
+        target: "Stand" = random.choice(valid_stand)
+        damage = stand.attack(target, multiplier=atck_multiplier)["damage"]
+        message = (
+            f"｢{stand.name}｣ explode a bubble on {target.name} for {damage} damage"
+        )
+
+    return payload, message
+
+
+def enigma(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    valid_stand = [i for i in ennemy_stand if i.is_alive()]
+
+    message = f"｢{stand.name}｣ schearch their fears."
+    if len(valid_stand) != 0:
+        target = random.choice(valid_stand)
+        if (
+            EffectType.STUN in [e.type for e in target.effects]
+            or EffectType.SLOW in [e.type for e in target.effects]
+            or target.current_speed < target.start_speed
+        ):
+            target.ressistance *= 0.6
+            message = f"｢{stand.name}｣ make {target.name} weak"
+    return payload, message
+
+
+"""
+def sex_pistol(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def kraft_work(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def aerosmith(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def man_in_the_miror(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def the_grateful_dead(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def baby_face(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def white_album(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def spice_girl(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def oasis(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def kiss(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def foo_fighters(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def limp_bizkit(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def diver_down(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def planet_waves(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def green_green_grass_home(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def jail_house_lock(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def sky_high(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def whgitesnake(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def tusk_act_3(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def scary_monster(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def in_a_silent_way(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def tomb_of_boom(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def wired(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def catch_the_rainbow(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def civil_war(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def paisley_park(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def nut_king_call(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def speed_king(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def fun_fun_fun(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def born_this_way(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def i_am_a_rock(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def blue_hawaii(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def ozon_baby(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def doctor_wu(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def space_trucking(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+
+
+def empress(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    # Whatever your code does to the lists above
+    # Payload Contain behavior change to the game
+    # message is what should be printed to the embed
+    return payload, message
+"""
 
 specials = {
     "1": star_platinum,

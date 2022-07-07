@@ -211,16 +211,19 @@ class Items(commands.Cog):
         # Gacha items
         gacha_item = [2, 12]
         # Stand chip
-        chip_ids = [8, 9, 10, 11, 14]
-        actual_id = [9, 0, 5, 29, 162]
+        chip_ids = [8, 9, 10, 11, 14, 17, 18, 19, 20, 21, 22, 23]
+        actual_id = [9, 0, 5, 29, 162, 31, 58, 32, 34, 45, 49, 50]
         # Requiem IDs
         requiemable = [49, 6, 59]
         requiem_stand = [57, 82, 83]
         # action based on which item was used
         if item.id in gacha_item:  # Stand arrows classic gacha
             if item.id == 2:
+                special_stand = [163]
                 stand_list = [
-                    get_stand_from_template(stand) for stand in self.stfubot.stand_file
+                    get_stand_from_template(stand)
+                    for stand in self.stfubot.stand_file
+                    if not stand["id"] in special_stand
                 ]
             if item.id == 12:
                 stand_list = [

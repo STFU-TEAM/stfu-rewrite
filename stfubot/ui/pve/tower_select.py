@@ -21,7 +21,7 @@ class Dropdown(disnake.ui.Select):
             CustomEmoji.EIGHT,
         ]
 
-        self.towers = [tower_file["1"]]
+        self.towers = [tower_file["1"], tower_file["2"]]
 
         options = [
             disnake.SelectOption(

@@ -161,6 +161,8 @@ class Stand:
                 and self.current_hp < self.base_hp
             ):
                 self.current_hp += effect.value
+            elif effect.type == EffectType.SLOW:
+                self.current_speed -= effect.value
             effect.duration -= 1
         # cleanup effect that have ended
         self.effects = [e for e in self.effects if e.duration > 0]
