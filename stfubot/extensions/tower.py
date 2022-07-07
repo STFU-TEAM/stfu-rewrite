@@ -141,21 +141,21 @@ class Tower(commands.Cog):
         if i + 1 == tower["levels"] and winner.is_human:
             # the tower is completed
             title = translation["tower"]["5"]
-            if user.tower_level <= tower_id:
-                user.tower_level = tower_id + 1
             embed = disnake.Embed(title=title, color=disnake.Color.blue())
             embed.add_field(
                 name=translation["tower"]["8"],
                 value="    ▬▬▬▬▬▬▬▬▬\n",
                 inline=False,
             )
-            first_item = item_from_dict(tower["first_completion_reward"])
-            embed.add_field(
-                name=translation["tower"]["7"],
-                value=f"{first_item.name}|{first_item.emoji}",
-                inline=False,
-            )
-            items.append(first_item)
+            if user.tower_level <= tower_id:
+                user.tower_level = tower_id + 1
+                first_item = item_from_dict(tower["first_completion_reward"])
+                embed.add_field(
+                    name=translation["tower"]["7"],
+                    value=f"{first_item.name}|{first_item.emoji}",
+                    inline=False,
+                )
+                items.append(first_item)
         else:
             title = translation["tower"]["6"]
             embed = disnake.Embed(title=title, color=disnake.Color.blue())
