@@ -163,7 +163,7 @@ class social(commands.Cog):
         past_time_adv = user.last_adv
 
         # get the current time
-        now = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+        now = datetime.datetime.now()
 
         # compute each wait time
         wait_time_vote = 12
@@ -177,42 +177,29 @@ class social(commands.Cog):
 
         status_ad = "✅ ready"
         delta_ad = now - past_time_ad
-        if delta_ad.total_seconds() // 3600 <= wait_time_ad:
+        if delta_ad.total_seconds() / 3600 <= wait_time_ad:
             hours_ad = datetime.timedelta(hours=wait_time_ad)
-            wait_for_ad = (
-                hours_ad - delta_ad if hours_ad > delta_ad else delta_ad - hours_ad
-            )
+            wait_for_ad = hours_ad - delta_ad
             status_ad = f"🕛 {secondsToText(wait_for_ad.total_seconds())} left"
         status_vote = "✅ ready"
         delta_vote = now - past_time_vote
-        if delta_vote.total_seconds() // 3600 <= wait_time_vote:
+        if delta_vote.total_seconds() / 3600 <= wait_time_vote:
             hours_vote = datetime.timedelta(hours=wait_time_vote)
-            wait_for_vote = (
-                hours_vote - delta_vote
-                if hours_vote > delta_vote
-                else delta_vote - hours_vote
-            )
-            status_vote = f"🕛 {secondsToText(wait_for_vote.total_seconds())} left"
+            wait_for_vote = hours_vote.total_seconds() - delta_vote.total_seconds()
+            status_vote = f"🕛 {secondsToText(wait_for_vote)} left"
         status_cr = "✅ ready"
         delta_cr = now - past_time_cr
-        if delta_cr.total_seconds() // 3600 <= wait_time_cr:
+        if delta_cr.total_seconds() / 3600 <= wait_time_cr:
             hours_cr = datetime.timedelta(hours=wait_time_cr)
-            wait_for_cr = (
-                hours_cr - delta_cr if hours_cr > delta_cr else delta_cr - hours_cr
-            )
+            wait_for_cr = hours_cr - delta_cr
             status_cr = f"🕛 {secondsToText(wait_for_cr.total_seconds())} left"
         status_adv = "✅ ready"
         delta_adv = now - past_time_adv
-        if delta_adv.total_seconds() // 3600 <= wait_time_adv:
+        if delta_adv.total_seconds() / 3600 <= wait_time_adv:
             hours_adv = datetime.timedelta(hours=wait_time_adv)
-            wait_for_adv = (
-                hours_adv - delta_adv
-                if hours_adv > delta_adv
-                else delta_adv - hours_adv
-            )
+            wait_for_adv = hours_adv - delta_adv
             status_adv = f"🕛 {secondsToText(wait_for_adv.total_seconds())} left"
         # create the embed
-        # sorry for the f string I was not really inspired
         embed = disnake.Embed(title="Your cooldowns:", color=disnake.Colour.blue())
         embed.set_thumbnail(
             url="https://cdn.iconscout.com/icon/free/png-256/clock-1605637-1360989.png"
@@ -243,7 +230,7 @@ class social(commands.Cog):
             inline=False,
         )
         view = disnake.ui.View()
-        if delta_adv.total_seconds() // 3600 >= wait_time_adv:
+        if delta_adv.total_seconds() // 3600 > wait_time_adv:
             view.add_item(
                 disnake.ui.Button(
                     label="Advert link",
@@ -251,7 +238,7 @@ class social(commands.Cog):
                     url="https://stfurequiem.com/ads",
                 )
             )
-        if delta_vote.total_seconds() // 3600 >= wait_time_vote:
+        if delta_vote.total_seconds() // 3600 > wait_time_vote:
             view.add_item(
                 disnake.ui.Button(
                     label="Vote link",

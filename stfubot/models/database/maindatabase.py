@@ -3,7 +3,7 @@ import asyncio
 import os
 import disnake
 import json
-import math
+import random
 import datetime
 
 from typing import Union, List
@@ -239,25 +239,8 @@ class Database:
         if len(shops) == 0:
             return None, 0
 
-        def get_best_shop_item(Item: Item, shop: Shop):
-            minimum = math.inf
-            index = 0
-            for i, item in enumerate(shop.items):
-                if item.id == Item.id:
-                    if shop.prices[i] < minimum:
-                        minimum = shop.prices[i]
-                        index = i
-            return index, minimum
-
-        best_shop = shops[0]
-        index, minimum = get_best_shop_item(item_to_find, shops[0])
-        for shop in shops:
-            i, mini = get_best_shop_item(item_to_find, shop)
-            if mini < minimum:
-                best_shop = shop
-                index = i
-                minimum = mini
-        return best_shop, index
+        suitable_shop = random.choice(shops)
+        return suitable_shop, shops.index(suitable_shop)
 
     async def close(self):
         await self.client.close()

@@ -133,7 +133,9 @@ class Stand:
         # if it is dodged the we do not compute damage
         if dodge_roll:
             return atck
-        damage = (self.current_damage // ennemy_stand.ressistance) * multi
+        damage = int(
+            (self.current_damage / max(0.01, ennemy_stand.ressistance)) * multi
+        )
         ennemy_stand.current_hp -= damage
         atck["damage"] = damage
         return atck
