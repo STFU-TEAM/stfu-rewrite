@@ -141,6 +141,7 @@ class social(commands.Cog):
         embed = disnake.Embed(
             title="Advert.",
             description="The easiest way to win more coins !, and to support our work !",
+            color=disnake.Colour.blue(),
         )
         embed.set_image(
             url="https://i.pinimg.com/originals/a5/e8/2d/a5e82d700ff336637489b44f32d36095.gif"

@@ -260,8 +260,8 @@ async def fight_instance(
         await send_all(final_embed, channels, fight_id, client)
         view = Menu(embeds)
         msg0, msg1 = await send_all(embeds[0], channels, fight_id, client)
-        await edit_ui(msg0, embeds[0], view)
-        await edit_ui(msg1, embeds[0], view)
+        await edit_ui(msg0, embeds[0], view, client)
+        await edit_ui(msg1, embeds[0], view, client)
         return win(players), combat_log
     except Exception as error:
         if ranked:

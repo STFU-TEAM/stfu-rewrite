@@ -128,7 +128,10 @@ class daily(commands.Cog):
             return
         user.last_adventure = now
         roll = random.randint(1, 100)
-        embed = disnake.Embed(title=translation["adventure"]["1"])
+        embed = disnake.Embed(
+            title=translation["adventure"]["1"],
+            color=disnake.Colour.blue(),
+        )
         if roll <= 10:
             items: List[Item] = [
                 item_from_dict({"id": 2}),

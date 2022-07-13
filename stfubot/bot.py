@@ -25,7 +25,7 @@ main_extension = {
     "extensions.gangs",
     "extensions.shop",
     "extensions.admincommand",
-    "extensions.ranked",
+    # "extensions.ranked",
     "extensions.listeners",
     "extensions.errors",
     "extensions.statcord",
