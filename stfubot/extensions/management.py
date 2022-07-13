@@ -390,14 +390,40 @@ class management(commands.Cog):
         embed.set_image(url=f"https://storage.stfurequiem.com/Image/{stand.id}.png")
         await Interaction.channel.send(embed=embed)
 
-    """
-    @stand.sub_command(name="ascend", description="ascend a main stand to a higher plain of existence")
+    @stand.sub_command(
+        name="ascend", description="ascend a main stand to a higher plain of existence"
+    )
     @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
-    async def store(self, Interaction: disnake.ApplicationCommandInteraction):
+    async def ascend(self, Interaction: disnake.ApplicationCommandInteraction):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author
-    """
+
+        embed = disnake.Embed(
+            title=translation["ascend"]["1"], color=disnake.Color.blue()
+        )
+        view = StandSelectDropdown(Interaction, user.stands)
+
+        await Interaction.send(embed=embed, view=view)
+        await wait_for(view)
+        stand: Stand = user.stands[view.value]
+        if stand.level == 100 and (stand.stars + stand.ascension) < 7:
+            embed = disnake.Embed(
+                title=translation["ascend"]["2"].format(
+                    stand.name, stand.ascension + 1
+                ),
+                color=disnake.Color.blue(),
+            )
+            embed.set_image(url="https://storage.stfurequiem.com/item_special/6.gif")
+            stand.ascension += 1
+            stand.xp = 0
+            await user.update()
+            await Interaction.channel.send(embed=embed)
+            return
+        embed = disnake.Embed(
+            title=translation["ascend"]["3"], color=disnake.Color.blue()
+        )
+        await Interaction.channel.send(embed=embed)
 
 
 def setup(client: StfuBot):

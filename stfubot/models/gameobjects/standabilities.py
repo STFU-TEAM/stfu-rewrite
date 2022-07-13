@@ -16,6 +16,7 @@ def get_payload():
         "gold_experience_requiem": False,
         "tusk_act_4": False,
         "king_crimson": False,
+        "is_a_special": True,
     }
 
 
@@ -44,7 +45,7 @@ def the_world_over_heaven(
     payload = get_payload()
     damage = 0
     for ennemy in ennemy_stand:
-        damage += stand.attack(ennemy)
+        damage += stand.attack(ennemy, multiplier=1000)["attack"]
     message = f"｢{stand.name}｣! damaged everyone for {int(damage)}!"
     return payload, message
 
@@ -377,7 +378,7 @@ def underworld(
         message = f"｢{stand.name}｣ waits for an ally to die..."
         stand.special_meter = 2
         return payload, message
-    valid_stand = [i for i in ennemy_stand if not i.is_alive()]
+    valid_stand = [i for i in allied_stand if not i.is_alive()]
     revived = random.choice(valid_stand)
     revived.current_hp = revived.start_hp // 4
     message = f"｢{stand.name}｣ brings a memory of {revived.name}!"
@@ -1154,6 +1155,16 @@ def empress(
     # message is what should be printed to the embed
     return payload, message
 """
+
+
+def not_implemented(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    payload = get_payload()
+    message = f"｢{stand.name}｣ has no power yet"
+    payload["is_a_special"] = False
+    return payload, message
+
 
 specials = {
     "1": star_platinum,

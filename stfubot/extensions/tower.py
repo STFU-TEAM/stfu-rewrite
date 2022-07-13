@@ -172,17 +172,6 @@ class Tower(commands.Cog):
         embed.set_image(url=TOWERURL)
         await Interaction.channel.send(embed=embed)
 
-    @commands.slash_command(
-        name="test", description="Enter towers to farm items and stands !"
-    )
-    @database_check()
-    async def test(self, Interaction: disnake.ApplicationCommandInteraction):
-        for i in range(1, 6):
-            file = await tower_images["2"](Interaction.author, i)
-            embed = disnake.Embed(color=disnake.Color.blue())
-            embed.set_image(file=file)
-            await Interaction.send(embed=embed)
-
 
 def setup(stfubot: StfuBot):
     stfubot.add_cog(Tower(stfubot))

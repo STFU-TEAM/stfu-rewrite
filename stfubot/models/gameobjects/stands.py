@@ -4,7 +4,7 @@ import json
 
 from stfubot.models.gameobjects.items import Item, item_from_dict
 from stfubot.models.gameobjects.effects import Effect, EffectType
-from stfubot.models.gameobjects.standabilities import specials
+from stfubot.models.gameobjects.standabilities import specials, not_implemented
 from typing import List, TypeVar
 
 from stfubot.globals.variables import (
@@ -112,10 +112,10 @@ class Stand:
             ennemy_stand (stand): the stand to attack
 
         Returns:
-            dict: Default {"damage": 0, "critical": False, "Dodged": False}
+            dict: Default {"damage": 0, "critical": False, "dodged": False}
         """
         # create a return dict this time :)
-        atck = {"damage": 0, "critical": False, "Dodged": False}
+        atck = {"damage": 0, "critical": False, "dodged": False}
         crit = random.randint(0, 100)
         # classic attack have no modifiers so x1
         multi = multiplier
@@ -129,7 +129,7 @@ class Stand:
                 random.randint(0, 100)
                 < (ennemy_stand.current_speed - self.current_speed) // DODGENERF
             )
-            atck["Dodged"] = dodge_roll
+            atck["dodged"] = dodge_roll
         # if it is dodged the we do not compute damage
         if dodge_roll:
             return atck
@@ -146,7 +146,7 @@ class Stand:
         Returns:
             bool: whether the stand is stunned
         """
-        return EffectType.STUN in [c.type for c in self.effects]
+        return EffectType.STUN in [e.type for e in self.effects]
 
     def end_turn(self) -> None:
         """Make the relevant action at the end of the turn"""
@@ -190,7 +190,8 @@ class Stand:
         """
         # reset the meter
         self.special_meter = 0
-        return specials[f"{self.id}"](self, allies, ennemies)
+        special_func = specials.get(self.id, not_implemented)
+        return special_func(self, allies, ennemies)
 
     def to_dict(self) -> dict:
         """Update the data of the stand
