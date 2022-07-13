@@ -3,7 +3,7 @@ import disnake
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
-from disnake.ext import commands
+from disnake.ext import commands, tasks
 
 TOKEN = os.environ["DISCORD_KEY_REQUIEM"]
 
@@ -25,10 +25,13 @@ main_extension = {
     "extensions.gangs",
     "extensions.shop",
     "extensions.admincommand",
+    "extensions.ranked",
+    "extensions.listeners",
     "extensions.errors",
     "extensions.statcord",
     "extensions.topgg",
 }
+
 
 # loads file and stuff
 for file in main_extension:
@@ -48,5 +51,7 @@ async def on_ready():
 
 
 if __name__ == "__main__":
+    # start matchmaking
+    Client.startMatchmaking()
     # run the bot
     Client.run(TOKEN)

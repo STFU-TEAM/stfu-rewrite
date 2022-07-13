@@ -1,6 +1,9 @@
 import aioredis
 import os
 import pickle
+import json
+
+from typing import List
 
 REDIS_URL = os.environ["REDIS_URL"]
 
@@ -10,6 +13,7 @@ class Cache:
 
     def __init__(self):
         self.redis_pool = aioredis.ConnectionPool.from_url(url=REDIS_URL)
+        self.ranked_key = "ranked_request"
 
     async def this_data(self, data: dict, time: int = 10, key: str = None) -> None:
         """cache the dict pickle first for good measure,
@@ -73,6 +77,58 @@ class Cache:
         # delete the value
         await redis_con.delete(key)
         await redis_con.close()
+
+    # ranked
+    async def join_ranked_queu(self, request: dict) -> None:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        data = json.dumps(request)
+        # add to the queu
+        await redis_con.execute_command("RPUSH", self.ranked_key, data)
+
+    async def leave_ranked_queu(self, request: dict) -> None:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        data = json.dumps(request)
+        # remove user
+        await redis_con.execute_command("LREM", self.ranked_key, -1, data)
+
+    async def len_ranked_queu(self) -> int:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # return the lenght
+        return await redis_con.execute_command("LLEN", self.ranked_key) - 1
+
+    async def match_found(self, request: dict) -> bool:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        data = json.dumps(request)
+        return bool(await redis_con.execute_command("LPOS", self.ranked_key, data))
+
+    async def get_matches(self) -> List[dict]:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        matches = await redis_con.execute_command("LRANGE", "matches_request", 1, -1)
+        json_matches = list(map(json.loads, matches))
+        return json_matches
+
+    async def remove_matches(self, match) -> None:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        data = json.dumps(match)
+        await redis_con.execute_command("LREM", "matches_request", -1, data)
+
+    async def leave_match_macking(self, rq: dict) -> None:
+        # get a connection
+        redis_con = aioredis.Redis(connection_pool=self.redis_pool)
+        # serialize with json
+        data = json.dumps(rq)
+        await redis_con.execute_command("LPUSH", "left_request", data)
 
     async def close(self):
         self.redis_pool.disconnect()
