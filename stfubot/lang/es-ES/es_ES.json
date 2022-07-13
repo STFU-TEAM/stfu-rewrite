@@ -244,5 +244,10 @@
     "2": "Para votar debes visitar esta página, el bot estará esperando tu votación {0}",
     "3": "Visita: https://stfurequiem.com/vote",
     "4": "¡Gracias por votar, aquí están tus recompensas!"
+  },
+  "ascend": {
+    "1": "Choose a stand to ascend",
+    "2": "{0} has ascended to ascension {1}",
+    "3": "Your stand need to be level 100 to ascend"
   }
 }
