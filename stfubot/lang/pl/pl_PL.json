@@ -155,7 +155,7 @@
   "shop_remove": {
     "1": "Wybierz przedmiot do usunięcia z Twojego sklepu",
     "2": "{0} został/a Usunięty z Twojego sklepu i dodany/a do twojego ekwipunku",
-    "3": "Your shop has no items"
+    "3": "Twój sklep nie ma przedmiotów"
   },
   "shop_show": {
     "1": "Sklep {0}",
