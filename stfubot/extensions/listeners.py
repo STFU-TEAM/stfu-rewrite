@@ -27,7 +27,8 @@ class Listeners(commands.Cog):
             shard_id,
             "\nrando guild id",
             rando_id,
-            "\ncheck:"(rando_id >> 22) % self.stfubot.shard_count,
+            "\ncheck:",
+            (rando_id >> 22) % self.stfubot.shard_count,
         )
         if shard_id == (rando_id >> 22) % self.stfubot.shard_count:
             channel = self.stfubot.get_partial_messageable(
