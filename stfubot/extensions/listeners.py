@@ -32,8 +32,8 @@ class Listeners(commands.Cog):
     async def on_delete_message_from_shard(self, message: disnake.Message):
         message = await self.stfubot.refresh_msg(message)
         shard_id = message.guild.shard_id
-        rando_id = self.stfubot.guilds[0].id
-        if shard_id == (rando_id >> 22) % self.stfubot.shard_count:
+        this_shard_id = self.stfubot.shard_id
+        if shard_id == this_shard_id:
             message = await self.stfubot.refresh_msg(message)
             await message.delete()
             self.stfubot.dispatch("delete_message_from_shard_done", message.id)
@@ -44,8 +44,8 @@ class Listeners(commands.Cog):
     ):
         message = await self.stfubot.refresh_msg(message)
         shard_id = message.guild.shard_id
-        rando_id = self.stfubot.guilds[0].id
-        if shard_id == (rando_id >> 22) % self.stfubot.shard_count:
+        this_shard_id = self.stfubot.shard_id
+        if shard_id == this_shard_id:
             message = await self.stfubot.refresh_msg(message)
             await message.edit(embed=embed)
             self.stfubot.dispatch("edit_message_from_shard_done", message.id)
@@ -56,8 +56,8 @@ class Listeners(commands.Cog):
     ):
         message = await self.stfubot.refresh_msg(message)
         shard_id = message.guild.shard_id
-        rando_id = self.stfubot.guilds[0].id
-        if shard_id == (rando_id >> 22) % self.stfubot.shard_count:
+        this_shard_id = self.stfubot.shard_id
+        if shard_id == this_shard_id:
             message = await self.stfubot.refresh_msg(message)
             await message.edit(embed=embed, view=view)
             self.stfubot.dispatch("edit_ui_from_shard_done", message.id)
