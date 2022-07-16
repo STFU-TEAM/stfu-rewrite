@@ -19,24 +19,13 @@ class Listeners(commands.Cog):
     async def on_send_message_to_shard(
         self, embed: disnake.Embed, channel: disnake.TextChannel, id: str
     ):
-
         shard_id = channel.guild.shard_id
-        rando_id = self.stfubot.guilds[0].id
-        print(
-            "ranked shard:",
-            shard_id,
-            "\nrando guild id",
-            rando_id,
-            "\ncheck:",
-            (rando_id >> 22) % self.stfubot.shard_count,
-        )
-        if shard_id == (rando_id >> 22) % self.stfubot.shard_count:
+        this_shard_id = self.stfubot.shard_id
+        if shard_id == this_shard_id:
             channel = self.stfubot.get_partial_messageable(
                 channel.id, type=disnake.ChannelType.text
             )
-            print("trying to send message")
             msg = await channel.send(embed=embed)
-            print("message sent")
             self.stfubot.dispatch("shard_send_message", msg, id)
 
     @commands.Cog.listener()
