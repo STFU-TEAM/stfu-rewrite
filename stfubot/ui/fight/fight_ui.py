@@ -35,6 +35,7 @@ class FightButtonFF(disnake.ui.Button):
         )
 
     async def callback(self, interaction: disnake.MessageInteraction):
+        await interaction.response.defer()
         view: FightUi = self.view
         view.value = self.custom_id
         view.interaction = interaction

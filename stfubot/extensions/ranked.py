@@ -23,6 +23,7 @@ class Ranked(commands.Cog):
     @commands.slash_command(
         name="ranked",
         description="make a match against people in different server",
+        guild_ids=[742654613282619473, 830042402685321226],
     )
     @commands.cooldown(1, 3, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.user)
@@ -119,7 +120,7 @@ class Ranked(commands.Cog):
             )
         else:
             await Interaction.channel.send(
-                f"Hey {Interaction.author.mention} you left matchmaking for some reason"
+                f"Hey {Interaction.author.mention} you left matchmaking for an unknown reason"
             )
         await Interaction.delete_original_message()
 

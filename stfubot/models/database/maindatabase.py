@@ -6,7 +6,7 @@ import json
 import random
 import datetime
 
-from typing import Union, List
+from typing import Union, List, Dict
 
 
 from stfubot.models.database.user import User, create_user
@@ -165,7 +165,7 @@ class Database:
 
     async def get_interaction_lang(
         self, Interaction: disnake.ApplicationCommandInteraction
-    ) -> dict:
+    ) -> Dict[str, Dict[str, str]]:
         """Get the localization file from the database
 
         Args:

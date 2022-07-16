@@ -31,7 +31,7 @@ class Stand:
         self.id: int = data["id"]
         self.name: str = stand_file[self.id - 1]["name"]
         self.stars: int = stand_file[self.id - 1]["stars"]
-        self.xp: int = data["xp"]
+        self.xp: int = min(MAX_LEVEL * STXPTOLEVEL, data["xp"])
         self.ascension: int = data["ascension"]
         self.base_critical: float = stand_file[self.id - 1]["base_critical"]
         self.base_hp: int = stand_file[self.id - 1]["base_hp"]

@@ -5,7 +5,7 @@ import uuid
 import datetime
 import traceback
 
-from typing import List, Union, Tuple, Optional, TYPE_CHECKING
+from typing import List, Union, Tuple, Dict, TYPE_CHECKING
 from stfubot.models.bot import stfubot
 
 # globals
@@ -40,7 +40,7 @@ from stfubot.models.database.user import User
 async def fight_instance(
     fighters: List[Union[User, Ia]],
     channels: List[disnake.TextChannel],
-    translation: dict,
+    translation: Dict[str, Dict[str, str]],
     ranked: bool = True,
     fight_id: str = str(uuid.uuid4()),
     client: "StfuBot" = None,
@@ -136,7 +136,6 @@ async def fight_instance(
                                 "Combat terminated because of inactivity."
                             )
                             break
-
                         await view.interaction.response.edit_message(
                             embed=embed, view=PlaceHolder()
                         )
@@ -192,7 +191,7 @@ async def fight_instance(
                         king_crimson |= payload["king_crimson"]
                         # edit the second embed
                         await edit(messages_2, embed, client)
-                        await asyncio.sleep(1.5)
+                        await asyncio.sleep(1)
                 # item special
                 if stand.is_alive():
                     for item in stand.items:

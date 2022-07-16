@@ -44,7 +44,7 @@ class User:
         self.gang_invites: List[int] = data["gang_invites"]
         self.custom_stand: int = data["custom_stand"]
         self.coins: int = data["coins"]
-        self.xp: int = int(data["xp"])
+        self.xp: int = min(int(data["xp"]), 100 * USRXPTOLEVEL)  # cap xp to 100
         self.job: dict = data["job"]
         self.prestige: int = data["prestige"]
         self.global_elo: int = data["global_elo"]
