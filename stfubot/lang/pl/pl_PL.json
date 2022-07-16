@@ -247,7 +247,7 @@
   },
   "ascend": {
     "1": "Wybierz standa, którego chcesz wznieść do nieba",
-    "2": "{0} has ascended to ascension {1}",
-    "3": "Your stand need to be level 100 to ascend"
+    "2": "{0} Wzniósł się do wzniesienia {1}\n(poziom wzniesienia do nieba się podniósł)",
+    "3": "Twój stand wymaga 100 poziomu, żeby wznieść się do nieba"
   }
 }
