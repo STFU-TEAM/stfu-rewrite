@@ -99,7 +99,7 @@ class Database:
         # cache management
         if await self.cache.is_cached(guild_id):
             document = await self.cache.get_data(guild_id)
-            return document
+            return Guild(document, self)
         document = await self.servers.find_one({"_id": guild_id})
         # cache the data
         await self.cache.this_data(document)
@@ -276,7 +276,7 @@ class Database:
         # cache management
         if await self.cache.is_cached(gang_id):
             document = await self.cache.get_data(gang_id)
-            return Shop(document, self)
+            return Gang(document, self)
         document = await self.gangs.find_one({"_id": gang_id})
         # cache the data
         await self.cache.this_data(document)
@@ -290,8 +290,8 @@ class Database:
         """
         _id = document["_id"]
         await self.gangs.replace_one({"_id": _id}, document)
-        # if await self.cache.is_cached(_id):
-        #    await self.cache.this_data(document)
+        if await self.cache.is_cached(_id):
+            await self.cache.this_data(document)
 
     async def add_log(
         self,
