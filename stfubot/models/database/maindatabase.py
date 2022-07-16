@@ -48,7 +48,7 @@ class Database:
         if isinstance(user_id, int):
             user_id = str(user_id)
         document = create_user(user_id)
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         await self.users.insert_one(document)
 
     async def add_guild(self, guild_id: Union[str, int]):
@@ -81,7 +81,7 @@ class Database:
             return User(document, self)
         document = await self.users.find_one({"_id": user_id})
         # cache the data
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         return User(document, self)
 
     async def get_guild_info(self, guild_id: Union[str, int]) -> Guild:
@@ -102,7 +102,7 @@ class Database:
             return document
         document = await self.servers.find_one({"_id": guild_id})
         # cache the data
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         return Guild(document, self)
 
     async def update_user(self, document: dict) -> None:
@@ -113,8 +113,8 @@ class Database:
         """
         _id = document["_id"]
         await self.users.replace_one({"_id": _id}, document)
-        # if await self.cache.is_cached(_id):
-        #    await self.cache.this_data(document)
+        if await self.cache.is_cached(_id):
+            await self.cache.this_data(document)
 
     async def update_guild(self, document: dict) -> None:
         """Update the document in the database
@@ -124,8 +124,8 @@ class Database:
         """
         _id = document["_id"]
         await self.servers.replace_one({"_id": _id}, document)
-        # if await self.cache.is_cached(_id):
-        #    await self.cache.this_data(document)
+        if await self.cache.is_cached(_id):
+            await self.cache.this_data(document)
 
     async def user_in_database(self, user_id: Union[str, int]) -> bool:
         """Check if the user is registered
@@ -194,7 +194,7 @@ class Database:
             str: id of the shop
         """
         document = create_shop(name, description, user_id)
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         await self.shops.insert_one(document)
         return document["_id"]
 
@@ -209,12 +209,12 @@ class Database:
         """
 
         # cache management
-        # if await self.cache.is_cached(shop_id):
-        # document = await self.cache.get_data(shop_id)
-        # return Shop(document, self)
+        if await self.cache.is_cached(shop_id):
+            document = await self.cache.get_data(shop_id)
+            return Shop(document, self)
         document = await self.shops.find_one({"_id": shop_id})
         # cache the data
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         return Shop(document, self)
 
     async def update_shop(self, document: dict) -> None:
@@ -225,8 +225,8 @@ class Database:
         """
         _id = document["_id"]
         await self.shops.replace_one({"_id": _id}, document)
-        # if await self.cache.is_cached(_id):
-        #    await self.cache.this_data(document)
+        if await self.cache.is_cached(_id):
+            await self.cache.this_data(document)
 
     async def find_suitable_shop(self, item_to_find: Item, user_shop_id: str):
         shops: List[Shop] = []
@@ -259,7 +259,7 @@ class Database:
             str: the id of the gang
         """
         document = create_gang(user_id, name, motd, motto)
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         await self.gangs.insert_one(document)
         return document["_id"]
 
@@ -274,12 +274,12 @@ class Database:
         """
 
         # cache management
-        # if await self.cache.is_cached(gang_id):
-        # document = await self.cache.get_data(gang_id)
-        # return Shop(document, self)
+        if await self.cache.is_cached(gang_id):
+            document = await self.cache.get_data(gang_id)
+            return Shop(document, self)
         document = await self.gangs.find_one({"_id": gang_id})
         # cache the data
-        # await self.cache.this_data(document)
+        await self.cache.this_data(document)
         return Gang(document, self)
 
     async def update_gang(self, document: dict) -> None:

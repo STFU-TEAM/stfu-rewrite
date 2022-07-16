@@ -94,7 +94,6 @@ class Shop(commands.Cog):
     async def sell(
         self, Interaction: disnake.ApplicationCommandInteraction, price: int
     ):
-        await Interaction.response.defer()
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author
@@ -268,7 +267,7 @@ class Shop(commands.Cog):
         Interaction: disnake.ApplicationCommandInteraction,
         itemtype: str = commands.Param(autocomplete=autocomplete_type),
     ):
-        await Interaction.response.defer()
+
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author

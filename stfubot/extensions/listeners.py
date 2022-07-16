@@ -19,6 +19,7 @@ class Listeners(commands.Cog):
     async def on_send_message_to_shard(
         self, embed: disnake.Embed, channel: disnake.TextChannel, id: str
     ):
+        print("ranked shard:", shard_id, "\nrando guild id", rando_id)
         shard_id = channel.guild.shard_id
         rando_id = self.stfubot.guilds[0].id
         if shard_id == (rando_id >> 22) % self.stfubot.shard_count:

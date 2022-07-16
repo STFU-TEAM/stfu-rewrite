@@ -64,7 +64,6 @@ def shop_check():
     database = Database(LOOP)
 
     async def check(Interaction: disnake.ApplicationCommandInteraction) -> bool:
-        await Interaction.response.defer()
         user = await database.get_user_info(Interaction.author.id)
         translation = await database.get_interaction_lang(Interaction)
         # Shop does no exists
@@ -87,7 +86,6 @@ def gang_check():
     database = Database(LOOP)
 
     async def check(Interaction: disnake.ApplicationCommandInteraction) -> bool:
-        await Interaction.response.defer()
         user = await database.get_user_info(Interaction.author.id)
         translation = await database.get_interaction_lang(Interaction)
         # gang does no exists
@@ -116,7 +114,6 @@ def gang_rank_check(minimum_rank: GangRank = GangRank.SOLDIER):
     database = Database(LOOP)
 
     async def check(Interaction: disnake.ApplicationCommandInteraction) -> bool:
-        await Interaction.response.defer()
         user = await database.get_user_info(Interaction.author.id)
         translation = await database.get_interaction_lang(Interaction)
 
