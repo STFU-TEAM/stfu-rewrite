@@ -45,7 +45,7 @@ def the_world_over_heaven(
     payload = get_payload()
     damage = 0
     for ennemy in ennemy_stand:
-        damage += stand.attack(ennemy, multiplier=1000)["attack"]
+        damage += stand.attack(ennemy, multiplier=1000)["damage"]
     message = f"｢{stand.name}｣! damaged everyone for {int(damage)}!"
     return payload, message
 
@@ -82,7 +82,7 @@ def the_world(
     multiplier = 0.6
     damage = 0
     for ennemy in ennemy_stand:
-        damage += stand.attack(ennemy, multiplier=multiplier)
+        damage += stand.attack(ennemy, multiplier=multiplier)["damage"]
     message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
@@ -105,7 +105,7 @@ def star_platinum_the_world(
     multiplier = 0.6
     damage = 0
     for ennemy in ennemy_stand:
-        damage += stand.attack(ennemy, multiplier=multiplier)
+        damage += stand.attack(ennemy, multiplier=multiplier)["damage"]
     message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
@@ -542,7 +542,7 @@ def victorious_star_platinum(
     multiplier = 0.4
     damage = 0
     for ennemy in ennemy_stand:
-        damage += stand.attack(ennemy, multiplier=multiplier)
+        damage += stand.attack(ennemy, multiplier=multiplier)["damage"]
     message = f"｢{stand.name}｣ STOPS TIME! and damages everyone for {int(damage)}"
     return payload, message
 
