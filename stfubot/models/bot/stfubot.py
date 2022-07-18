@@ -172,8 +172,9 @@ class StfuBot(commands.AutoShardedInteractionBot):
                         "priority_level": 1 + user_2.is_donator(),
                     }
                     # create Ranked task
-                    user_1
                     users = [user_1, user_2]
+                    print(users)
+                    print(channels)
                     self.RankedTask.append(
                         self.loop.create_task(
                             fight_instance(

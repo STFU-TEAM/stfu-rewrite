@@ -2,7 +2,7 @@ import disnake
 import time
 from datetime import datetime
 
-from typing import List, TYPE_CHECKING
+from typing import List, TYPE_CHECKING, Optional
 from math import inf
 
 # It's for typehint
@@ -28,7 +28,7 @@ class Queue:
 
     async def leave(
         self,
-        Interaction: disnake.ApplicationCommandInteraction,
+        Interaction: Optional[disnake.ApplicationCommandInteraction],
         reason: str,
         manual: list = [],
     ):
