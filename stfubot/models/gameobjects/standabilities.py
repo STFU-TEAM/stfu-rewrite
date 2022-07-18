@@ -291,7 +291,10 @@ def chariot_requiem(
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
         if target.id != stand.id:
-            return specials[f"{target.id}"](stand, allied_stand, ennemy_stand)
+            try:
+                return specials[f"{target.id}"](stand, allied_stand, ennemy_stand)
+            except:
+                stand.current_damage += 10
     stand.current_damage += 5
     message = f"｢{stand.name}｣'s soul searches for the arrow..."
     return payload, message
