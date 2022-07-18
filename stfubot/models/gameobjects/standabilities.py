@@ -134,7 +134,7 @@ def the_hand(
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
     if len(valid_stand) != 0:
         target: "Stand" = random.choice(valid_stand)
-        damage = stand.attack(target, multipler=multiplier)
+        damage = stand.attack(target, multiplier=multiplier)
         message = f"｢{stand.name}｣ throws out random items and deals {damage} damage"
     return payload, message
 
