@@ -190,7 +190,7 @@ class Stand:
         """
         # reset the meter
         self.special_meter = 0
-        special_func = specials.get(self.id, not_implemented)
+        special_func = specials.get(str(self.id), not_implemented)
         return special_func(self, allies, ennemies)
 
     def to_dict(self) -> dict:
