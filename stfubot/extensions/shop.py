@@ -73,6 +73,7 @@ class Shop(commands.Cog):
             embed.set_image(url="https://storage.stfurequiem.com/randomAsset/shop.gif")
             await Interaction.response.edit_message(embed=embed, view=PlaceHolder())
             return
+        user.coins -= SHOPCREATIONCOST
         modal = ShopModal(translation)
         await Interaction.response.send_modal(modal=modal)
 
