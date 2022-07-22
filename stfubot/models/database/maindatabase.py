@@ -6,7 +6,7 @@ import json
 import random
 import datetime
 
-from typing import Union, List, Dict
+from typing import Union, List, Dict, Tuple
 
 
 from stfubot.models.database.user import User, create_user
@@ -228,7 +228,18 @@ class Database:
         if await self.cache.is_cached(_id):
             await self.cache.this_data(document)
 
-    async def find_suitable_shop(self, item_to_find: Item, user_shop_id: str):
+    async def find_suitable_shop(
+        self, item_to_find: Item, user_shop_id: str
+    ) -> Tuple[Shop, int]:
+        """This fonction finds a shop with the right item
+
+        Args:
+            item_to_find (Item): item to find
+            user_shop_id (str): user shop id to exclude
+
+        Returns:
+            Tuple[Shop, int]: the suitable shop and the item index
+        """
         shops: List[Shop] = []
         docs = self.shops.find({"items": {"id": item_to_find.id}})
         docs = await docs.to_list(length=100)
@@ -238,9 +249,11 @@ class Database:
         # If no shops as the item
         if len(shops) == 0:
             return None, 0
-
+        # we take a random shop to have a healthier economy
         suitable_shop = random.choice(shops)
-        return suitable_shop, shops.index(suitable_shop)
+        # get the index of the item to find
+        index = [i.id for i in suitable_shop.items].index(item_to_find.id)
+        return (suitable_shop, index)
 
     async def close(self):
         await self.client.close()

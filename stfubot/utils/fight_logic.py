@@ -129,6 +129,7 @@ async def fight_instance(
                         try:
                             if await view.wait():
                                 raise asyncio.TimeoutError
+                            await view.interaction.response.defer()
                         except asyncio.TimeoutError:
                             for i in player.stands:
                                 i.current_hp = 0
@@ -136,9 +137,12 @@ async def fight_instance(
                                 "Combat terminated because of inactivity."
                             )
                             break
-                        await view.interaction.response.edit_message(
-                            embed=embed, view=PlaceHolder()
-                        )
+                        if ranked:
+                            edit_ui(player.message, embed, PlaceHolder(), client)
+                        else:
+                            await view.interaction.response.edit_message(
+                                embed=embed, view=PlaceHolder()
+                            )
                         if view.value == "ff":
                             for i in player.stands:
                                 i.current_hp = 0
