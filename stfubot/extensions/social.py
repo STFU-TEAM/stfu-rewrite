@@ -95,7 +95,6 @@ class social(commands.Cog):
     async def changeprofileimage(
         self, Interaction: disnake.ApplicationCommandInteraction, url: str
     ):
-        await Interaction.response.defer()
         if is_url_image(url) == False:
             embed = disnake.Embed(
                 title="URL Error",
@@ -120,7 +119,6 @@ class social(commands.Cog):
     async def changedefaultlang(
         self, Interaction: disnake.ApplicationCommandInteraction
     ):
-        await Interaction.response.defer()
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         embed = disnake.Embed(
             title=translation["changedefaultlang"]["1"], color=disnake.Color.blue()
@@ -158,7 +156,6 @@ class social(commands.Cog):
     @commands.slash_command(name="cooldowns", description="Show a cooldown list")
     @database_check()
     async def cooldowns(self, Interaction: disnake.ApplicationCommandInteraction):
-        await Interaction.response.defer()
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
 
         # get the times
