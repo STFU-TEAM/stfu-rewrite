@@ -25,6 +25,7 @@ class FightButton(disnake.ui.Button):
         view: FightUi = self.view
         view.value = int(self.custom_id)
         view.interaction = interaction
+        await view.interaction.response.defer()
         view.stop()
 
 
@@ -38,6 +39,7 @@ class FightButtonFF(disnake.ui.Button):
         view: FightUi = self.view
         view.value = self.custom_id
         view.interaction = interaction
+        await view.interaction.response.defer()
         view.stop()
 
 
