@@ -129,7 +129,6 @@ async def fight_instance(
                         try:
                             if await view.wait():
                                 raise asyncio.TimeoutError
-                            await view.interaction.response.defer()
                         except asyncio.TimeoutError:
                             for i in player.stands:
                                 i.current_hp = 0
