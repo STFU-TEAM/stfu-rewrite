@@ -139,14 +139,9 @@ async def fight_instance(
                         if ranked:
                             edit_ui(player.message, embed, PlaceHolder(), client)
                         else:
-                            if not view.interaction.response._responded:
-                                await view.interaction.response.edit_message(
-                                    embed=embed, view=PlaceHolder()
-                                )
-                            else:
-                                await view.interaction.edit_original_message(
-                                    embed=embed, view=PlaceHolder()
-                                )
+                            await view.interaction.edit_original_message(
+                                embed=embed, view=PlaceHolder()
+                            )
                         if view.value == "ff":
                             for i in player.stands:
                                 i.current_hp = 0

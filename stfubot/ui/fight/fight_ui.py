@@ -2,6 +2,7 @@ import disnake
 
 from stfubot.models.gameobjects.stands import Stand
 from stfubot.globals.emojis import CustomEmoji
+from stfubot.ui.place_holder import PlaceHolder
 
 from typing import List, Union
 
@@ -25,6 +26,7 @@ class FightButton(disnake.ui.Button):
         view: FightUi = self.view
         view.value = int(self.custom_id)
         view.interaction = interaction
+        await view.interaction.response.edit_message(view=PlaceHolder())
         view.stop()
 
 
@@ -38,6 +40,7 @@ class FightButtonFF(disnake.ui.Button):
         view: FightUi = self.view
         view.value = self.custom_id
         view.interaction = interaction
+        await view.interaction.response.edit_message(view=PlaceHolder())
         view.stop()
 
 
