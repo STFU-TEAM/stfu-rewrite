@@ -259,10 +259,12 @@ class Items(commands.Cog):
         # Requiem IDs
         requiemable = [49, 6, 59]
         requiem_stand = [57, 82, 83]
+        # stand to excluse from gacha
+        special_stand = [163, 110, 84, 109, 161, 120, 114]
         # action based on which item was used
         if item.id in gacha_item:  # Stand arrows classic gacha
             if item.id == 2:
-                special_stand = [163]
+
                 stand_list = [
                     get_stand_from_template(stand)
                     for stand in self.stfubot.stand_file
@@ -272,7 +274,7 @@ class Items(commands.Cog):
                 stand_list = [
                     get_stand_from_template(stand)
                     for stand in self.stfubot.stand_file
-                    if stand["id"] < 31
+                    if stand["id"] < 31 and not stand["id"] in special_stand
                 ]
             drop: Stand = get_drop_from_list(stand_list)[0]
             msg = add_to_available_storage(user, drop)
