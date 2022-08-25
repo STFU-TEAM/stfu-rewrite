@@ -2,6 +2,7 @@ import random
 
 from typing import TYPE_CHECKING, List
 
+from stfubot.models.gameobjects.effects import Effect, EffectType
 
 # It's for typehint
 if TYPE_CHECKING:
@@ -86,6 +87,30 @@ def stone_mask(
     return message
 
 
+def lottery_ticket(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    message = "None"
+    return message
+
+
+def polpos_lighter(
+    stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
+) -> tuple:
+    e_type = [e.type for e in stand.effects if not e.sender in allied_stand]
+    if EffectType.POISON in e_type:
+        index = e_type.index(EffectType.POISON)
+        target = stand.effects[index].sender
+        target.effects.append(Effect(EffectType.WEAKEN, 1, 0.95, stand))
+        message = (
+            f"｢{stand.name}｣ manifest ｢Black Sabbath｣ and {target.name} gets weakened"
+        )
+        return message
+
+    message = "None"
+    return message
+
+
 item_specials = {
     "1": dio_Knife,
     "2": stand_arrows,
@@ -94,4 +119,6 @@ item_specials = {
     "5": sheer_heart_attack,
     "6": red_stone_of_aja,
     "7": stone_mask,
+    "15": lottery_ticket,
+    "16": polpos_lighter,
 }

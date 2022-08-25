@@ -34,7 +34,11 @@ class Item:
 
     def special(self, stand, allies, ennemies) -> str:
         self.special_meter = 0
-        return item_specials[f"{self.id}"](stand, allies, ennemies)
+        try:
+            message = item_specials[f"{self.id}"](stand, allies, ennemies)
+        except:
+            message = "None"
+        return message
 
     def as_special(self):
         return self.is_active and self.special_meter >= self.turn_for_ability

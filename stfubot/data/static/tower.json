@@ -204,6 +204,141 @@
         "Yoshikage Kira"
       ],
       "first_completion_reward": { "id": 18 }
+    },
+    "3": {
+      "name": "Part 5",
+      "levels": 5,
+      "fighters": [
+        [
+          {
+            "id": 60,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 69,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 67,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          }
+        ],
+        [
+          {
+            "id": 68,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 72,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 74,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          }
+        ],
+        [
+          {
+            "id": 73,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 80,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 80,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          }
+        ],
+        [
+          {
+            "id": 84,
+            "xp": 1000,
+            "ascension": 0,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 59,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 83,
+            "xp": 1000,
+            "ascension": 0,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          }
+        ],
+        [
+          {
+            "id": 81,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 82,
+            "xp": 1000,
+            "ascension": 1,
+            "items": [{ "id": 16 }, { "id": 4 }]
+          },
+          {
+            "id": 75,
+            "xp": 1000,
+            "ascension": 2,
+            "items": [
+              { "id": 16 },
+              { "id": 4 },
+              { "id": 1 },
+              { "id": 1 },
+              { "id": 4 }
+            ]
+          }
+        ]
+      ],
+      "rewards": [
+        { "id": 24, "p": 0.1 },
+        { "id": 25, "p": 0.1 },
+        { "id": 26, "p": 0.1 },
+        { "id": 28, "p": 0.1 },
+        { "id": 29, "p": 0.1 },
+        { "id": 30, "p": 0.1 },
+        { "id": 27, "p": 0.06 },
+        { "id": 31, "p": 0.06 },
+        { "id": 32, "p": 0.06 },
+        { "id": 16, "p": 0.12 },
+        { "id": 4, "p": 0.05 },
+        { "id": 3, "p": 0.05 }
+      ],
+      "unlocks": [0, 0, 6, 10, 12],
+      "names": [
+        "The gang",
+        "Squadra I",
+        "Squadra II",
+        "Gangstars",
+        "Diavol gang"
+      ],
+      "first_completion_reward": { "id": 31 }
     }
   }
 }
