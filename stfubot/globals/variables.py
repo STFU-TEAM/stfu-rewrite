@@ -3,6 +3,8 @@ import asyncio
 # URL
 
 CRUSADEURL = "https://c.tenor.com/Qp2FQMOC0HMAAAAC/jotaro-kujo-joseph-joestar.gif"
+TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
+GANGURL = "https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
 
 # Bot loop
 
@@ -41,7 +43,6 @@ NORMAL_CR_WAIT_TIME = 1.5
 # Tower constants
 
 ENTRYCOST = 500
-TOWERURL = "https://storage.stfurequiem.com/randomAsset/tower.png"
 
 # ADV
 
@@ -52,18 +53,46 @@ NORMAL_ADV_WAIT_TIME = 6
 
 SHOPCREATIONCOST = 3000
 
-ITEMTYPE = ["damage", "utility", "stand", "misc"]
+ITEMTYPE = [
+    "damage",
+    "utility",
+    "stand",
+    "part3chips",
+    "part4chips",
+    "part5chips",
+    "misc",
+]
 ITEMBYTYPE = {
     "damage": [{"id": 1}, {"id": 5}],
     "utility": [{"id": 6}, {"id": 7}],
-    "stand": [{"id": 2}, {"id": 8}, {"id": 9}, {"id": 10}, {"id": 11}, {"id": 12}],
+    "part3chips": [{"id": 9}, {"id": 10}, {"id": 11}, {"id": 12}, {"id": 14}],
+    "part4chips": [
+        {"id": 17},
+        {"id": 18},
+        {"id": 19},
+        {"id": 20},
+        {"id": 21},
+        {"id": 22},
+        {"id": 23},
+    ],
+    "part5chips": [
+        {"id": 24},
+        {"id": 25},
+        {"id": 26},
+        {"id": 27},
+        {"id": 28},
+        {"id": 29},
+        {"id": 30},
+        {"id": 31},
+        {"id": 32},
+    ],
+    "stand": [{"id": 2}, {"id": 8}],
     "misc": [{"id": 3}, {"id": 13}],
 }
 
 # Gang
 
-GANGURL = "https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
-GANGCREATIONCOST = 50000
+GANGCREATIONCOST = 10000
 
 # Vote
 

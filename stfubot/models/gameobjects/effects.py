@@ -1,4 +1,12 @@
+import disnake
+
 from enum import Enum
+
+from typing import TYPE_CHECKING, Optional
+
+# It's for typehint
+if TYPE_CHECKING:
+    from stfubot.models.gameobjects.stands import Stand
 
 
 Emoji = {
@@ -19,8 +27,15 @@ class EffectType(Enum):
 
 
 class Effect:
-    def __init__(self, type: EffectType, duration: int, value: int):
+    def __init__(
+        self,
+        type: EffectType,
+        duration: int,
+        value: int,
+        sender: Optional["Stand"] = None,
+    ):
         self.type: EffectType = type
         self.duration: int = duration
         self.value: int = value
-        self.emoji = Emoji[self.type.name]
+        self.emoji: disnake.PartialEmoji = Emoji[self.type.name]
+        self.sender: Optional["Stand"] = sender

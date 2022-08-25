@@ -199,22 +199,22 @@ async def fight_instance(
                 if stand.is_alive():
                     for item in stand.items:
                         if item.as_special():
-                            await asyncio.sleep(0.5)
                             message = item.special(stand, player.stands, watcher.stands)
-
-                            combat_log.append(
-                                translation["fight"]["4"].format(turn + 1)
-                                + ", "
-                                + message
-                            )
-                            embed = disnake.Embed(
-                                title=message, color=disnake.Color.blue()
-                            )
-                            embed.set_image(
-                                url=f"https://storage.stfurequiem.com/item_special/{item.id}.gif"
-                            )
-                            await edit(messages_2, embed, client)
                             await asyncio.sleep(0.5)
+                            if message == "None":
+                                combat_log.append(
+                                    translation["fight"]["4"].format(turn + 1)
+                                    + ", "
+                                    + message
+                                )
+                                embed = disnake.Embed(
+                                    title=message, color=disnake.Color.blue()
+                                )
+                                embed.set_image(
+                                    url=f"https://storage.stfurequiem.com/item_special/{item.id}.gif"
+                                )
+                                await edit(messages_2, embed, client)
+                                await asyncio.sleep(0.5)
 
             # action done after the round
             for stand in player.stands + watcher.stands:

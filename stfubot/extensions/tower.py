@@ -113,7 +113,7 @@ class Tower(commands.Cog):
                 players, channels, translation, ranked=False
             )
             if not winner.is_human:
-                # The Person has lost0
+                # The Person has lost
                 break
         for stand in user.stands:
             stand.xp += int(STAND_XPGAINS * (tower["levels"] + 1 / (i + 1)))
@@ -132,7 +132,11 @@ class Tower(commands.Cog):
             {"id": i["id"]} for i in tower["rewards"][0 : tower["unlocks"][i]]
         ]
         probabilities = [i["p"] for i in tower["rewards"][0 : tower["unlocks"][i]]]
-        number_of_drops = random.randint(1, i)
+        sum_level = (i * (i + 1)) / 2
+        probabilities_ndrop = [(7 - n) / sum_level for n in range(1, i + 1)]
+        number_of_drops = random.choices(
+            list(range(1, i + 1)), probabilities_ndrop, k=1
+        )[0]
         items = random.choices(reward_items, probabilities, k=number_of_drops)
 
         items = [item_from_dict(get_item_from_template(item)) for item in items]
@@ -171,6 +175,19 @@ class Tower(commands.Cog):
         await user.update()
         embed.set_image(url=TOWERURL)
         await Interaction.channel.send(embed=embed)
+
+    """
+    @commands.slash_command(
+        name="test", description="Enter towers to farm items and stands !"
+    )
+    @database_check()
+    async def test(self, Interaction: disnake.ApplicationCommandInteraction):
+        for i in range(1, 6):
+            file = await tower_images["3"](Interaction.author, i)
+            embed = disnake.Embed(color=disnake.Color.blue())
+            embed.set_image(file=file)
+            await Interaction.send(embed=embed)
+    """
 
 
 def setup(stfubot: StfuBot):

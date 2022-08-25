@@ -1204,11 +1204,11 @@
       "name": "The World Over Heaven",
       "stars": 10,
       "special_description": "Win",
-      "base_hp": 9999,
-      "base_damage": 1024,
+      "base_hp": 999999,
+      "base_damage": 100000,
       "base_speed": 100,
       "turn_for_ability": 0,
-      "base_critical": 1
+      "base_critical": 100
     },
     {
       "id": 111,

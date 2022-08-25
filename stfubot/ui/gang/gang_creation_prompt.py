@@ -37,10 +37,11 @@ class GangModal(disnake.ui.Modal):
 
     # The callback received when the user input is completed.
     async def callback(self, inter: disnake.ModalInteraction):
-        embed = disnake.Embed(title=self.translation["ui"]["gang_modal"]["8"])
+        embed = disnake.Embed(
+            title=self.translation["ui"]["gang_modal"]["8"], color=disnake.Color.blue()
+        )
         embed.set_image(
-            url="https://storage.stfurequiem.com/randomAsset/gang_default.jpg",
-            color=disnake.Color.blue(),
+            url="https://storage.stfurequiem.com/randomAsset/gang_default.jpg"
         )
         for key, value in inter.text_values.items():
             embed.add_field(
