@@ -311,7 +311,7 @@ class Items(commands.Cog):
                 embed.set_image(url=self.stfubot.avatar_url)
                 await Interaction.channel.send(embed=embed)
                 return
-            if stand.id in requiemable:
+            if stand.id in requiemable and stand.ascension >= 2 and stand.level >= 100:
                 index = requiemable.index(stand.id)
                 new_stand_template = self.stfubot.stand_file[requiem_stand[index]]
                 new_stand = get_stand_from_template(new_stand_template)
