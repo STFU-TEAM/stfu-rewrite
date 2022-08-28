@@ -180,7 +180,7 @@ def get_drop_from_list(stand_list: List["Stand"], number_of_drop: int = 1) -> li
     return drops
 
 
-def add_to_available_storage(user: User, stand: "Stand", skip_main=False):
+def add_to_available_storage(user: User, stand: "Stand", skip_main:bool=False):
     if len(user.stands) < 3 and not skip_main:
         user.stands.append(stand)
         return "Main stand"

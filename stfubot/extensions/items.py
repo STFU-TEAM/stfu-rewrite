@@ -253,6 +253,7 @@ class Items(commands.Cog):
             74,
             77,
             79,
+            80,
             82,
             83,
         ]
