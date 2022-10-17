@@ -801,7 +801,6 @@ def enigma(
     return payload, message
 
 
-"""
 def sex_pistol(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:
@@ -882,6 +881,7 @@ def spice_girl(
     return payload, message
 
 
+"""
 def oasis(
     stand: "Stand", allied_stand: List["Stand"], ennemy_stand: List["Stand"]
 ) -> tuple:

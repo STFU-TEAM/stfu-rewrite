@@ -1,4 +1,4 @@
-disnake==2.5.1
+disnake==2.6.0
 numpy
 dnspython
 async-timeout
