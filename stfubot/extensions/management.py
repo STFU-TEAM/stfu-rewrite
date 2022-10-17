@@ -175,7 +175,10 @@ class management(commands.Cog):
                 inline=True,
             )
         view = StandSelectDropdown(Interaction, storage)
-        await Interaction.send(embed=embed, view=view)
+        if Interaction.response.is_done():
+            await Interaction.send(embed=embed, view=view)
+        else:
+            await Interaction.channel.send(embed=embed, view=view)
         await wait_for(view)
         stand = storage.pop(view.value)
         embed = disnake.Embed(
@@ -245,7 +248,10 @@ class management(commands.Cog):
                 value=f"`{etoile}`\n    ▬▬▬▬▬▬▬▬▬",
                 inline=True,
             )
-        await Interaction.send(embed=embed)
+        if Interaction.response.is_done():
+            await Interaction.send(embed=embed)
+        else:
+            await Interaction.channel.send(embed=embed)
 
     @stand.sub_command(
         name="main", description="move a stand from storage to your main stands"
@@ -288,7 +294,10 @@ class management(commands.Cog):
                 inline=True,
             )
         view = StandSelectDropdown(Interaction, storage)
-        await Interaction.send(embed=embed, view=view)
+        if Interaction.response.is_done():
+            await Interaction.send(embed=embed, view=view)
+        else:
+            await Interaction.channel.send(embed=embed, view=view)
         await wait_for(view)
         stand = storage.pop(view.value)
         embed = disnake.Embed(
@@ -347,21 +356,6 @@ class management(commands.Cog):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author
-
-        storage = user.stand_storage
-        premium = False
-        if user.is_donator():
-            embed = disnake.Embed(
-                title=translation["ui"]["1"], color=disnake.Color.blue()
-            )
-            view = ChooseStorage(Interaction)
-            await Interaction.send(embed=embed, view=view)
-            await wait_for(view)
-            Interaction = view.interaction
-            if not view.value:
-                premium = True
-                storage = user.pstand_storage
-
         embed = disnake.Embed(
             title=translation["store"]["1"], color=disnake.Color.blue()
         )
