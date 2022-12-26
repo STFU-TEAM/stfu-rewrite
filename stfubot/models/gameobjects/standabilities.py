@@ -57,7 +57,7 @@ def star_platinum(
     multiplier = random.randint(1, 4)
     valid_stand = [i for i in ennemy_stand if i.is_alive()]
     if len(valid_stand) != 0:
-        target: Stand = random.choice(valid_stand)
+        target: "Stand" = random.choice(valid_stand)
         stand.attack(target, multiplier=multiplier)
         message = f"｢{stand.name}｣ punches, {target.name}, {multiplier} times dealing {stand.current_damage*multiplier}!"
     else:

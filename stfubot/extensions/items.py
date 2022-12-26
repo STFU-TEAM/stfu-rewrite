@@ -1,7 +1,5 @@
 import disnake
-import json
 import random
-import asyncio
 
 from disnake.ext import commands
 from typing import List

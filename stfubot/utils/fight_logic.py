@@ -64,7 +64,7 @@ async def fight_instance(
         king_crimson = False
         combat_log = []
         turn = 0
-        # Determine who start fist
+        # Determine who start first
         start_1 = sum([i.current_speed for i in fighters[0].stands])
         start_2 = sum([i.current_speed for i in fighters[1].stands])
         players = [fighters[0], fighters[1]]
@@ -77,8 +77,8 @@ async def fight_instance(
             stand.special_meter += 1
         # Game loop
         while game(players[0].stands, players[1].stands):
-            # We get with player must play based of parity looks hard but it is not
-            # Look in idle what n % 2 does if you need to
+            # We get the player who must play based of parity looks hard but it is not
+            # Look in python idle what n % 2 does if you need to
             player = players[turn % 2]
             watcher = players[(turn + 1) % 2]
             for stand in player.stands:

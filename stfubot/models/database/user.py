@@ -63,7 +63,7 @@ class User:
         self.discord: Optional[Union[disnake.User, disnake.Member]] = None
         self.message: Optional[disnake.Message] = None
         self.level: int = min(self.xp // USRXPTOLEVEL, 100)
-        self.is_human = True
+        self.is_human = True # used in fight to determine who is human
 
     async def update(self) -> None:
         """Update the user info in the database"""

@@ -115,6 +115,7 @@ def win(players: List[Union[User, Ia]]) -> User:
 
 # used in cooldown functions
 def secondsToText(seconds):
+    seconds = int(seconds)
     days = seconds // (24 * 3600)
     seconds %= 24 * 3600
     hour = seconds // 3600
