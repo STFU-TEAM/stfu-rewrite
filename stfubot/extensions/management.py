@@ -152,8 +152,8 @@ class management(commands.Cog):
             await Interaction.send(embed=embed, view=view)
             await wait_for(view)
             Interaction = view.interaction
-            premium = True
-            if not view.value:
+            if view.value:
+                premium = True
                 storage = user.pstand_storage
 
         if storage == []:
@@ -162,7 +162,10 @@ class management(commands.Cog):
                 color=disnake.Color.blue(),
             )
             embed.set_image(url=self.stfubot.avatar_url)
-            await Interaction.send(embed=embed)
+            if Interaction.response.is_done():
+                await Interaction.send(embed=embed)
+                return
+            await Interaction.channel.send(embed=embed)
             return
         embed = disnake.Embed(
             title=translation["remove"]["1"], color=disnake.Color.blue()
@@ -215,6 +218,7 @@ class management(commands.Cog):
         user.discord = Interaction.author
 
         storage = user.stand_storage
+
         if user.is_donator():
             embed = disnake.Embed(
                 title=translation["ui"]["1"], color=disnake.Color.blue()
@@ -223,7 +227,7 @@ class management(commands.Cog):
             await Interaction.send(embed=embed, view=view)
             await wait_for(view)
             Interaction = view.interaction
-            if not view.value:
+            if view.value:
                 storage = user.pstand_storage
 
         if storage == []:
@@ -232,7 +236,10 @@ class management(commands.Cog):
                 color=disnake.Color.blue(),
             )
             embed.set_image(url=self.stfubot.avatar_url)
-            await Interaction.send(embed=embed)
+            if Interaction.response.is_done():
+                await Interaction.send(embed=embed)
+                return
+            await Interaction.channel.send(embed=embed)
             return
         embed = disnake.Embed(
             title=translation["storage"]["1"].format(user.discord.name),
@@ -245,7 +252,10 @@ class management(commands.Cog):
                 value=f"`{etoile}`\n    ▬▬▬▬▬▬▬▬▬",
                 inline=True,
             )
-        await Interaction.send(embed=embed)
+        if Interaction.response.is_done():
+            await Interaction.send(embed=embed)
+            return
+        await Interaction.channel.send(embed=embed)
 
     @stand.sub_command(
         name="main", description="move a stand from storage to your main stands"
@@ -265,7 +275,7 @@ class management(commands.Cog):
             await Interaction.send(embed=embed, view=view)
             await wait_for(view)
             Interaction = view.interaction
-            if not view.value:
+            if view.value:
                 premium = True
                 storage = user.pstand_storage
 
@@ -275,7 +285,10 @@ class management(commands.Cog):
                 color=disnake.Color.blue(),
             )
             embed.set_image(url=self.stfubot.avatar_url)
-            await Interaction.send(embed=embed)
+            if Interaction.response.is_done():
+                await Interaction.send(embed=embed)
+                return
+            await Interaction.channel.send(embed=embed)
             return
         embed = disnake.Embed(
             title=translation["mainstand"]["1"], color=disnake.Color.blue()
@@ -288,7 +301,10 @@ class management(commands.Cog):
                 inline=True,
             )
         view = StandSelectDropdown(Interaction, storage)
-        await Interaction.send(embed=embed, view=view)
+        if Interaction.response.is_done():
+            await Interaction.send(embed=embed, view=view)
+        else:
+            await Interaction.channel.send(embed=embed, view=view)
         await wait_for(view)
         stand = storage.pop(view.value)
         embed = disnake.Embed(
@@ -347,20 +363,6 @@ class management(commands.Cog):
         translation = await self.stfubot.database.get_interaction_lang(Interaction)
         user = await self.stfubot.database.get_user_info(Interaction.author.id)
         user.discord = Interaction.author
-
-        storage = user.stand_storage
-        premium = False
-        if user.is_donator():
-            embed = disnake.Embed(
-                title=translation["ui"]["1"], color=disnake.Color.blue()
-            )
-            view = ChooseStorage(Interaction)
-            await Interaction.send(embed=embed, view=view)
-            await wait_for(view)
-            Interaction = view.interaction
-            if not view.value:
-                premium = True
-                storage = user.pstand_storage
 
         embed = disnake.Embed(
             title=translation["store"]["1"], color=disnake.Color.blue()
@@ -424,8 +426,182 @@ class management(commands.Cog):
             title=translation["ascend"]["3"], color=disnake.Color.blue()
         )
         await Interaction.channel.send(embed=embed)
-        
+    
+    @commands.max_concurrency(1, per=commands.BucketType.user, wait=False)
+    @stand.sub_command(name="trade", description="trade a stand with someone else")
+    async def trade(
+        self, Interaction: disnake.ApplicationCommandInteraction, tradee: disnake.Member
+    ):
+        translation = await self.stfubot.database.get_interaction_lang(Interaction)
+        user1 = await self.stfubot.database.get_user_info(Interaction.author.id)
+        user1.discord = Interaction.author
 
+        if True:
+            embed = disnake.Embed(
+                title="An error has occurred",
+                description="This command is disabled while we investigate a bug",
+                color=disnake.Color.red(),
+            )
+            embed.set_thumbnail(
+                url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+            )
+            await Interaction.send(embed=embed)
+            return
+        
+        if tradee == user1.discord:
+            embed = disnake.Embed(
+                title="An error has occurred",
+                description="You can't trade with yourself...",
+                color=0xFF0000,
+            )
+            embed.set_thumbnail(
+                url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+            )
+            await Interaction.send(embed=embed)
+            return
+        if not await self.stfubot.database.user_in_database(tradee.id):
+            embed = disnake.Embed(
+                title="An error has occurred",
+                description=f"It seems {tradee.display_name} is not in the database, consider using .ad first !",
+                color=0xFF0000,
+            )
+            embed.set_thumbnail(
+                url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+            )
+            await Interaction.send(embed=embed)
+            return
+        user2 = await self.stfubot.database.get_user_info(tradee.id)
+        user2.discord = tradee
+        tradeUrl = "https://cdn0.iconfinder.com/data/icons/trading-outline/32/trading_outline_2._Location-512.png"
+        embed = disnake.Embed(
+            title=f"Trade between {Interaction.author.display_name} and {tradee.display_name}",
+            description=f"{tradee.display_name}, do you want to trade with {Interaction.author.display_name} ?",
+        )
+        embed.set_thumbnail(url=tradeUrl)
+        view = Confirm(Interaction, custom_user=tradee)
+        await Interaction.send(embed=embed, view=view)
+        time_out = await view.wait()
+        if time_out:
+            raise asyncio.TimeoutError
+        if not view.value:
+            embed = disnake.Embed(
+                title="Error",
+                description=f"{tradee.display_name} refused the trade",
+                color=0xFF0000,
+            )
+            embed.set_thumbnail(
+                url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+            )
+            await Interaction.response.edit_message(embed=embed, view=None)
+            return
+
+        if user1.stands == [] or user2.stands == []:
+            embed = disnake.Embed(
+                title="An error has occurred",
+                description=f"It seems one of you don't have any stand",
+                color=0xFF0000,
+            )
+            embed.set_thumbnail(
+                url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+            )
+            await Interaction.response.edit_message(embed=embed, view=None)
+            return
+        embed = disnake.Embed(
+            title=f"{Interaction.author.display_name}, Which stand would you like to trade ?"
+        )
+        embed.set_thumbnail(url=tradeUrl)
+        stands = []
+        # get the second stand to exange
+        for i, s in enumerate(User1["main_stand"]):
+            stands.append([self.fixpool[s[0] - 1], s[1], i])
+        for i, s in enumerate(stands):
+            stars = "⭐" * s[0]["stars"] + "🌟" * s[1]
+            embed.add_field(
+                name=f"｢{s[0]['stand_name']}｣:{i+1}",
+                value=f"{stars}",
+                inline=False,
+            )
+        view = StandSelectDropdown(Interaction, User1["main_stand"])
+        await Interaction.edit_original_message(embed=embed, view=view)
+        time_out = await view.wait()
+        if time_out:
+            raise asyncio.TimeoutError
+        choix1 = view.value
+        # get the first stand to exange
+        stands = []
+        embed = disnake.Embed(
+            title=f"{user.display_name}, which stand would you like to trade ?"
+        )
+        embed.set_thumbnail(url=tradeUrl)
+        for i, s in enumerate(User2["main_stand"]):
+            stands.append([self.fixpool[s[0] - 1], s[1], i])
+        for i, s in enumerate(stands):
+            stars = "⭐" * s[0]["stars"] + "🌟" * s[1]
+            embed.add_field(
+                name=f"｢{s[0]['stand_name']}｣:{i+1}",
+                value=f"{stars}",
+                inline=False,
+            )
+        view = StandSelectDropdown(Interaction, User2["main_stand"], custom_user=user)
+        await Interaction.edit_original_message(embed=embed, view=view)
+        time_out = await view.wait()
+        if time_out:
+            raise asyncio.TimeoutError
+        choix2 = int(view.children[0].values[0])
+        users = [user, Interaction.author]
+
+        stands = []
+        stands.append(
+            [
+                self.fixpool[User1["main_stand"][choix1][0] - 1],
+                User1["main_stand"][choix1][1],
+                0,
+            ]
+        )
+        stands.append(
+            [
+                self.fixpool[User2["main_stand"][choix2][0] - 1],
+                User2["main_stand"][choix2][1],
+                1,
+            ]
+        )
+        for user_ in users:
+            embed = disnake.Embed(
+                title=f"{user_.display_name}, do you accept the trade ?"
+            )
+            embed.set_thumbnail(url=tradeUrl)
+            for i, s in enumerate(stands):
+                stars = "⭐" * s[0]["stars"] + "🌟" * s[1]
+                if s[1] > 1:
+                    stars = "🌟" * s[0]["stars"] + "🌠" * s[1]
+                embed.add_field(
+                    name=f"{users[not(i)].display_name} get:",
+                    value=f"｢{s[0]['stand_name']}｣ {stars}",
+                    inline=False,
+                )
+            view = Confirm(Interaction, custom_user=user_)
+            await Interaction.edit_original_message(embed=embed, view=view)
+            if await view.wait():
+                raise asyncio.TimeoutError
+            if not view.value:
+                embed = disnake.Embed(
+                    title="Error",
+                    description=f"{user_.display_name} refused the trade",
+                    color=0xFF0000,
+                )
+                embed.set_thumbnail(
+                    url="https://storage.stfurequiem.com/randomAsset/avatar.png"
+                )
+                await Interaction.edit_original_message(embed=embed, view=None)
+                return
+        User1["main_stand"][choix1], User2["main_stand"][choix2] = (
+            User2["main_stand"][choix2],
+            User1["main_stand"][choix1],
+        )
+        await self.database.Update(User1)
+        await self.database.Update(User2)
+        embed = disnake.Embed(title=f"Done, the trade was successful !")
+        await Interaction.edit_original_message(embed=embed, view=None)
 
 def setup(client: StfuBot):
     client.add_cog(management(client))

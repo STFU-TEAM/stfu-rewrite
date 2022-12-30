@@ -1,7 +1,5 @@
 import disnake
-import json
 import random
-import asyncio
 
 from disnake.ext import commands
 from typing import List
@@ -253,16 +251,19 @@ class Items(commands.Cog):
             74,
             77,
             79,
+            80,
             82,
             83,
         ]
         # Requiem IDs
         requiemable = [49, 6, 59]
         requiem_stand = [57, 82, 83]
+        # stand to excluse from gacha
+        special_stand = [163, 110, 84, 109, 161, 120, 114]
         # action based on which item was used
         if item.id in gacha_item:  # Stand arrows classic gacha
             if item.id == 2:
-                special_stand = [163]
+
                 stand_list = [
                     get_stand_from_template(stand)
                     for stand in self.stfubot.stand_file
@@ -272,7 +273,7 @@ class Items(commands.Cog):
                 stand_list = [
                     get_stand_from_template(stand)
                     for stand in self.stfubot.stand_file
-                    if stand["id"] < 31
+                    if stand["id"] < 31 and not stand["id"] in special_stand
                 ]
             drop: Stand = get_drop_from_list(stand_list)[0]
             msg = add_to_available_storage(user, drop)
@@ -309,7 +310,7 @@ class Items(commands.Cog):
                 embed.set_image(url=self.stfubot.avatar_url)
                 await Interaction.channel.send(embed=embed)
                 return
-            if stand.id in requiemable:
+            if stand.id in requiemable and stand.ascension >= 2 and stand.level >= 100:
                 index = requiemable.index(stand.id)
                 new_stand_template = self.stfubot.stand_file[requiem_stand[index]]
                 new_stand = get_stand_from_template(new_stand_template)

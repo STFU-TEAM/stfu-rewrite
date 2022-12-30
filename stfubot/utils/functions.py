@@ -42,7 +42,7 @@ async def play_files(
             while voice.is_playing():
                 await asyncio.sleep(0.1)
         await voice.disconnect()
-    # this render the fonction callable even if the person is not connected+
+    # this render the fonction callable even if the person is not connected
 
 
 # Used in UI and embeds
@@ -54,7 +54,7 @@ def sign(x: int):
     else:
         return ""
 
-
+#Determine if a fight should keep going or not
 def game(stand1: List["Stand"], stand2: List["Stand"]) -> bool:
     result = False
     for stand in stand1:
@@ -64,7 +64,7 @@ def game(stand1: List["Stand"], stand2: List["Stand"]) -> bool:
         result2 |= stand.is_alive()
     return result and result2
 
-
+#get a list of effect emojis
 def get_stand_status(stand: "Stand") -> str:
     status = ""
     if not stand.effects:
@@ -84,7 +84,7 @@ def get_stand_status(stand: "Stand") -> str:
             status += f" {effect.emoji}"
     return status
 
-
+# get the number of turn until the ability
 def get_turn_special(stand: "Stand") -> str:
     turn = stand.turn_for_ability - stand.special_meter
     if turn > 0:
@@ -114,27 +114,20 @@ def win(players: List[Union[User, Ia]]) -> User:
 
 
 # used in cooldown functions
-def secondsToText(secs):
-    days = secs // 86400
-    hours = int((secs - days * 86400) // 3600)
-    minutes = int((secs - days * 86400 - hours * 3600) // 60)
-    seconds = int(secs - days * 86400 - hours * 3600 - minutes * 60)
-    result = (
-        ("{0} day{1}, ".format(days, "s" if days != 1 else "") if days else "")
-        + ("{0} hour{1}, ".format(hours, "s" if hours != 1 else "") if hours else "")
-        + (
-            "{0} minute{1}, ".format(minutes, "s" if minutes != 1 else "")
-            if minutes
-            else ""
-        )
-        + (
-            "{0} second{1}, ".format(seconds, "s" if seconds != 1 else "")
-            if seconds
-            else ""
-        )
-    )
-    return result
-
+def secondsToText(seconds):
+    seconds = int(seconds)
+    days = seconds // (24 * 3600)
+    seconds %= 24 * 3600
+    hour = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    final_s = ""
+    final_s += f"{days} days, " if days > 0 else ""
+    final_s += f"{hour} hour, " if hour > 0 else ""
+    final_s += f"{minutes} minutes, " if minutes > 0 else ""
+    final_s += f"{seconds} seconds" if seconds > 0 else ""
+    return final_s
 
 def format_combat_log(translation: dict, combat_log: List[str]) -> List[disnake.Embed]:
     embeds = []
@@ -180,7 +173,7 @@ def get_drop_from_list(stand_list: List["Stand"], number_of_drop: int = 1) -> li
     return drops
 
 
-def add_to_available_storage(user: User, stand: "Stand", skip_main=False):
+def add_to_available_storage(user: User, stand: "Stand", skip_main:bool=False):
     if len(user.stands) < 3 and not skip_main:
         user.stands.append(stand)
         return "Main stand"

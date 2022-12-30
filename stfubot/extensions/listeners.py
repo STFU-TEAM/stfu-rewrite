@@ -59,5 +59,7 @@ class Listeners(commands.Cog):
             await message.edit(embed=embed, view=view)
             self.stfubot.dispatch("edit_ui_from_shard_done", message.id)
 
-def setup(client: StfuBot):
-    client.add_cog(Listeners(client))
+
+def setup(stfubot: StfuBot):
+    stfubot.add_cog(Listeners(stfubot))
+
