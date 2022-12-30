@@ -3,7 +3,7 @@ import disnake
 
 from stfubot.globals.variables import LOOP
 from stfubot.models.bot.stfubot import StfuBot
-from disnake.ext import commands, tasks
+from disnake.ext import commands
 
 TOKEN = os.environ["DISCORD_KEY_REQUIEM"]
 
@@ -30,6 +30,7 @@ main_extension = {
     "extensions.errors",
     "extensions.statcord",
     "extensions.topgg",
+    "extensions.routines"
 }
 
 
@@ -44,9 +45,10 @@ for file in main_extension:
         print(f"loaded {file}")
 print(textart)
 
-
 @Client.event
-async def on_ready():
+async def on_shard_ready(shard_id: int):
+    Client.shard_id = shard_id
+    print(f"Shard id:{shard_id} is ready")
     await Client.change_presence(activity=disnake.Game(f"Stfurequiem but better"))
 
 

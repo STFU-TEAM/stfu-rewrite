@@ -18,12 +18,6 @@ class Listeners(commands.Cog):
     ):
         shard_id = channel.guild.shard_id
         this_shard_id = self.stfubot.shard_id
-        print(
-            "ranked listen,shard_incoming:",
-            shard_id,
-            "\nlistener shard id",
-            this_shard_id,
-        )
         if shard_id == this_shard_id:
             channel = self.stfubot.get_partial_messageable(
                 channel.id, type=disnake.ChannelType.text
@@ -65,4 +59,5 @@ class Listeners(commands.Cog):
             await message.edit(embed=embed, view=view)
             self.stfubot.dispatch("edit_ui_from_shard_done", message.id)
 
-    
+def setup(client: StfuBot):
+    client.add_cog(Listeners(client))
