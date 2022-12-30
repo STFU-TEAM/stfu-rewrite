@@ -18,6 +18,7 @@ class Listeners(commands.Cog):
     ):
         shard_id = channel.guild.shard_id
         this_shard_id = self.stfubot.shard_id
+        print(f"received:{id} send_message from shard:{shard_id}|SHARD:{shard_id}")
         if shard_id == this_shard_id:
             channel = self.stfubot.get_partial_messageable(
                 channel.id, type=disnake.ChannelType.text

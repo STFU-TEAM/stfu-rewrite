@@ -173,8 +173,6 @@ class StfuBot(commands.AutoShardedInteractionBot):
                     }
                     # create Ranked task
                     users = [user_1, user_2]
-                    print(users)
-                    print(channels)
                     self.RankedTask.append(
                         self.loop.create_task(
                             fight_instance(
