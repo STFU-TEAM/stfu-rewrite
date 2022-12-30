@@ -20,10 +20,10 @@ from stfubot.models.gameobjects.stands import Stand
 from disnake.ext import commands
 
 # ui
-from ui.place_holder import PlaceHolder
-from ui.confirmation import Confirm
-from ui.StandSelect import StandSelectDropdown
-from ui.storage.ChooseDonor import ChooseStorage
+from stfubot.ui.place_holder import PlaceHolder
+from stfubot.ui.confirmation import Confirm
+from stfubot.ui.StandSelect import StandSelectDropdown
+from stfubot.ui.storage.ChooseDonor import ChooseStorage
 
 
 class management(commands.Cog):
