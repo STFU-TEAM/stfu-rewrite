@@ -13,6 +13,14 @@ class Listeners(commands.Cog):
         self.stfubot = stfubot
 
     @commands.Cog.listener()
+    async def on_shard_ready(self, shard_id: int):
+        self.stfubot.shard_id = shard_id
+        print(f"Shard id:{shard_id} is ready")
+        await self.stfubot.change_presence(
+            activity=disnake.Game(f"Stfurequiem but better")
+        )
+
+    @commands.Cog.listener()
     async def on_send_message_to_shard(
         self, embed: disnake.Embed, channel: disnake.TextChannel, id: str
     ):
