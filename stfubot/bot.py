@@ -46,6 +46,12 @@ for file in main_extension:
 
 
 @Client.event
+async def on_shard_ready(shard_id: int):
+    Client.shard_id = shard_id
+    print(f"Shard id:{shard_id} is ready")
+
+
+@Client.event
 async def on_ready():
     print(f"The bot is ready")
     print(textart)
